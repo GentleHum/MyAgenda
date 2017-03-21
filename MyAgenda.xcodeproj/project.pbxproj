@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0631A11E81817300581274 /* Next7DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A01E81817300581274 /* Next7DaysViewController.swift */; };
+		7E0631A31E81818B00581274 /* AllItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A21E81818B00581274 /* AllItemsViewController.swift */; };
 		7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A51E805A92009BF039 /* AppDelegate.swift */; };
-		7ED746A81E805A92009BF039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A71E805A92009BF039 /* ViewController.swift */; };
+		7ED746A81E805A92009BF039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A71E805A92009BF039 /* HomeViewController.swift */; };
 		7ED746AB1E805A92009BF039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED746A91E805A92009BF039 /* Main.storyboard */; };
 		7ED746AE1E805A92009BF039 /* MyAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */; };
 		7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ED746AF1E805A92009BF039 /* Assets.xcassets */; };
 		7ED746B31E805A92009BF039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */; };
 		7ED746BE1E805A92009BF039 /* MyAgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746BD1E805A92009BF039 /* MyAgendaTests.swift */; };
 		7ED746C91E805A92009BF039 /* MyAgendaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746C81E805A92009BF039 /* MyAgendaUITests.swift */; };
+		7ED746DC1E805FF2009BF039 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */; };
+		7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DD1E806489009BF039 /* HomeListItem.swift */; };
+		7ED746E11E808061009BF039 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746E01E808061009BF039 /* TodayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0631A01E81817300581274 /* Next7DaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Next7DaysViewController.swift; sourceTree = "<group>"; };
+		7E0631A21E81818B00581274 /* AllItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsViewController.swift; sourceTree = "<group>"; };
 		7ED746A21E805A92009BF039 /* MyAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED746A51E805A92009BF039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7ED746A71E805A92009BF039 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7ED746A71E805A92009BF039 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7ED746AA1E805A92009BF039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7ED746AD1E805A92009BF039 /* MyAgenda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAgenda.xcdatamodel; sourceTree = "<group>"; };
 		7ED746AF1E805A92009BF039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,9 @@
 		7ED746C41E805A92009BF039 /* MyAgendaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAgendaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED746C81E805A92009BF039 /* MyAgendaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAgendaUITests.swift; sourceTree = "<group>"; };
 		7ED746CA1E805A92009BF039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		7ED746DD1E806489009BF039 /* HomeListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
+		7ED746E01E808061009BF039 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +110,13 @@
 			isa = PBXGroup;
 			children = (
 				7ED746A51E805A92009BF039 /* AppDelegate.swift */,
-				7ED746A71E805A92009BF039 /* ViewController.swift */,
-				7ED746A91E805A92009BF039 /* Main.storyboard */,
+				7ED746DF1E80723F009BF039 /* Constants */,
+				7ED746D81E805C80009BF039 /* Controllers */,
+				7ED746D61E805B6D009BF039 /* Models */,
+				7ED746D71E805B7C009BF039 /* Storyboards */,
+				7ED746DA1E805CBA009BF039 /* Views */,
 				7ED746AF1E805A92009BF039 /* Assets.xcassets */,
-				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 				7ED746B41E805A92009BF039 /* Info.plist */,
-				7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */,
 			);
 			path = MyAgenda;
 			sourceTree = "<group>";
@@ -126,6 +137,50 @@
 				7ED746CA1E805A92009BF039 /* Info.plist */,
 			);
 			path = MyAgendaUITests;
+			sourceTree = "<group>";
+		};
+		7ED746D61E805B6D009BF039 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */,
+				7ED746DD1E806489009BF039 /* HomeListItem.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7ED746D71E805B7C009BF039 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7ED746A91E805A92009BF039 /* Main.storyboard */,
+				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		7ED746D81E805C80009BF039 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E0631A21E81818B00581274 /* AllItemsViewController.swift */,
+				7ED746A71E805A92009BF039 /* HomeViewController.swift */,
+				7E0631A01E81817300581274 /* Next7DaysViewController.swift */,
+				7ED746E01E808061009BF039 /* TodayViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7ED746DA1E805CBA009BF039 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7ED746DF1E80723F009BF039 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED746A81E805A92009BF039 /* ViewController.swift in Sources */,
+				7ED746A81E805A92009BF039 /* HomeViewController.swift in Sources */,
+				7E0631A31E81818B00581274 /* AllItemsViewController.swift in Sources */,
+				7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */,
+				7ED746E11E808061009BF039 /* TodayViewController.swift in Sources */,
 				7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */,
+				7ED746DC1E805FF2009BF039 /* HomeTableViewCell.swift in Sources */,
+				7E0631A11E81817300581274 /* Next7DaysViewController.swift in Sources */,
 				7ED746AE1E805A92009BF039 /* MyAgenda.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +578,7 @@
 				7ED746CF1E805A92009BF039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED746D01E805A92009BF039 /* Build configuration list for PBXNativeTarget "MyAgendaTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +587,7 @@
 				7ED746D21E805A92009BF039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED746D31E805A92009BF039 /* Build configuration list for PBXNativeTarget "MyAgendaUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +596,7 @@
 				7ED746D51E805A92009BF039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

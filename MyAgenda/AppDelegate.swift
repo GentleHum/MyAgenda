@@ -9,14 +9,29 @@
 import UIKit
 import CoreData
 
+let facebookBlue = UIColor(colorLiteralRed: 59/255.0, green: 89/255.0, blue: 152/255.0, alpha: 1.0) // Facebook blue
+let twitterBlue = UIColor(colorLiteralRed: 64/255.0, green: 153/255.0, blue: 255/255.0, alpha: 1.0)  // Twitter blue
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    let barColor = UIColor(colorLiteralRed: 64/255.0, green: 153/255.0, blue: 255/255.0, alpha: 1.0)  // Twitter blue
+    
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool  {
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = barColor
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().clipsToBounds = false
+        UINavigationBar.appearance().backgroundColor = .white
+//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : (UIFont(name: "System", size: 18))!, NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
         return true
     }
 
