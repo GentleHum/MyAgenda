@@ -75,6 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // need to add one for the segment control in the "header"
         return homeListItems.count + 1 + categoryListItems.count
     }
     
