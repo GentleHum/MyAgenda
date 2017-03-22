@@ -11,7 +11,11 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private struct Storyboard {
-        static let mainCellIdentifier = "HomeTVC"
+        static let homeCellIdentifier = "HomeTVC"
+        static let segmentChoiceCellIdentifier = "SegmentChoiceTVC"
+        static let categoryCellIdentifier = "CategoryTVC"
+        static let filterCellIdentifier = "FilterTVC"
+        
         static let todaySegue = "TodaySegue"
         static let next7DaysSegue = "Next7DaysSegue"
         static let allItemsSegue = "AllItemsSegue"
@@ -29,6 +33,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         HomeListItem(name: "All", iconName: "AllItems-icon", taskCount: 0),
     ]
     
+    private var categoryListItems = [
+        CategoryListItem(name: "Personal", iconName: "", taskCount: 0),
+        CategoryListItem(name: "Work", iconName: "", taskCount: 0),
+        CategoryListItem(name: "Shopping", iconName: "", taskCount: 0),
+        CategoryListItem(name: "Movies to watch", iconName: "", taskCount: 0),
+    ]
+    
     @IBOutlet weak var mainTableView: UITableView!
     
     override func viewDidLoad() {
@@ -37,9 +48,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
+       
         // no title on the navigation back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // get rid of empty rows at bottom of table
+        mainTableView.tableFooterView = UIView()
         
         updateTaskCounts()
     }
@@ -48,6 +62,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeListItems[HomeListItemRows.today.rawValue].taskCount = 0
         homeListItems[HomeListItemRows.next7Days.rawValue].taskCount = 2
         homeListItems[HomeListItemRows.all.rawValue].taskCount = 12
+        
+        categoryListItems[0].taskCount = 8
+        categoryListItems[1].taskCount = 0
+        categoryListItems[2].taskCount = 2
+        categoryListItems[3].taskCount = 4
     }
     
     // MARK: Table view delegate and data source methods
@@ -56,20 +75,41 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeListItems.count
+        return homeListItems.count + 1 + categoryListItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.mainCellIdentifier, for: indexPath) as! HomeTableViewCell
+        var cell = UITableViewCell()
+        print("cellForRowAt: row: \(indexPath.row)")  // zap
         
-        // configure the cell
-        let homeListItem = homeListItems[indexPath.row]
-        cell.countLabel.text = (homeListItem.taskCount > 0) ? String(homeListItem.taskCount) : " "
-        cell.icon.image = UIImage(named: homeListItem.iconName)
-        cell.nameLabel.text = homeListItem.name
+        if indexPath.row < homeListItems.count {
+            cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.homeCellIdentifier,
+                                                 for: indexPath)
+            if let homeCell = cell as? HomeTableViewCell {
+                homeCell.item = homeListItems[indexPath.row]
+            }
+            
+        }
+        else if indexPath.row == homeListItems.count {  // at the segment choice cell
+            cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.segmentChoiceCellIdentifier,
+                                                 for: indexPath)
+            // future: configure the cell
+            // nothing to do until segment control is in place
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.categoryCellIdentifier,
+                                                 for: indexPath)
+            if let categoryCell = cell as? CategoryTableViewCell {
+                categoryCell.item = categoryListItems[indexPath.row - homeListItems.count - 1]
+            }
+        }
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
@@ -89,9 +129,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 
+
 }
 
-// kept around just in case
-//            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "TodayVC") as! TodayViewController
-//            self.present(myWebView, animated: true, completion: nil)
 

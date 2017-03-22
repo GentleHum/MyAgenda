@@ -13,3 +13,6 @@ struct HomeListItem {
     var iconName: String
     var taskCount: Int
 }
+
+typealias CategoryListItem = HomeListItem
+typealias FilterListItem = HomeListItem

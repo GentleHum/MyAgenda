@@ -1,19 +1,20 @@
 //
-//  HomeTableViewCell.swift
+//  CategoryTableViewCell.swift
 //  MyAgenda
 //
-//  Created by Mike Vork on 3/20/17.
+//  Created by Mike Vork on 3/21/17.
 //  Copyright © 2017 Mike Vork. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
+class CategoryTableViewCell: UITableViewCell {
+
+    @IBOutlet private weak var countLabel: UILabel!
+    @IBOutlet private weak var icon: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
-    var item: HomeListItem? {
+    var item: CategoryListItem? {
         didSet {
             updateUI()
         }
@@ -27,5 +28,6 @@ class HomeTableViewCell: UITableViewCell {
             nameLabel.text = item.name
         }
     }
+    
 
 }
