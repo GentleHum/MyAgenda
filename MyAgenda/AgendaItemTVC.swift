@@ -14,7 +14,7 @@ class AgendaItemTVC: UITableViewCell {
 
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
-    
+    @IBOutlet weak var categoryImage: UIImageView!
     
     var agendaItem: AgendaItem? {
         didSet {
@@ -27,6 +27,7 @@ class AgendaItemTVC: UITableViewCell {
         if let item = self.agendaItem {
             itemNameLabel.text = item.descriptionText
             categoryLabel.text = item.category
+            categoryImage.image = UIImage(named: "category-purple-icon.png")
         }
     }
 

@@ -24,11 +24,15 @@ class AllItemsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        agendaItems = ModelController.sharedInstance.loadAgendaItems()
-        
         tableView.tableFooterView = UIView()
         self.navigationItem.backBarButtonItem?.title = ""
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        agendaItems = ModelController.sharedInstance.loadAgendaItems()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -52,6 +56,10 @@ class AllItemsTableViewController: UITableViewController {
 
         return cell
     }
+//    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 48
+//    }
 
 
     /*
