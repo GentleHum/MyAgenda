@@ -27,6 +27,10 @@ class AllItemsTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem?.title = ""
         navigationItem.leftBarButtonItem = editButtonItem
         
+        // no title on the navigation back button
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

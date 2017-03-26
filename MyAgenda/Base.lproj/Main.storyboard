@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -316,29 +317,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-xf-yeo">
-                                            <rect key="frame" x="359" y="34" width="8" height="8"/>
+                                            <rect key="frame" x="359" y="30.5" width="8" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="8" id="4dR-Ql-3XL"/>
                                                 <constraint firstAttribute="height" constant="8" id="gqL-XM-taj"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuU-3a-EpR">
-                                            <rect key="frame" x="8" y="8" width="359" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="rHf-wC-2rX"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="359" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcV-0j-YZQ">
-                                            <rect key="frame" x="8" y="30" width="347" height="16"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="OJg-Ks-QQD"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="26.5" width="347" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -350,6 +351,7 @@
                                         <constraint firstItem="p2e-xf-yeo" firstAttribute="trailing" secondItem="lBr-8r-Jhz" secondAttribute="trailingMargin" id="niJ-0f-Frz"/>
                                         <constraint firstItem="EuU-3a-EpR" firstAttribute="leading" secondItem="lBr-8r-Jhz" secondAttribute="leadingMargin" id="q37-ZQ-8TT"/>
                                         <constraint firstItem="JcV-0j-YZQ" firstAttribute="leading" secondItem="lBr-8r-Jhz" secondAttribute="leading" constant="8" id="wGy-O1-z0e"/>
+                                        <constraint firstItem="p2e-xf-yeo" firstAttribute="centerY" secondItem="JcV-0j-YZQ" secondAttribute="centerY" id="x4Q-f6-THz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -365,17 +367,25 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="8DE-Wb-wwi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="orF-Xc-Gen">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="rcE-0X-OWr" kind="show" id="hIO-Ff-t5S"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="orF-Xc-Gen">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="rcE-0X-OWr" kind="show" id="hIO-Ff-t5S"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Home" id="mYY-rb-zS0">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Qx2-DY-f2j" kind="show" identifier="HomeSegue" id="1NK-aV-vhZ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73G-IH-YT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184.8000000000002" y="2410.344827586207"/>
+            <point key="canvasLocation" x="1832" y="2409"/>
         </scene>
         <!--Add Agenda Item View Controller-->
         <scene sceneID="kl7-vM-K0X">
@@ -488,10 +498,7 @@
                             <constraint firstItem="U5Y-5Y-4Oe" firstAttribute="leading" secondItem="0Nq-oN-byc" secondAttribute="leadingMargin" id="vFa-ho-hKU"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="HeO-ZV-F5e"/>
-                        <barButtonItem title="Item" id="E1e-2d-qAx"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryField" destination="hR1-Ns-oeA" id="Qdl-QE-hJ6"/>
@@ -501,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7x-oR-inj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2997.5999999999999" y="2408.5457271364321"/>
+            <point key="canvasLocation" x="2416" y="2435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BPf-0u-8cr">
@@ -578,7 +585,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hp8-Jz-Bmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1013" y="1334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TO2-Sn-Ezs">
@@ -596,7 +603,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaD-SF-Utm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="3251"/>
+            <point key="canvasLocation" x="1234" y="3215"/>
         </scene>
     </scenes>
 </document>

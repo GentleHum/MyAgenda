@@ -34,9 +34,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     ]
     
     private var categoryListItems = [
-        CategoryListItem(name: "Personal", iconName: "", taskCount: 0),
-        CategoryListItem(name: "Work", iconName: "", taskCount: 0),
-        CategoryListItem(name: "Shopping", iconName: "", taskCount: 0),
+        CategoryListItem(name: "Personal", iconName: "category-blue-icon.png", taskCount: 0),
+        CategoryListItem(name: "Work", iconName: "category-purple-icon.png", taskCount: 0),
+        CategoryListItem(name: "Shopping", iconName: "category-black-icon.png", taskCount: 0),
         CategoryListItem(name: "Movies to watch", iconName: "", taskCount: 0),
     ]
     
@@ -81,7 +81,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        print("cellForRowAt: row: \(indexPath.row)")  // zap
         
         if indexPath.row < homeListItems.count {
             cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.homeCellIdentifier,

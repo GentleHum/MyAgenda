@@ -19,13 +19,10 @@ class AddAgendaItemViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Add to Agenda"
+
     }
 
     @IBAction func saveWasPressed(_ sender: Any) {
-        print("saveWasPressed")  // zap
-        print(descriptionField.text ?? "")
-        print(categoryField.text ?? "")
-        print(priorityChoice.selectedSegmentIndex)
         let priority = priorityChoice.selectedSegmentIndex + 1 // adjust from zero-based
         let descriptionText = descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let category = categoryField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
