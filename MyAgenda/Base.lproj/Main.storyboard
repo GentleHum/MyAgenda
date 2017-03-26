@@ -13,7 +13,7 @@
         <!--MyAgenda-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="1814" y="408"/>
         </scene>
-        <!--Task Detail-->
+        <!--Agenda Item Detail-->
         <scene sceneID="nvR-4Z-Lff">
             <objects>
-                <viewController id="nsq-TU-iGh" sceneMemberID="viewController">
+                <viewController id="nsq-TU-iGh" customClass="AgendaItemDetailViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ssE-Pr-Oks"/>
                         <viewControllerLayoutGuide type="bottom" id="70r-k8-6g6"/>
@@ -292,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Task Detail" id="iqj-EI-Jch"/>
+                    <navigationItem key="navigationItem" title="Agenda Item Detail" id="iqj-EI-Jch"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsK-eS-NlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,7 +565,7 @@
         <!--Navigation Controller-->
         <scene sceneID="loe-gq-16Y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qx2-DY-f2j" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qx2-DY-f2j" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rZO-g5-AMO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

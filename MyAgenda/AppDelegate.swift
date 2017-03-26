@@ -14,7 +14,7 @@ let twitterBlue = UIColor(colorLiteralRed: 64/255.0, green: 153/255.0, blue: 255
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
     let barColor = UIColor(colorLiteralRed: 64/255.0, green: 153/255.0, blue: 255/255.0, alpha: 1.0)  // Twitter blue
@@ -29,8 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().clipsToBounds = false
         UINavigationBar.appearance().backgroundColor = .white
-//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : (UIFont(name: "System", size: 18))!, NSForegroundColorAttributeName: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        // Override point for customization after application launch.
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        splitViewController.delegate = self
         
         return true
     }
@@ -103,6 +108,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        print("in collapseSecondary")  // zap
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? AgendaItemDetailViewController else { return false }
+        if topAsDetailController.agendaItem == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            print("returning true")  // zap
+            return true
+        }
+        
+        print("returning false")  // zap
+        return false
+    }
+
 
 }
 
