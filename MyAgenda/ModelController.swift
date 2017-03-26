@@ -26,15 +26,6 @@ class ModelController {
     private var agendaItems = [AgendaItem]()
     
     private init() { // must be private to ensure it's thread safe
-//        if let newItem = addAgendaItem(descriptionText: "OTF Workout", category: "Personal", priority: 2, dueDate: Date()) {
-//            agendaItems.append(newItem)
-//        }
-//        if let newItem = addAgendaItem(descriptionText: "Work on final project", category: "Career Foundry", priority: 2, dueDate: Date()) {
-//            agendaItems.append(newItem)
-//        }
-//        if let newItem = addAgendaItem(descriptionText: "Cancel Wild tickets", category: "Personal", priority: 1, dueDate: Date()) {
-//            agendaItems.append(newItem)
-//        }
     }
     
     func loadAgendaItems() -> [AgendaItem] {
@@ -75,8 +66,10 @@ class ModelController {
     }
     
     
-    func deleteAgendaItem() {
-        
+    func deleteAgendaItem(_ itemToDelete: AgendaItem) {
+        let context = appDelegate.persistentContainer.viewContext
+        context.delete(itemToDelete)
+        appDelegate.saveContext()
     }
     
     

@@ -16,6 +16,12 @@ class AgendaItemTVC: UITableViewCell {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
     
+    private var iconDictionary: Dictionary<String,String> = [
+        "Personal" : "category-blue-icon.png",
+        "Work" : "category-purple-icon.png",
+        "School" : "category-black-icon.png",
+    ]
+    
     var agendaItem: AgendaItem? {
         didSet {
             updateUI()
@@ -25,10 +31,11 @@ class AgendaItemTVC: UITableViewCell {
     private func updateUI() {
         // load new information from our item (if any)
         if let item = self.agendaItem {
-            let iconName = item.category == "Personal" ? "category-blue-icon.png" : "category-purple-icon.png"
+            if let iconName = iconDictionary[item.category ?? ""] {
+                categoryImage.image = UIImage(named: iconName)
+            }
             itemNameLabel.text = item.descriptionText
             categoryLabel.text = item.category
-            categoryImage.image = UIImage(named: iconName)
         }
     }
 

@@ -58,14 +58,11 @@ class AllItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print("in commit editingStyle") // zap
         if editingStyle == .delete {
-//            let category = categories[indexPath.row]
-//            if DataModelController.sharedInstance.deleteCategory(category) {
-//                categories.remove(at: indexPath.row)
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-//            }
-            
+            let itemToDelete = agendaItems[indexPath.row]
+            ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
+            agendaItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
@@ -73,6 +70,11 @@ class AllItemsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
+        if destinationIndexPath.row != sourceIndexPath.row {
+            let itemToMove = agendaItems[sourceIndexPath.row]
+            agendaItems.insert(itemToMove, at: destinationIndexPath.row)
+            agendaItems.remove(at: sourceIndexPath.row)
+        }
     }
 
 
