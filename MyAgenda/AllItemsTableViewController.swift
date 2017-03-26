@@ -26,6 +26,7 @@ class AllItemsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         self.navigationItem.backBarButtonItem?.title = ""
+        navigationItem.leftBarButtonItem = editButtonItem
         
     }
     
@@ -56,7 +57,30 @@ class AllItemsTableViewController: UITableViewController {
 
         return cell
     }
-//    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("in commit editingStyle") // zap
+        if editingStyle == .delete {
+//            let category = categories[indexPath.row]
+//            if DataModelController.sharedInstance.deleteCategory(category) {
+//                categories.remove(at: indexPath.row)
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+            
+        }
+    }
+    
+
+//    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+    }
+
+
+//
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 48
 //    }

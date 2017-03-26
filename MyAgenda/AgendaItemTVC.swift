@@ -25,9 +25,10 @@ class AgendaItemTVC: UITableViewCell {
     private func updateUI() {
         // load new information from our item (if any)
         if let item = self.agendaItem {
+            let iconName = item.category == "Personal" ? "category-blue-icon.png" : "category-purple-icon.png"
             itemNameLabel.text = item.descriptionText
             categoryLabel.text = item.category
-            categoryImage.image = UIImage(named: "category-purple-icon.png")
+            categoryImage.image = UIImage(named: iconName)
         }
     }
 
