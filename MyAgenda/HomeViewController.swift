@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var categoryListItems = [
         CategoryListItem(name: "Personal", iconName: "category-blue-icon.png", taskCount: 0),
         CategoryListItem(name: "Work", iconName: "category-purple-icon.png", taskCount: 0),
-        CategoryListItem(name: "Shopping", iconName: "category-black-icon.png", taskCount: 0),
+        CategoryListItem(name: "School", iconName: "category-black-icon.png", taskCount: 0),
         CategoryListItem(name: "Movies to watch", iconName: "", taskCount: 0),
     ]
     
@@ -115,28 +115,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 1 {
-//            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "SecondDetailVC") as? UINavigationController {
-//                if let detailController = navigationController.childViewControllers[0] as? SecondDetailViewController {
-//                    detailController.userName = items[indexPath.row]
-//                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
-//                }
-//            }
-//        } else {
-//            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "FirstDetailVC") as? UINavigationController {
-//                if let detailController = navigationController.childViewControllers[0] as? FirstDetailViewController {
-//                    detailController.userName = items[indexPath.row]
-//                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
-//                }
-//            }
-//        }
-//        
-//        
-//    }
-//    
-
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             
@@ -156,7 +134,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.allItems.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
-                if let detailController = navigationController.childViewControllers[0] as? AllItemsViewController {
+                if let detailController = navigationController.childViewControllers[0] as? AllItemsTableViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
