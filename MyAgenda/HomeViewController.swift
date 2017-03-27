@@ -19,12 +19,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let todaySegue = "TodaySegue"
         static let next7DaysSegue = "Next7DaysSegue"
         static let allItemsSegue = "AllItemsSegue"
+        
+        static let todayVC = "TodayVC"
+        static let next7DaysVC = "Next7DaysVC"
+        static let allItemsVC = "AllItemsVC"
     }
     
     private enum HomeListItemRows: Int {
         case today = 0
         case next7Days = 1
-        case all = 2
+        case allItems = 2
     }
     
     private var homeListItems = [
@@ -61,7 +65,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func updateTaskCounts() {
         homeListItems[HomeListItemRows.today.rawValue].taskCount = 0
         homeListItems[HomeListItemRows.next7Days.rawValue].taskCount = 2
-        homeListItems[HomeListItemRows.all.rawValue].taskCount = 12
+        homeListItems[HomeListItemRows.allItems.rawValue].taskCount = 12
         
         categoryListItems[0].taskCount = 8
         categoryListItems[1].taskCount = 0
@@ -111,17 +115,51 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 1 {
+//            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "SecondDetailVC") as? UINavigationController {
+//                if let detailController = navigationController.childViewControllers[0] as? SecondDetailViewController {
+//                    detailController.userName = items[indexPath.row]
+//                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+//                }
+//            }
+//        } else {
+//            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "FirstDetailVC") as? UINavigationController {
+//                if let detailController = navigationController.childViewControllers[0] as? FirstDetailViewController {
+//                    detailController.userName = items[indexPath.row]
+//                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+//                }
+//            }
+//        }
+//        
+//        
+//    }
+//    
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             
         case HomeListItemRows.today.rawValue:
-            performSegue(withIdentifier: Storyboard.todaySegue, sender: nil)
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.todayVC) as? UINavigationController {
+                if let detailController = navigationController.childViewControllers[0] as? TodayViewController {
+                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+                }
+            }
             
         case HomeListItemRows.next7Days.rawValue:
-            performSegue(withIdentifier: Storyboard.next7DaysSegue, sender: nil)
-
-        case HomeListItemRows.all.rawValue:
-            performSegue(withIdentifier: Storyboard.allItemsSegue, sender: nil)
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.next7DaysVC) as? UINavigationController {
+                if let detailController = navigationController.childViewControllers[0] as? Next7DaysViewController {
+                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+                }
+            }
+            
+        case HomeListItemRows.allItems.rawValue:
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
+                if let detailController = navigationController.childViewControllers[0] as? AllItemsViewController {
+                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+                }
+            }
             
         default: break
             

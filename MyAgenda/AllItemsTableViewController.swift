@@ -91,18 +91,6 @@ class AllItemsTableViewController: UITableViewController {
         return true
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.detailController) as? UINavigationController {
-//            //
-//            if let detailController = navigationController.childViewControllers[0] as? AgendaItemDetailViewController {
-//                self.present(navigationController, animated: true, completion: nil)
-//                detailController.agendaItem = agendaItems[indexPath.row]
-//            }
-//        }
-//    }
-//
-
-
 
     // MARK: - Navigation
 
