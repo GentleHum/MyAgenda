@@ -11,6 +11,8 @@ import UIKit
 class AllItemsTableViewController: UITableViewController {
     struct Storyboard {
         static let cellIdentifier = "AgendaItemTVC"
+        static let detailSegue = "AgendaItemDetailSegue"
+        static let detailController = "AgendaItemDetailViewController"
     }
     
     var agendaItems = [AgendaItem]()
@@ -88,17 +90,38 @@ class AllItemsTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.detailController) as? UINavigationController {
+//            //
+//            if let detailController = navigationController.childViewControllers[0] as? AgendaItemDetailViewController {
+//                self.present(navigationController, animated: true, completion: nil)
+//                detailController.agendaItem = agendaItems[indexPath.row]
+//            }
+//        }
+//    }
+//
 
 
 
-    /*
     // MARK: - Navigation
+
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == Storyboard.detailSegue {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let agendaItem = agendaItems[indexPath.row]
+                let controller = (segue.destination as! UINavigationController).topViewController as! AgendaItemDetailViewController
+                controller.agendaItem = agendaItem
+            }
+        }
+        
     }
-    */
+
+
 
 }

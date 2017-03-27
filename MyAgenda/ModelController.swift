@@ -58,6 +58,8 @@ class ModelController {
                               forKey: AgendaItemProperties.categoryField)
             item.setValue(priority,
                               forKey: AgendaItemProperties.priorityField)
+            item.setValue(dueDate,
+                          forKey: AgendaItemProperties.dueDateField)
             appDelegate.saveContext()
             return item
         }
@@ -75,36 +77,3 @@ class ModelController {
     
 }
 
-
-//class func loadCategories() -> [TaskCategory] {
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let managedContext = appDelegate.persistentContainer.viewContext
-//    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskCategory")
-//    
-//    do {
-//        let results = try managedContext.fetch(fetchRequest)
-//        let categories = results as! [TaskCategory]
-//        return categories
-//    } catch let error as NSError {
-//        print("Fetching Error: \(error.userInfo)")
-//    }
-//    
-//    return [TaskCategory]()
-//    
-//}
-//
-//class func addCategory(name: String, iconName: String, taskCount: Int) -> TaskCategory? {
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let context = appDelegate.persistentContainer.viewContext
-//    let entity = NSEntityDescription.entity(forEntityName: "TaskCategory", in: context)
-//    
-//    if let category = NSManagedObject(entity: entity!, insertInto: context) as? TaskCategory {
-//        category.setValue(name, forKey: "name")
-//        category.setValue(iconName, forKey: "iconName")
-//        category.setValue(taskCount, forKey: "taskCount")
-//        appDelegate.saveContext()
-//        return category
-//    }
-//    
-//    return nil
-//}
