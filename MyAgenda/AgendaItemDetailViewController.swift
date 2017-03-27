@@ -32,7 +32,6 @@ class AgendaItemDetailViewController: UIViewController {
     private func updateUI() {
         // load new information from our item (if any)
         if let item = self.agendaItem {
-            print(item)  // zap
             if descriptionTextLabel != nil {
                 descriptionTextLabel.text = item.descriptionText
                 categoryLabel.text = item.category
