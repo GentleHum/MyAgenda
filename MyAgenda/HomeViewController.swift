@@ -75,14 +75,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // update the top level numbers
         homeListItems[HomeListItemRows.today.rawValue].taskCount = 0
         homeListItems[HomeListItemRows.next7Days.rawValue].taskCount = 2
-//        homeListItems[HomeListItemRows.allItems.rawValue].taskCount = 12
-        
-        let allItemsIndex = HomeListItemRows.allItems.rawValue
-        homeListItems[allItemsIndex].taskCount =
+
+        // update count for all items
+        homeListItems[HomeListItemRows.allItems.rawValue].taskCount =
             ModelController.sharedInstance.getAgendaItemCount()
 
-        
-        
         // update the category numbers
         for itemNumber in 0..<categoryListItems.count {
             categoryListItems[itemNumber].taskCount =

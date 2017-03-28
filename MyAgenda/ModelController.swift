@@ -43,7 +43,6 @@ class ModelController {
            print("Fetching Error: \(error.userInfo)")
         }
         
-        print("returning \(count)")  // zap
         return count
     }
     
