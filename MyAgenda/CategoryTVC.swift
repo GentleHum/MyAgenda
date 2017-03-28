@@ -25,10 +25,17 @@ class CategoryTVC: UITableViewCell {
         if itemNameLabel != nil {  // verify outlets are configured
             if let item = self.agendaItem {
                 itemNameLabel.text = item.descriptionText
-// zap                dueDateLabel.text = String(describing: item.dueDate)
-                dueDateLabel.text = "Today"
+                dueDateLabel.text = getFormattedDate(item.dueDate as! Date)
+// zap                dueDateLabel.text = "Today"
             }
         }
+    }
+    
+    private func getFormattedDate(_ dateToFormat: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let currDateString = dateFormatter.string(from: dateToFormat)
+        return currDateString
     }
 
 }

@@ -61,19 +61,34 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // get rid of empty rows at bottom of table
         mainTableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         updateTaskCounts()
+        mainTableView.reloadData()
     }
     
     private func updateTaskCounts() {
+        
+        // update the top level numbers
         homeListItems[HomeListItemRows.today.rawValue].taskCount = 0
         homeListItems[HomeListItemRows.next7Days.rawValue].taskCount = 2
-        homeListItems[HomeListItemRows.allItems.rawValue].taskCount = 12
+//        homeListItems[HomeListItemRows.allItems.rawValue].taskCount = 12
         
-        categoryListItems[0].taskCount = 8
-        categoryListItems[1].taskCount = 0
-        categoryListItems[2].taskCount = 2
-        categoryListItems[3].taskCount = 4
+        let allItemsIndex = HomeListItemRows.allItems.rawValue
+        homeListItems[allItemsIndex].taskCount =
+            ModelController.sharedInstance.getAgendaItemCount()
+
+        
+        
+        // update the category numbers
+        for itemNumber in 0..<categoryListItems.count {
+            categoryListItems[itemNumber].taskCount =
+                ModelController.sharedInstance.getAgendaItemCount(matching: categoryListItems[itemNumber].name)
+        }
+        
     }
     
     // MARK: Table view delegate and data source methods
