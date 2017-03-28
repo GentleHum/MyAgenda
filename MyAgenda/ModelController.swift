@@ -28,12 +28,15 @@ class ModelController {
     private init() { // must be private to ensure it's thread safe
     }
     
-    func loadAgendaItems() -> [AgendaItem] {
+    func loadAgendaItems(matching categoryName: String? = nil) -> [AgendaItem] {
         let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
-        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
+        if let name = categoryName {
+            request.predicate = NSPredicate(format: "category == %@", name)
+        }
+
         do {
-            let results = try context.fetch(fetchRequest)
+            let results = try context.fetch(request)
             agendaItems = results as! [AgendaItem]
             return agendaItems
         } catch let error as NSError {
@@ -43,6 +46,7 @@ class ModelController {
         return [AgendaItem]()
         
     }
+    
     
     func addAgendaItem(descriptionText: String, category: String,
                        priority: Int, dueDate: Date) -> AgendaItem? {

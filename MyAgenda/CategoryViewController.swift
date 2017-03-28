@@ -12,6 +12,8 @@ class CategoryViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
+    private var agendaItems = [AgendaItem]()
+    
     var categoryName: String? {
         didSet {
             updateUI()
@@ -25,16 +27,17 @@ class CategoryViewController: UIViewController {
         updateUI()
     }
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        agendaItems = ModelController.sharedInstance.loadAgendaItems(matching: categoryName)
+//        tableView.reloadData()
         updateUI()
     }
+   
     
     private func updateUI() {
         if mainLabel != nil && categoryName != nil {
-            mainLabel.text = "CategoryViewController: " + categoryName!
+            mainLabel.text = "CategoryViewController: " + categoryName! + " \(agendaItems.count)"
             
             self.navigationItem.title = categoryName!
         }

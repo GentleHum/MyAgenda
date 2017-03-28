@@ -27,13 +27,16 @@ class AllItemsTableViewController: UITableViewController {
         
         tableView.allowsMultipleSelection = false
         
+        // no empty rows at bottom of table
         tableView.tableFooterView = UIView()
         
-        navigationItem.leftBarButtonItem = editButtonItem
-        navigationItem.leftItemsSupplementBackButton = true
+//        navigationItem.leftBarButtonItem = editButtonItem
+//        navigationItem.leftItemsSupplementBackButton = true
 
-
+        // no title on the navigation back button
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,7 +106,7 @@ class AllItemsTableViewController: UITableViewController {
         if segue.identifier == Storyboard.detailSegue {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let agendaItem = agendaItems[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! AgendaItemDetailViewController
+                let controller = segue.destination as! AgendaItemDetailViewController
                 controller.agendaItem = agendaItem
             }
         }
