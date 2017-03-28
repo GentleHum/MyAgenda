@@ -28,6 +28,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         // empty rows at bottom of table
         tableView.tableFooterView = UIView()
         
+        // allows swipe to delete
+        tableView.allowsMultipleSelection = false
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,5 +59,15 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let itemToDelete = agendaItems[indexPath.row]
+            ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
+            agendaItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 
 }

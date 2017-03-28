@@ -13,6 +13,10 @@ import UIKit
 class ModelController {
     static let sharedInstance = ModelController()
     
+    struct Notifications {
+        static let dataChanged = "com.gentlehum.MyAgenda.dataChanged"
+    }
+    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     struct AgendaItemProperties {
@@ -84,6 +88,7 @@ class ModelController {
             item.setValue(dueDate,
                           forKey: AgendaItemProperties.dueDateField)
             appDelegate.saveContext()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
             return item
         }
         
@@ -95,6 +100,7 @@ class ModelController {
         let context = appDelegate.persistentContainer.viewContext
         context.delete(itemToDelete)
         appDelegate.saveContext()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
     }
     
     

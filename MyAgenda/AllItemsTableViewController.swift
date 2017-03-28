@@ -25,6 +25,7 @@ class AllItemsTableViewController: UITableViewController {
 
         self.navigationItem.title = "All items"
         
+        // allows swipe to delete
         tableView.allowsMultipleSelection = false
         
         // no empty rows at bottom of table

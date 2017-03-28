@@ -49,6 +49,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var mainTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,6 +62,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // get rid of empty rows at bottom of table
         mainTableView.tableFooterView = UIView()
+        
+        // setup handler for when data in the underlying data model changes
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.dataChangeObserver),
+                                               name: NSNotification.Name(rawValue: ModelController.Notifications.dataChanged),
+                                               object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,8 +92,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             categoryListItems[itemNumber].taskCount =
                 ModelController.sharedInstance.getAgendaItemCount(matching: categoryListItems[itemNumber].name)
         }
-        
     }
+    
+    @objc private func dataChangeObserver() {
+        print("dataChangeObserver entered")  // zap
+        updateTaskCounts()
+        mainTableView.reloadData()
+    }
+    
+    
+    
     
     // MARK: Table view delegate and data source methods
     func numberOfSections(in tableView: UITableView) -> Int {
