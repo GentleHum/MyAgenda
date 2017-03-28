@@ -32,14 +32,19 @@ class ModelController {
     private init() { // must be private to ensure it's thread safe
     }
     
-    
-    func getAgendaItemCount(matching categoryName: String? = nil) -> Int {
-        var count = 0
-        let context = appDelegate.persistentContainer.viewContext
+    private func buildGetAgendaItemQuery(categoryName: String? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
         if let name = categoryName {
             request.predicate = NSPredicate(format: "category == %@", name)
         }
+     
+        return request
+    }
+    
+    func getAgendaItemCount(matching categoryName: String? = nil) -> Int {
+        var count = 0
+        let context = appDelegate.persistentContainer.viewContext
+        let request = buildGetAgendaItemQuery(categoryName: categoryName)
         
         do {
             count = try context.count(for: request)
@@ -53,10 +58,7 @@ class ModelController {
     
     func loadAgendaItems(matching categoryName: String? = nil) -> [AgendaItem] {
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
-        if let name = categoryName {
-            request.predicate = NSPredicate(format: "category == %@", name)
-        }
+        let request = buildGetAgendaItemQuery(categoryName: categoryName)
 
         do {
             let results = try context.fetch(request)
