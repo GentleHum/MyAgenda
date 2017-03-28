@@ -95,7 +95,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc private func dataChangeObserver() {
-        print("dataChangeObserver entered")  // zap
         updateTaskCounts()
         mainTableView.reloadData()
     }
