@@ -23,16 +23,16 @@ class AllItemsTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        self.navigationItem.title = "All items"
+        
         tableView.allowsMultipleSelection = false
         
         tableView.tableFooterView = UIView()
-        self.navigationItem.backBarButtonItem?.title = ""
+        
         navigationItem.leftBarButtonItem = editButtonItem
-        
-        // no title on the navigation back button
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.leftItemsSupplementBackButton = true
 
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

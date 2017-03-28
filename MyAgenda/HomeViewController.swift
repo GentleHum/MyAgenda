@@ -23,6 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let todayVC = "TodayVC"
         static let next7DaysVC = "Next7DaysVC"
         static let allItemsVC = "AllItemsVC"
+        static let categoryVC = "CategoryVC"
     }
     
     private enum HomeListItemRows: Int {
@@ -120,26 +121,36 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.today.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.todayVC) as? UINavigationController {
-                if let detailController = navigationController.childViewControllers[0] as? TodayViewController {
+                if navigationController.childViewControllers[0] is TodayViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
             
         case HomeListItemRows.next7Days.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.next7DaysVC) as? UINavigationController {
-                if let detailController = navigationController.childViewControllers[0] as? Next7DaysViewController {
+                if navigationController.childViewControllers[0] is Next7DaysViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
             
         case HomeListItemRows.allItems.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
-                if let detailController = navigationController.childViewControllers[0] as? AllItemsTableViewController {
+                if navigationController.childViewControllers[0] is AllItemsTableViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
             
-        default: break
+        default:
+            if indexPath.row > homeListItems.count {  // skip the category/filter table row
+                let categoryNumber = indexPath.row - homeListItems.count - 1
+                if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.categoryVC) as? UINavigationController {
+                    if let destinationController = navigationController.childViewControllers[0] as? CategoryViewController {
+                        destinationController.categoryName = categoryListItems[categoryNumber].name
+                        self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+                    }
+                }
+            }
+            break
             
         }
     }
