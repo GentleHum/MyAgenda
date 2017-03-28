@@ -28,12 +28,14 @@ class AgendaItemTVC: UITableViewCell {
     
     private func updateUI() {
         // load new information from our item (if any)
-        if let item = self.agendaItem {
-            if let iconName = iconDictionary[item.category ?? ""] {
-                categoryImage.image = UIImage(named: iconName)
+        if itemNameLabel != nil {  // verify outlets are configured
+            if let item = self.agendaItem {
+                if let iconName = iconDictionary[item.category ?? ""] {
+                    categoryImage.image = UIImage(named: iconName)
+                }
+                itemNameLabel.text = item.descriptionText
+                categoryLabel.text = item.category
             }
-            itemNameLabel.text = item.descriptionText
-            categoryLabel.text = item.category
         }
     }
 

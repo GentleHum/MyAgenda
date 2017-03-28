@@ -8,39 +8,53 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    struct Storyboard {
+        static let itemCellIdentifier = "CategoryTVC"
+    }
 
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     private var agendaItems = [AgendaItem]()
     
-    var categoryName: String? {
-        didSet {
-            updateUI()
-        }
-    }
+    var categoryName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        updateUI()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // empty rows at bottom of table
+        tableView.tableFooterView = UIView()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         agendaItems = ModelController.sharedInstance.loadAgendaItems(matching: categoryName)
-//        tableView.reloadData()
-        updateUI()
+        tableView.reloadData()
+        self.navigationItem.title = categoryName
     }
    
     
-    private func updateUI() {
-        if mainLabel != nil && categoryName != nil {
-            mainLabel.text = "CategoryViewController: " + categoryName! + " \(agendaItems.count)"
-            
-            self.navigationItem.title = categoryName!
-        }
+    // MARK: Table view data source methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return agendaItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.itemCellIdentifier,
+                                                 for: indexPath) as! CategoryTVC
+        
+        cell.agendaItem = agendaItems[indexPath.row]
+        
+        return cell
     }
 
 }

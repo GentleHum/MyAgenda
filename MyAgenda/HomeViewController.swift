@@ -24,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let next7DaysVC = "Next7DaysVC"
         static let allItemsVC = "AllItemsVC"
         static let categoryVC = "CategoryVC"
+        
+        static let rowHeight = 44
     }
     
     private enum HomeListItemRows: Int {
@@ -112,7 +114,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return CGFloat(Storyboard.rowHeight)
     }
     
     
