@@ -32,24 +32,48 @@ class ModelController {
     private init() { // must be private to ensure it's thread safe
     }
     
-    private func buildGetAgendaItemQuery(categoryName: String? = nil) -> NSFetchRequest<NSFetchRequestResult> {
+    
+    private func buildAgendaItemQuery(from startDate: Date?, to endDate: Date?) -> NSFetchRequest<NSFetchRequestResult> {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
+        request.predicate = NSPredicate(format: "(dueDate >= %@) AND (dueDate <= %@)",
+                                        argumentArray: [startDate!, endDate!] )
+        
+        return request
+    }
+    
+    
+    private func buildAgendaItemQuery(categoryName: String? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
         if let name = categoryName {
             request.predicate = NSPredicate(format: "category == %@", name)
         }
-     
+        
         return request
+    }
+    
+    func getAgendaItemCount(from startDate: Date, to endDate: Date) -> Int {
+        var count = 0
+        let context = appDelegate.persistentContainer.viewContext
+        let request = buildAgendaItemQuery(from: startDate, to: endDate)
+        
+        do {
+            count = try context.count(for: request)
+        } catch let error as NSError {
+            print("Fetching Error: \(error.userInfo)")
+        }
+        
+        return count
     }
     
     func getAgendaItemCount(matching categoryName: String? = nil) -> Int {
         var count = 0
         let context = appDelegate.persistentContainer.viewContext
-        let request = buildGetAgendaItemQuery(categoryName: categoryName)
+        let request = buildAgendaItemQuery(categoryName: categoryName)
         
         do {
             count = try context.count(for: request)
         } catch let error as NSError {
-           print("Fetching Error: \(error.userInfo)")
+            print("Fetching Error: \(error.userInfo)")
         }
         
         return count
@@ -58,8 +82,8 @@ class ModelController {
     
     func loadAgendaItems(matching categoryName: String? = nil) -> [AgendaItem] {
         let context = appDelegate.persistentContainer.viewContext
-        let request = buildGetAgendaItemQuery(categoryName: categoryName)
-
+        let request = buildAgendaItemQuery(categoryName: categoryName)
+        
         do {
             let results = try context.fetch(request)
             agendaItems = results as! [AgendaItem]
@@ -82,11 +106,11 @@ class ModelController {
         
         if let item = NSManagedObject(entity: entity!, insertInto: context) as? AgendaItem {
             item.setValue(descriptionText,
-                              forKey: AgendaItemProperties.descriptionField)
+                          forKey: AgendaItemProperties.descriptionField)
             item.setValue(category,
-                              forKey: AgendaItemProperties.categoryField)
+                          forKey: AgendaItemProperties.categoryField)
             item.setValue(priority,
-                              forKey: AgendaItemProperties.priorityField)
+                          forKey: AgendaItemProperties.priorityField)
             item.setValue(dueDate,
                           forKey: AgendaItemProperties.dueDateField)
             appDelegate.saveContext()

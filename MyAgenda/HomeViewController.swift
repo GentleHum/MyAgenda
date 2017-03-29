@@ -80,8 +80,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func updateTaskCounts() {
         
         // update the top level numbers
-        homeListItems[HomeListItemRows.today.rawValue].taskCount = 0
-        homeListItems[HomeListItemRows.next7Days.rawValue].taskCount = 2
+        let calendar = NSCalendar.current
+        let today = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
+        let tomorrow = calendar.date(byAdding: Calendar.Component.day, value: 1, to: today!)
+        let sevenDaysFromToday = calendar.date(byAdding: Calendar.Component.day, value: 7, to: today!)
+        
+        homeListItems[HomeListItemRows.today.rawValue].taskCount =
+            ModelController.sharedInstance.getAgendaItemCount(from: today!, to: tomorrow!)
+        
+        homeListItems[HomeListItemRows.next7Days.rawValue].taskCount =
+            ModelController.sharedInstance.getAgendaItemCount(from: today!, to: sevenDaysFromToday!)
 
         // update count for all items
         homeListItems[HomeListItemRows.allItems.rawValue].taskCount =
