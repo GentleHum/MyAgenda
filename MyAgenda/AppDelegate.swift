@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UINavigationBar.appearance().backgroundColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        // change the status bar to white because of our blue background color
         UIApplication.shared.statusBarStyle = .lightContent
-        
         
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
