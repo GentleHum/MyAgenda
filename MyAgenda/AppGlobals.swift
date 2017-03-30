@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+// global variable structure for the application
+
 struct AppGlobals {
     static let dateFormatter = DateFormatter()
 }
