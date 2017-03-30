@@ -20,6 +20,7 @@
 		7EB6C8531E8AB41E00F6D064 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6C8521E8AB41E00F6D064 /* CategoryViewController.swift */; };
 		7EB6C8551E8AE7E800F6D064 /* CategoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6C8541E8AE7E800F6D064 /* CategoryTVC.swift */; };
 		7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */; };
+		7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */; };
 		7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A51E805A92009BF039 /* AppDelegate.swift */; };
 		7ED746A81E805A92009BF039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A71E805A92009BF039 /* HomeViewController.swift */; };
 		7ED746AB1E805A92009BF039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED746A91E805A92009BF039 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		7EB6C8521E8AB41E00F6D064 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		7EB6C8541E8AE7E800F6D064 /* CategoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTVC.swift; sourceTree = "<group>"; };
 		7EBDB27C1E8B03D200CAD1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddItem.storyboard; sourceTree = "<group>"; };
+		7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		7ED746A21E805A92009BF039 /* MyAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED746A51E805A92009BF039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ED746A71E805A92009BF039 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7EC00C491E8D8D8800BAED00 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */,
+			);
+			name = Globals;
+			sourceTree = "<group>";
+		};
 		7ED746991E805A92009BF039 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				7E8EA6D61E86DD57001A8DA3 /* Cells */,
 				7ED746DF1E80723F009BF039 /* Constants */,
 				7ED746D81E805C80009BF039 /* Controllers */,
+				7EC00C491E8D8D8800BAED00 /* Globals */,
 				7ED746D61E805B6D009BF039 /* Models */,
 				7ED746D71E805B7C009BF039 /* Storyboards */,
 				7ED746DA1E805CBA009BF039 /* Views */,
@@ -377,6 +388,7 @@
 				7E8EA6DC1E870FA3001A8DA3 /* RoundedButton.swift in Sources */,
 				7E0631A91E81DA3800581274 /* FilterTableViewCell.swift in Sources */,
 				7E0631A11E81817300581274 /* Next7DaysViewController.swift in Sources */,
+				7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */,
 				7E8EA6D31E86D88A001A8DA3 /* AllItemsTableViewController.swift in Sources */,
 				7EB6C8531E8AB41E00F6D064 /* CategoryViewController.swift in Sources */,
 				7ED746AE1E805A92009BF039 /* MyAgenda.xcdatamodeld in Sources */,

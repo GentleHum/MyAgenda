@@ -69,6 +69,7 @@ class ModelController {
         var count = 0
         let context = appDelegate.persistentContainer.viewContext
         let request = buildAgendaItemQuery(categoryName: categoryName)
+        request.includesPropertyValues = false
         
         do {
             count = try context.count(for: request)

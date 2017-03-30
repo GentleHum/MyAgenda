@@ -47,7 +47,7 @@ class AgendaItemDetailViewController: UIViewController {
     }
     
     private func getFormattedDate(_ dateToFormat: Date) -> String {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = AppGlobals.dateFormatter
         dateFormatter.dateFormat = "MM/dd/yyyy"
         let currDateString = dateFormatter.string(from: dateToFormat)
         return currDateString
