@@ -32,6 +32,7 @@
 		7ED746DC1E805FF2009BF039 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */; };
 		7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DD1E806489009BF039 /* HomeListItem.swift */; };
 		7ED746E11E808061009BF039 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746E01E808061009BF039 /* TodayViewController.swift */; };
+		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		7ED746DD1E806489009BF039 /* HomeListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		7ED746E01E808061009BF039 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				7ED746DA1E805CBA009BF039 /* Views */,
 				7ED746AF1E805A92009BF039 /* Assets.xcassets */,
 				7ED746B41E805A92009BF039 /* Info.plist */,
+				7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */,
 			);
 			path = MyAgenda;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			files = (
 				7ED746B31E805A92009BF039 /* LaunchScreen.storyboard in Resources */,
 				7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */,
+				7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */,
 				7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */,
 				7ED746AB1E805A92009BF039 /* Main.storyboard in Resources */,
 			);
