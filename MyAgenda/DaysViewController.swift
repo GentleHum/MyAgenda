@@ -16,6 +16,7 @@ class DaysViewController: UIViewController {
     var daysToShow = 1  // defaults to Today
     
     private var agendaItems = [[AgendaItem]]()
+    private var sectionNames = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +27,54 @@ class DaysViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        loadAgendaItems()
+        loadSectionData()
         self.navigationItem.title = (daysToShow > 1) ? "Next \(daysToShow) Days" : "Today"
         
     }
     
-    private func loadAgendaItems() {
+    private func loadSectionData() {
+        // clear the section data
+        agendaItems.removeAll()
+        sectionNames.removeAll()
+
         let calendar = NSCalendar.current
         var currentDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
         
-        agendaItems.removeAll()
+        
+        
+        // load overdue items
+        let backDate = calendar.date(byAdding: Calendar.Component.day,
+                                     value: -10000, to: currentDay!)
+        let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
+        print("Overdue item count: \(overdueItems.count)")  // zap
+        if overdueItems.count > 0 {
+            sectionNames.append("Overdue")
+            agendaItems.append(overdueItems)
+        }
+
+        // load daily items
         for _ in 0..<daysToShow {
             let nextDay = calendar.date(byAdding: Calendar.Component.day, value: 1, to: currentDay!)
             let oneDaysItems =  ModelController.sharedInstance.loadAgendaItems(from: currentDay!, to: nextDay!)
             print("oneDaysItems: \(oneDaysItems.count)")  // zap
             agendaItems.append(oneDaysItems)
-            
+            sectionNames.append(getFormattedDate(currentDay!))
             currentDay = nextDay
         }
         
         print("number of days: \(agendaItems.count)")  // zap
+        for section in 0..<agendaItems.count {
+            print("section \(section) name: \(sectionNames[section])")  // zap
+        }
+
+    }
+    
+    
+    private func getFormattedDate(_ dateToFormat: Date) -> String {
+        let dateFormatter = AppGlobals.dateFormatter
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let currDateString = dateFormatter.string(from: dateToFormat)
+        return currDateString
     }
     
     // MARK: Table view data source methods
