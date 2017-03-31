@@ -94,9 +94,22 @@ class ModelController {
         }
         
         return [AgendaItem]()
-        
     }
-    
+  
+    func loadAgendaItems(from startDate: Date, to endDate: Date) -> [AgendaItem] {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = buildAgendaItemQuery(from: startDate, to: endDate)
+        
+        do {
+            let results = try context.fetch(request)
+            agendaItems = results as! [AgendaItem]
+            return agendaItems
+        } catch let error as NSError {
+            print("Fetching Error: \(error.userInfo)")
+        }
+        
+        return [AgendaItem]()
+    }
     
     func addAgendaItem(descriptionText: String, category: String,
                        priority: Int, dueDate: Date) -> AgendaItem? {

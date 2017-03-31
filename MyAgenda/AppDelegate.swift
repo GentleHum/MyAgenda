@@ -121,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
                 return true
             }
-        } else if (secondaryAsNavController.topViewController as? TodayViewController) != nil {
+        } else if (secondaryAsNavController.topViewController as? DaysViewController) != nil {
             return true
         }
         

@@ -157,14 +157,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.today.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.todayVC) as? UINavigationController {
-                if navigationController.childViewControllers[0] is TodayViewController {
+                if let destinationController = navigationController.childViewControllers[0] as? DaysViewController {
+                    destinationController.daysToShow = 1
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
             
         case HomeListItemRows.next7Days.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.next7DaysVC) as? UINavigationController {
-                if navigationController.childViewControllers[0] is Next7DaysViewController {
+                if let destinationController = navigationController.childViewControllers[0] as? DaysViewController {
+                    destinationController.daysToShow = 7
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Today View Controller-->
+        <!--Days View Controller-->
         <scene sceneID="N2y-yZ-ZRX">
             <objects>
-                <viewController id="9Cz-pX-iZD" customClass="TodayViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Cz-pX-iZD" customClass="DaysViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7IC-Hc-wsr"/>
                         <viewControllerLayoutGuide type="bottom" id="Pq3-97-cCc"/>
@@ -275,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="1102" y="-2302"/>
         </scene>
-        <!--Next7 Days View Controller-->
+        <!--Days View Controller-->
         <scene sceneID="Dhz-xu-EAF">
             <objects>
-                <viewController id="c8m-Hg-JCY" customClass="Next7DaysViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c8m-Hg-JCY" customClass="DaysViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pi0-ah-jjI"/>
                         <viewControllerLayoutGuide type="bottom" id="F8r-Sv-AAb"/>

@@ -33,6 +33,7 @@
 		7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DD1E806489009BF039 /* HomeListItem.swift */; };
 		7ED746E11E808061009BF039 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746E01E808061009BF039 /* TodayViewController.swift */; };
 		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
+		7EFDCCFF1E8EFA0C0002A4A5 /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFE1E8EFA0C0002A4A5 /* DaysViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		7ED746DD1E806489009BF039 /* HomeListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		7ED746E01E808061009BF039 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		7EFDCCFE1E8EFA0C0002A4A5 /* DaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */,
 				7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */,
 				7EB6C8521E8AB41E00F6D064 /* CategoryViewController.swift */,
+				7EFDCCFE1E8EFA0C0002A4A5 /* DaysViewController.swift */,
 				7ED746A71E805A92009BF039 /* HomeViewController.swift */,
 				7E0631A01E81817300581274 /* Next7DaysViewController.swift */,
 				7ED746E01E808061009BF039 /* TodayViewController.swift */,
@@ -396,6 +399,7 @@
 				7E8EA6D31E86D88A001A8DA3 /* AllItemsTableViewController.swift in Sources */,
 				7EB6C8531E8AB41E00F6D064 /* CategoryViewController.swift in Sources */,
 				7ED746AE1E805A92009BF039 /* MyAgenda.xcdatamodeld in Sources */,
+				7EFDCCFF1E8EFA0C0002A4A5 /* DaysViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
