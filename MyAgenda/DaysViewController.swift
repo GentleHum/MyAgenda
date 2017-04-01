@@ -64,19 +64,14 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
             let nextDay = calendar.date(byAdding: Calendar.Component.day, value: 1, to: currentDay!)
             let oneDaysItems =  ModelController.sharedInstance.loadAgendaItems(from: currentDay!, to: nextDay!)
             agendaItems.append(oneDaysItems)
-            sectionNames.append(getFormattedDate(currentDay!))
+            let dateString = AppGlobals.dateFormatter.getString(from: currentDay!, with: "M/d/y")
+            sectionNames.append(dateString)
             currentDay = nextDay
         }
 
     }
     
     
-    private func getFormattedDate(_ dateToFormat: Date) -> String {
-        let dateFormatter = AppGlobals.dateFormatter
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let currDateString = dateFormatter.string(from: dateToFormat)
-        return currDateString
-    }
     
     // MARK: Table view data source methods
     

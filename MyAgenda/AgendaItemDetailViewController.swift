@@ -37,7 +37,9 @@ class AgendaItemDetailViewController: UIViewController {
                 categoryLabel.text = item.category
                 priorityLabel.text = "Priority \(item.priority)"
                 if item.dueDate != nil {
-                    dueDateLabel.text = "Due on \(getFormattedDate(item.dueDate! as Date))"
+                    let dateString =
+                        AppGlobals.dateFormatter.getString(from: item.dueDate! as Date, with: "M/d/y")
+                    dueDateLabel.text = "Due on \(dateString)"
                 } else {
                     dueDateLabel.text = "Unspecified due date"
                 }
@@ -46,11 +48,4 @@ class AgendaItemDetailViewController: UIViewController {
         
     }
     
-    private func getFormattedDate(_ dateToFormat: Date) -> String {
-        let dateFormatter = AppGlobals.dateFormatter
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let currDateString = dateFormatter.string(from: dateToFormat)
-        return currDateString
-    }
-
 }
