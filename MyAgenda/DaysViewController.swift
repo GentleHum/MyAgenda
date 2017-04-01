@@ -26,6 +26,10 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // eliminate empty rows at bottom of table
         tableView.tableFooterView = UIView()
+        tableView.tableHeaderView = UIView()
+        tableView.sectionFooterHeight = 0
+        tableView.sectionHeaderHeight = 0
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,12 +100,9 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionNames[section]
+        return "  " + sectionNames[section]
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
-    }
     
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
