@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let next7DaysSegue = "Next7DaysSegue"
         static let allItemsSegue = "AllItemsSegue"
         
+        static let daysVC = "DaysVC"
         static let todayVC = "TodayVC"
         static let next7DaysVC = "Next7DaysVC"
         static let allItemsVC = "AllItemsVC"
@@ -33,6 +34,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         case next7Days = 1
         case allItems = 2
     }
+    
+    private let daysToShow = [1, 7]  // today, next 7 days
     
     private var homeListItems = [
         HomeListItem(name: "Today", iconName: "Today-icon.png", taskCount: 0),
@@ -82,7 +85,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // update the top level numbers
         let calendar = NSCalendar.current
         let today = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
-        let tomorrow = calendar.date(byAdding: Calendar.Component.day, value: 1, to: today!)
+        let tomorrow = calendar.date(byAdding: Calendar.Component.day,
+                                     value: 1, to: today!)
         let sevenDaysFromToday = calendar.date(byAdding: Calendar.Component.day, value: 7, to: today!)
         
         homeListItems[HomeListItemRows.today.rawValue].taskCount =
@@ -106,9 +110,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateTaskCounts()
         mainTableView.reloadData()
     }
-    
-    
-    
+
     
     // MARK: Table view delegate and data source methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -155,18 +157,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             
-        case HomeListItemRows.today.rawValue:
-            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.todayVC) as? UINavigationController {
+        case HomeListItemRows.today.rawValue,
+             HomeListItemRows.next7Days.rawValue:
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysVC) as? UINavigationController {
                 if let destinationController = navigationController.childViewControllers[0] as? DaysViewController {
-                    destinationController.daysToShow = 1
-                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
-                }
-            }
-            
-        case HomeListItemRows.next7Days.rawValue:
-            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.next7DaysVC) as? UINavigationController {
-                if let destinationController = navigationController.childViewControllers[0] as? DaysViewController {
-                    destinationController.daysToShow = 7
+                    destinationController.daysToShow = daysToShow[indexPath.row]
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }

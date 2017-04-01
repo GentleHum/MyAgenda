@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DaysViewController: UIViewController {
+class DaysViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     struct Storyboard {
-        static let cellIdentifier = "daysCell"
+        static let cellIdentifier = "DaysTVC"
     }
     
     var daysToShow = 1  // defaults to Today
@@ -18,18 +18,24 @@ class DaysViewController: UIViewController {
     private var agendaItems = [[AgendaItem]]()
     private var sectionNames = [String]()
 
+    @IBOutlet private weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // eliminate empty rows at bottom of table
+        tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         loadSectionData()
         self.navigationItem.title = (daysToShow > 1) ? "Next \(daysToShow) Days" : "Today"
-        
     }
     
     private func loadSectionData() {
@@ -40,13 +46,10 @@ class DaysViewController: UIViewController {
         let calendar = NSCalendar.current
         var currentDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
         
-        
-        
         // load overdue items
         let backDate = calendar.date(byAdding: Calendar.Component.day,
-                                     value: -10000, to: currentDay!)
+                                     value: -10000, to: currentDay!)  // a long time ago
         let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
-        print("Overdue item count: \(overdueItems.count)")  // zap
         if overdueItems.count > 0 {
             sectionNames.append("Overdue")
             agendaItems.append(overdueItems)
@@ -56,15 +59,9 @@ class DaysViewController: UIViewController {
         for _ in 0..<daysToShow {
             let nextDay = calendar.date(byAdding: Calendar.Component.day, value: 1, to: currentDay!)
             let oneDaysItems =  ModelController.sharedInstance.loadAgendaItems(from: currentDay!, to: nextDay!)
-            print("oneDaysItems: \(oneDaysItems.count)")  // zap
             agendaItems.append(oneDaysItems)
             sectionNames.append(getFormattedDate(currentDay!))
             currentDay = nextDay
-        }
-        
-        print("number of days: \(agendaItems.count)")  // zap
-        for section in 0..<agendaItems.count {
-            print("section \(section) name: \(sectionNames[section])")  // zap
         }
 
     }
@@ -89,11 +86,21 @@ class DaysViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier,
-                                                 for: indexPath) as! CategoryTVC
+                                                 for: indexPath)
         
-        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
+        let agendaItem = agendaItems[indexPath.section][indexPath.row]
+        cell.detailTextLabel?.text = agendaItem.category
+        cell.textLabel?.text = agendaItem.descriptionText
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
     }
     
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
