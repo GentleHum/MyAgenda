@@ -128,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4SE-E4-P0I" id="sHw-kW-B0a">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-jw-Vyl">
@@ -178,7 +178,7 @@
                                         <rect key="frame" x="0.0" y="76" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wDb-Zd-ayh" id="Eml-RG-Kp1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-JB-3AT">
@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="124" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ntg-eO-ZY3" id="hib-cJ-mwP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-tO-6lm">
@@ -260,7 +260,7 @@
                                         <rect key="frame" x="0.0" y="172" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="14t-xe-12g" id="LJU-lT-TTW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-4Q-bs4">
@@ -313,86 +313,6 @@
             </objects>
             <point key="canvasLocation" x="1102" y="-2302"/>
         </scene>
-        <!--Agenda Item Detail-->
-        <scene sceneID="nvR-4Z-Lff">
-            <objects>
-                <viewController id="nsq-TU-iGh" customClass="AgendaItemDetailViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ssE-Pr-Oks"/>
-                        <viewControllerLayoutGuide type="bottom" id="70r-k8-6g6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e8q-6H-Bte">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-85-p4b">
-                                <rect key="frame" x="145.5" y="233.5" width="84" height="200"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PuU-qW-6QQ">
-                                        <rect key="frame" x="3" y="0.0" width="78" height="101"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XJ5-5v-WoS">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQq-rM-D0h">
-                                                <rect key="frame" x="0.0" y="29" width="78" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-Kx-CKT">
-                                                <rect key="frame" x="0.0" y="57" width="78" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vk-Ge-8Lx">
-                                                <rect key="frame" x="0.0" y="85" width="78" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                </variation>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checklist-icon" translatesAutoresizingMaskIntoConstraints="NO" id="C4t-lp-Eyg">
-                                        <rect key="frame" x="0.0" y="116" width="84" height="84"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FPs-85-p4b" firstAttribute="centerX" secondItem="e8q-6H-Bte" secondAttribute="centerX" id="3bo-kZ-VTi"/>
-                            <constraint firstItem="FPs-85-p4b" firstAttribute="centerY" secondItem="e8q-6H-Bte" secondAttribute="centerY" id="ger-AT-5u8"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Agenda Item Detail" id="iqj-EI-Jch"/>
-                    <connections>
-                        <outlet property="categoryLabel" destination="kQq-rM-D0h" id="mMh-8G-bd9"/>
-                        <outlet property="descriptionTextLabel" destination="XJ5-5v-WoS" id="ekY-cN-gaU"/>
-                        <outlet property="dueDateLabel" destination="3Vk-Ge-8Lx" id="zwW-XQ-7f2"/>
-                        <outlet property="priorityLabel" destination="OrG-Kx-CKT" id="NCg-49-Hf3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YsK-eS-NlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1068" y="1270"/>
-        </scene>
         <!--All Items Table View Controller-->
         <scene sceneID="zyK-4j-mjw">
             <objects>
@@ -407,7 +327,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jAf-ek-1fg" id="lBr-8r-Jhz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-xf-yeo">
@@ -453,7 +373,7 @@
                                     <outlet property="categoryImage" destination="p2e-xf-yeo" id="3Pm-YR-1rf"/>
                                     <outlet property="categoryLabel" destination="JcV-0j-YZQ" id="Oph-sG-fY6"/>
                                     <outlet property="itemNameLabel" destination="EuU-3a-EpR" id="CFZ-Cg-Ief"/>
-                                    <segue destination="nsq-TU-iGh" kind="show" identifier="AgendaItemDetailSegue" id="tIh-hv-krC"/>
+                                    <segue destination="F7T-cb-Gi2" kind="show" identifier="AgendaItemDetailSegue" id="tIh-hv-krC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -512,7 +432,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qQc-0e-Z65" id="5Hy-pR-Gza">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4J-VL-tgl">
@@ -652,8 +572,13 @@
             </objects>
             <point key="canvasLocation" x="1798" y="527"/>
         </scene>
+        <!--AgendaItemDetail-->
+        <scene sceneID="Fpx-0p-WhM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AgendaItemDetail" id="F7T-cb-Gi2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7V-cO-lip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="1270"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="checklist-icon" width="84" height="84"/>
-    </resources>
 </document>

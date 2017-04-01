@@ -11,6 +11,7 @@
 		7E0631A71E81DA2600581274 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A61E81DA2600581274 /* CategoryTableViewCell.swift */; };
 		7E0631A91E81DA3800581274 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A81E81DA3800581274 /* FilterTableViewCell.swift */; };
 		7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */; };
+		7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */; };
 		7E8EA6D31E86D88A001A8DA3 /* AllItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */; };
 		7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */; };
 		7E8EA6D81E86DD81001A8DA3 /* AgendaItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D71E86DD81001A8DA3 /* AgendaItemTVC.swift */; };
@@ -57,6 +58,7 @@
 		7E0631A61E81DA2600581274 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		7E0631A81E81DA3800581274 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter-Extensions.swift"; sourceTree = "<group>"; };
+		7E89E1191E90451400BA6072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AgendaItemDetail.storyboard; sourceTree = "<group>"; };
 		7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsTableViewController.swift; sourceTree = "<group>"; };
 		7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		7E8EA6D71E86DD81001A8DA3 /* AgendaItemTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTVC.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				7ED746A91E805A92009BF039 /* Main.storyboard */,
+				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 			);
@@ -362,6 +365,7 @@
 				7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */,
 				7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */,
 				7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */,
+				7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */,
 				7ED746AB1E805A92009BF039 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +445,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E89E1191E90451400BA6072 /* Base */,
+			);
+			name = AgendaItemDetail.storyboard;
+			sourceTree = "<group>";
+		};
 		7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
