@@ -215,10 +215,10 @@
 		7ED746D71E805B7C009BF039 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7ED746A91E805A92009BF039 /* Main.storyboard */,
 				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
+				7ED746A91E805A92009BF039 /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";

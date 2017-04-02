@@ -507,7 +507,7 @@
                 <viewControllerPlaceholder storyboardName="AddItem" id="jh5-US-N7r" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08z-kS-Gck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="-560"/>
+            <point key="canvasLocation" x="1760" y="-563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vja-gi-dcH">
@@ -578,7 +578,7 @@
                 <viewControllerPlaceholder storyboardName="AgendaItemDetail" id="F7T-cb-Gi2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7V-cO-lip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="1270"/>
+            <point key="canvasLocation" x="1066" y="1014"/>
         </scene>
     </scenes>
 </document>
