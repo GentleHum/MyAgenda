@@ -9,7 +9,7 @@
 import UIKit
 
 class AgendaItemTVC: UITableViewCell {
-
+    
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
@@ -18,7 +18,7 @@ class AgendaItemTVC: UITableViewCell {
         "Personal" : "category-blue-icon.png",
         "Work" : "category-purple-icon.png",
         "School" : "category-black-icon.png",
-    ]
+        ]
     
     var agendaItem: AgendaItem? {
         didSet {
@@ -28,15 +28,18 @@ class AgendaItemTVC: UITableViewCell {
     
     private func updateUI() {
         // load new information from our item (if any)
-        if itemNameLabel != nil {  // verify outlets are configured
-            if let item = self.agendaItem {
-                if let iconName = iconDictionary[item.category ?? ""] {
-                    categoryImage.image = UIImage(named: iconName)
-                }
-                itemNameLabel.text = item.descriptionText
-                categoryLabel.text = item.category
+        
+        guard itemNameLabel != nil,
+            categoryLabel != nil,
+            categoryImage != nil else { return }
+        
+        if let item = self.agendaItem {
+            if let iconName = iconDictionary[item.category ?? ""] {
+                categoryImage.image = UIImage(named: iconName)
             }
+            itemNameLabel.text = item.descriptionText
+            categoryLabel.text = item.category
         }
     }
-
+    
 }

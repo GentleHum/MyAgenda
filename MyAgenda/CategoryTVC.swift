@@ -21,12 +21,16 @@ class CategoryTVC: UITableViewCell {
     }
     
     private func updateUI() {
+        
+        guard itemNameLabel != nil,
+            dueDateLabel != nil else { return }
+        
         // load new information from our item (if any)
-        if itemNameLabel != nil {  // verify outlets are configured
-            if let item = self.agendaItem {
-                itemNameLabel.text = item.descriptionText
+        if let item = self.agendaItem {
+            itemNameLabel.text = item.descriptionText
+            if let dueDate = item.dueDate {
                 dueDateLabel.text =
-                    AppGlobals.dateFormatter.getString(from: item.dueDate as! Date,
+                    AppGlobals.dateFormatter.getString(from: dueDate as Date,
                                                        with: "M/d/y")
             }
         }

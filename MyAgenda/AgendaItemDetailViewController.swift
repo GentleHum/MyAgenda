@@ -30,19 +30,23 @@ class AgendaItemDetailViewController: UIViewController {
 
 
     private func updateUI() {
+        
+        guard descriptionTextLabel != nil,
+            categoryLabel != nil,
+            priorityLabel != nil,
+            dueDateLabel != nil else { return }
+        
         // load new information from our item (if any)
         if let item = self.agendaItem {
-            if descriptionTextLabel != nil {
-                descriptionTextLabel.text = item.descriptionText
-                categoryLabel.text = item.category
-                priorityLabel.text = "Priority \(item.priority)"
-                if item.dueDate != nil {
-                    let dateString =
-                        AppGlobals.dateFormatter.getString(from: item.dueDate! as Date, with: "M/d/y")
-                    dueDateLabel.text = "Due on \(dateString)"
-                } else {
-                    dueDateLabel.text = "Unspecified due date"
-                }
+            descriptionTextLabel.text = item.descriptionText
+            categoryLabel.text = item.category
+            priorityLabel.text = "Priority \(item.priority)"
+            if item.dueDate != nil {
+                let formattedDate =
+                    AppGlobals.dateFormatter.getString(from: item.dueDate! as Date, with: "M/d/y")
+                dueDateLabel.text = "Due on \(formattedDate)"
+            } else {
+                dueDateLabel.text = "Unspecified due date"
             }
         }
         
