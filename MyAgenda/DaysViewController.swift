@@ -11,6 +11,7 @@ import UIKit
 class DaysViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     struct Storyboard {
         static let cellIdentifier = "DaysTVC"
+        static let detailSegue = "AgendaItemDetailSegue"
     }
     
     var daysToShow = 1  // defaults to Today
@@ -109,5 +110,18 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        }
 //    }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.detailSegue {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let agendaItem = agendaItems[indexPath.section][indexPath.row]
+                let controller = segue.destination as! AgendaItemDetailViewController
+                controller.agendaItem = agendaItem
+            }
+        }
+        
+    }
+
 
 }

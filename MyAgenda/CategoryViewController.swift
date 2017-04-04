@@ -11,6 +11,7 @@ import UIKit
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     struct Storyboard {
         static let itemCellIdentifier = "CategoryTVC"
+        static let detailSegue = "AgendaItemDetailSegue"
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -68,6 +69,18 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.detailSegue {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let agendaItem = agendaItems[indexPath.row]
+                let controller = segue.destination as! AgendaItemDetailViewController
+                controller.agendaItem = agendaItem
+            }
+        }
+        
+    }
+    
     
 
 }
