@@ -39,6 +39,7 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
 
         loadSectionData()
+        tableView.reloadData()
         self.navigationItem.title = (daysToShow > 1) ? "Next \(daysToShow) Days" : "Today"
     }
     
