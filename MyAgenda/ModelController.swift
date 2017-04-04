@@ -29,6 +29,34 @@ class ModelController {
     
     private var agendaItems = [AgendaItem]()
     
+    lazy var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+         */
+        let container = NSPersistentContainer(name: "MyAgenda")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    
     private init() { // must be private to ensure it's thread safe
     }
     
@@ -53,7 +81,7 @@ class ModelController {
     
     func getAgendaItemCount(from startDate: Date, to endDate: Date) -> Int {
         var count = 0
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         let request = buildAgendaItemQuery(from: startDate, to: endDate)
         
         do {
@@ -67,7 +95,7 @@ class ModelController {
     
     func getAgendaItemCount(matching categoryName: String? = nil) -> Int {
         var count = 0
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         let request = buildAgendaItemQuery(categoryName: categoryName)
         request.includesPropertyValues = false
         
@@ -82,7 +110,7 @@ class ModelController {
     
     
     func loadAgendaItems(matching categoryName: String? = nil) -> [AgendaItem] {
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         let request = buildAgendaItemQuery(categoryName: categoryName)
         
         do {
@@ -95,9 +123,9 @@ class ModelController {
         
         return [AgendaItem]()
     }
-  
+    
     func loadAgendaItems(from startDate: Date, to endDate: Date) -> [AgendaItem] {
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         let request = buildAgendaItemQuery(from: startDate, to: endDate)
         
         do {
@@ -113,7 +141,7 @@ class ModelController {
     
     func addAgendaItem(descriptionText: String, category: String,
                        priority: Int, dueDate: Date) -> AgendaItem? {
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: AgendaItemProperties.entityName,
                                                 in: context)
@@ -127,7 +155,7 @@ class ModelController {
                           forKey: AgendaItemProperties.priorityField)
             item.setValue(dueDate,
                           forKey: AgendaItemProperties.dueDateField)
-            appDelegate.saveContext()
+            self.saveContext()
             NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
             return item
         }
@@ -137,11 +165,28 @@ class ModelController {
     
     
     func deleteAgendaItem(_ itemToDelete: AgendaItem) {
-        let context = appDelegate.persistentContainer.viewContext
+        let context = self.persistentContainer.viewContext
         context.delete(itemToDelete)
-        appDelegate.saveContext()
+        self.saveContext()
         NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
     }
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
     
     
 }
