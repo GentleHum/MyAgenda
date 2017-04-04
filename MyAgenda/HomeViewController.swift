@@ -160,7 +160,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         case HomeListItemRows.today.rawValue,
              HomeListItemRows.next7Days.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysVC) as? UINavigationController {
-                if let destinationController = navigationController.childViewControllers[0] as? DaysViewController {
+                if let destinationController = navigationController.childViewControllers.first as? DaysViewController {
                     destinationController.daysToShow = daysToShow[indexPath.row]
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
@@ -168,7 +168,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.allItems.rawValue:
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
-                if navigationController.childViewControllers[0] is AllItemsTableViewController {
+                if navigationController.childViewControllers.first is AllItemsTableViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
@@ -177,7 +177,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if indexPath.row > homeListItems.count {  // skip the category/filter table row
                 let categoryNumber = indexPath.row - homeListItems.count - 1
                 if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.categoryVC) as? UINavigationController {
-                    if let destinationController = navigationController.childViewControllers[0] as? CategoryViewController {
+                    if let destinationController = navigationController.childViewControllers.first as? CategoryViewController {
                         destinationController.categoryName = categoryListItems[categoryNumber].name
                         self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                     }
