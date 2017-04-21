@@ -13,6 +13,7 @@
 		7E0FE8D01EAA605D008899CB /* AgendaItem-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FE8CF1EAA605D008899CB /* AgendaItem-Extensions.swift */; };
 		7E0FE8D31EAA606D008899CB /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FE8D11EAA606D008899CB /* AgendaItemTests.swift */; };
 		7E0FE8D41EAA606D008899CB /* MyAgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FE8D21EAA606D008899CB /* MyAgendaTests.swift */; };
+		7E0FE8D61EAA61FB008899CB /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FE8D51EAA61FB008899CB /* ModelControllerTests.swift */; };
 		7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */; };
 		7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */; };
 		7E8EA6D31E86D88A001A8DA3 /* AllItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */; };
@@ -63,6 +64,7 @@
 		7E0FE8CF1EAA605D008899CB /* AgendaItem-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AgendaItem-Extensions.swift"; sourceTree = "<group>"; };
 		7E0FE8D11EAA606D008899CB /* AgendaItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTests.swift; sourceTree = "<group>"; };
 		7E0FE8D21EAA606D008899CB /* MyAgendaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAgendaTests.swift; sourceTree = "<group>"; };
+		7E0FE8D51EAA61FB008899CB /* ModelControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
 		7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter-Extensions.swift"; sourceTree = "<group>"; };
 		7E89E1191E90451400BA6072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AgendaItemDetail.storyboard; sourceTree = "<group>"; };
 		7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsTableViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				7E0FE8D21EAA606D008899CB /* MyAgendaTests.swift */,
 				7ED746BF1E805A92009BF039 /* Info.plist */,
 				7EB0132B1EA14EF600A05995 /* DateFormatterExtensionsTests.swift */,
+				7E0FE8D51EAA61FB008899CB /* ModelControllerTests.swift */,
 			);
 			path = MyAgendaTests;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0FE8D31EAA606D008899CB /* AgendaItemTests.swift in Sources */,
+				7E0FE8D61EAA61FB008899CB /* ModelControllerTests.swift in Sources */,
 				7E0FE8D41EAA606D008899CB /* MyAgendaTests.swift in Sources */,
 				7EB0132C1EA14EF600A05995 /* DateFormatterExtensionsTests.swift in Sources */,
 			);
