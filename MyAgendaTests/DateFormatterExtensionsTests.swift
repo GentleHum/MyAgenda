@@ -27,7 +27,6 @@ class DateFormatterExtensionsTests: XCTestCase {
     }
     
     func testDateFormats() {
-        
         let date = Date(timeIntervalSince1970: 10000000.0)  // 4/26/1970
         var formattedString = dateFormatter.getString(from: date, with: "M/d/y")
         XCTAssertEqual(formattedString, "4/26/1970")
@@ -41,8 +40,6 @@ class DateFormatterExtensionsTests: XCTestCase {
         
         formattedString = dateFormatter.getString(from: date2, with: "MM/dd/yyyy")
         XCTAssertEqual(formattedString, "09/08/2001")
-
-        
     }
     
 }
