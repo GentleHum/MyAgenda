@@ -19,14 +19,6 @@ class ModelController {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    struct AgendaItemProperties {
-        static let entityName = "AgendaItem"
-        static let descriptionField = "descriptionText"
-        static let categoryField = "category"
-        static let priorityField = "priority"
-        static let dueDateField = "dueDate"
-    }
-    
     private var agendaItems = [AgendaItem]()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -62,7 +54,7 @@ class ModelController {
     
     
     private func buildAgendaItemQuery(from startDate: Date?, to endDate: Date?) -> NSFetchRequest<NSFetchRequestResult> {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItem.Properties.entityName)
         request.predicate = NSPredicate(format: "(dueDate >= %@) AND (dueDate <= %@)",
                                         argumentArray: [startDate!, endDate!] )
         
@@ -71,7 +63,7 @@ class ModelController {
     
     
     private func buildAgendaItemQuery(categoryName: String? = nil) -> NSFetchRequest<NSFetchRequestResult> {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItem.Properties.entityName)
         if let name = categoryName {
             request.predicate = NSPredicate(format: "category == %@", name)
         }
@@ -143,18 +135,12 @@ class ModelController {
                        priority: Int, dueDate: Date) -> AgendaItem? {
         let context = self.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: AgendaItemProperties.entityName,
+        let entity = NSEntityDescription.entity(forEntityName: AgendaItem.Properties.entityName,
                                                 in: context)
         
         if let item = NSManagedObject(entity: entity!, insertInto: context) as? AgendaItem {
-            item.setValue(descriptionText,
-                          forKey: AgendaItemProperties.descriptionField)
-            item.setValue(category,
-                          forKey: AgendaItemProperties.categoryField)
-            item.setValue(priority,
-                          forKey: AgendaItemProperties.priorityField)
-            item.setValue(dueDate,
-                          forKey: AgendaItemProperties.dueDateField)
+            item.set(descriptionText: descriptionText, category: category,
+                     priority: priority, dueDate: dueDate)
             self.saveContext()
             NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
             return item
