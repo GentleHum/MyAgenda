@@ -159,8 +159,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.today.rawValue,
              HomeListItemRows.next7Days.rawValue:
+            print("didSelectRow: \(indexPath.row)")  // zap
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysVC) as? UINavigationController {
-                if let destinationController = navigationController.childViewControllers.first as? DaysViewController {
+                if let destinationController = navigationController.childViewControllers.first as? DaysTableViewController {
                     destinationController.daysToShow = daysToShow[indexPath.row]
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
