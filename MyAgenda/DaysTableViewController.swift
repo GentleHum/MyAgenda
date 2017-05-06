@@ -20,8 +20,7 @@ class DaysTableViewController: AgendaItemTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")  // zap
-        loadSectionData()
+ //       loadSectionData()
 
 
     }
@@ -35,7 +34,6 @@ class DaysTableViewController: AgendaItemTableViewController {
     }
     
     private func loadSectionData() {
-        print("loadSectionData")  // zap
         // clear the section data
         agendaItems.removeAll()
         sectionNames.removeAll()
@@ -53,11 +51,9 @@ class DaysTableViewController: AgendaItemTableViewController {
         }
 
         // load daily items
-        print("daysToShow: \(daysToShow)")  // zap
         for _ in 0..<daysToShow {
             let nextDay = calendar.date(byAdding: Calendar.Component.day, value: 1, to: currentDay!)
             let oneDaysItems =  ModelController.sharedInstance.loadAgendaItems(from: currentDay!, to: nextDay!)
-            print("appending oneDaysItems: \(oneDaysItems.count)")  // zap
             agendaItems.append(oneDaysItems)
             let dateString = AppGlobals.dateFormatter.getString(from: currentDay!, with: "M/d/y")
             sectionNames.append(dateString)
@@ -70,9 +66,6 @@ class DaysTableViewController: AgendaItemTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AIStoryboard.cellIdentifier,
                                                  for: indexPath)
-        print("agendaItems count: \(agendaItems.count)")   // zap
-        print("agendaItems[0].count: \(agendaItems[0].count)")  // zap
-        print("indexPath: \(indexPath)")  // zap
         let agendaItem = agendaItems[indexPath.section][indexPath.row]
         cell.detailTextLabel?.text = agendaItem.category
         cell.textLabel?.text = agendaItem.descriptionText

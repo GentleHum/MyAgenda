@@ -230,11 +230,11 @@
 			children = (
 				7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */,
 				7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */,
+				E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */,
 				7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */,
 				7EB6C8521E8AB41E00F6D064 /* CategoryViewController.swift */,
 				7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */,
 				7ED746A71E805A92009BF039 /* HomeViewController.swift */,
-				E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

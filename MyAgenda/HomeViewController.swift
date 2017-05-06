@@ -22,7 +22,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         static let daysVC = "DaysVC"
         static let todayVC = "TodayVC"
-        static let next7DaysVC = "Next7DaysVC"
         static let allItemsVC = "AllItemsVC"
         static let categoryVC = "CategoryVC"
         
@@ -159,7 +158,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         case HomeListItemRows.today.rawValue,
              HomeListItemRows.next7Days.rawValue:
-            print("didSelectRow: \(indexPath.row)")  // zap
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysVC) as? UINavigationController {
                 if let destinationController = navigationController.childViewControllers.first as? DaysTableViewController {
                     destinationController.daysToShow = daysToShow[indexPath.row]
