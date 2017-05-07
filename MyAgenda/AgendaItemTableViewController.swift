@@ -41,7 +41,7 @@ class AgendaItemTableViewController: UITableViewController {
     private func delete(from view: UITableView, at indexPath: IndexPath) {
         let itemToDelete = agendaItems[indexPath.section][indexPath.row]
         ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
-        agendaItems.remove(at: indexPath.row)
+        agendaItems[indexPath.section].remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
         tableView.reloadData()
     }
