@@ -34,6 +34,10 @@
 		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
 		7EFDCCFF1E8EFA0C0002A4A5 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */; };
 		E069C7DF1EBE01F40006FBB9 /* AgendaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */; };
+		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
+		E069C7E61EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */; };
+		E069C7E71EBE9D4F0006FBB9 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */; };
+		E069C7E81EBE9D4F0006FBB9 /* MyAgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E41EBE9D4F0006FBB9 /* MyAgendaTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,11 @@
 		7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
 		E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTableViewController.swift; sourceTree = "<group>"; };
+		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTests.swift; sourceTree = "<group>"; };
+		E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
+		E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
+		E069C7E41EBE9D4F0006FBB9 /* MyAgendaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAgendaTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +196,12 @@
 		7ED746BC1E805A92009BF039 /* MyAgendaTests */ = {
 			isa = PBXGroup;
 			children = (
+				E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */,
+				E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */,
+				E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */,
+				E069C7E41EBE9D4F0006FBB9 /* MyAgendaTests.swift */,
 				7ED746BF1E805A92009BF039 /* Info.plist */,
+				E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */,
 			);
 			path = MyAgendaTests;
 			sourceTree = "<group>";
@@ -325,6 +339,7 @@
 					7ED746B81E805A92009BF039 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = JNR8436L9N;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7ED746A11E805A92009BF039;
 					};
@@ -418,6 +433,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E069C7E61EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift in Sources */,
+				E069C7E71EBE9D4F0006FBB9 /* ModelControllerTests.swift in Sources */,
+				E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */,
+				E069C7E81EBE9D4F0006FBB9 /* MyAgendaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,11 +623,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JNR8436L9N;
 				INFOPLIST_FILE = MyAgendaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momentumsoft.MyAgendaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyAgendaTests/MyAgendaTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAgenda.app/MyAgenda";
 			};
@@ -619,11 +641,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JNR8436L9N;
 				INFOPLIST_FILE = MyAgendaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.momentumsoft.MyAgendaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyAgendaTests/MyAgendaTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAgenda.app/MyAgenda";
 			};
