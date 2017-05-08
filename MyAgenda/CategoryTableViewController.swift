@@ -44,7 +44,7 @@ class CategoryTableViewController: AgendaItemTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.itemCellIdentifier,
-                                                 for: indexPath) as! CategoryTVC
+                                                 for: indexPath) as! CategoryTableViewCell
         
         cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
         

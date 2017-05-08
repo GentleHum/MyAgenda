@@ -1,5 +1,5 @@
 //
-//  AgendaItemTVC.swift
+//  AgendaItemTableViewCell.swift
 //  MyAgenda
 //
 //  Created by Mike Vork on 3/25/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaItemTVC: UITableViewCell {
+class AgendaItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!

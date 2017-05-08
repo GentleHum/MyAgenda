@@ -2,32 +2,38 @@
 //  CategoryTableViewCell.swift
 //  MyAgenda
 //
-//  Created by Mike Vork on 3/21/17.
+//  Created by Mike Vork on 3/28/17.
 //  Copyright © 2017 Mike Vork. All rights reserved.
 //
 
 import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
-
-    @IBOutlet private weak var countLabel: UILabel!
-    @IBOutlet private weak var icon: UIImageView!
-    @IBOutlet private weak var nameLabel: UILabel!
     
-    var item: CategoryListItem? {
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
+    
+    
+    var agendaItem: AgendaItem? {
         didSet {
             updateUI()
         }
     }
     
     private func updateUI() {
+        
+        guard itemNameLabel != nil,
+            dueDateLabel != nil else { return }
+        
         // load new information from our item (if any)
-        if let item = self.item {
-            countLabel.text = (item.taskCount > 0) ? String(item.taskCount) : " "
-            icon.image = UIImage(named: item.iconName)
-            nameLabel.text = item.name
+        if let item = self.agendaItem {
+            itemNameLabel.text = item.descriptionText
+            if let dueDate = item.dueDate {
+                dueDateLabel.text =
+                    AppGlobals.dateFormatter.getString(from: dueDate as Date,
+                                                       with: "M/d/y")
+            }
         }
     }
     
-
 }

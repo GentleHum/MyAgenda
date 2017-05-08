@@ -1,5 +1,5 @@
 //
-//  FilterTableViewCell.swift
+//  HomeFilterTableViewCell.swift
 //  MyAgenda
 //
 //  Created by Mike Vork on 3/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterTableViewCell: UITableViewCell {
+class HomeFilterTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

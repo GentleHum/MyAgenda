@@ -87,16 +87,7 @@ class AgendaItemTableViewController: UITableViewController {
         return agendaItems[section].count
     }
     
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTVC
-//        
-//        // Configure the cell...
-//        cell.agendaItem = agendaItems[indexPath.row]
-//        
-//        return cell
-//    }
-    
+        
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             delete(from: tableView, at: indexPath)

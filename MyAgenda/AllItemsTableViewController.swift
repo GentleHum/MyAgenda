@@ -28,7 +28,8 @@ class AllItemsTableViewController: AgendaItemTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTableViewCell
+    
         
         // Configure the cell...
         cell.agendaItem = agendaItems[indexPath.section][indexPath.row]

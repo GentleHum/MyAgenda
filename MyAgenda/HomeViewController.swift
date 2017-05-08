@@ -140,7 +140,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.categoryCellIdentifier,
                                                  for: indexPath)
-            if let categoryCell = cell as? CategoryTableViewCell {
+            if let categoryCell = cell as? HomeCategoryTableViewCell {
                 categoryCell.item = categoryListItems[indexPath.row - homeListItems.count - 1]
             }
         }
