@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class DaysTableViewController: AgendaItemTableViewController {
     struct Storyboard {
@@ -37,12 +38,10 @@ class DaysTableViewController: AgendaItemTableViewController {
         agendaItems.removeAll()
         sectionNames.removeAll()
 
-        let calendar = NSCalendar.current
-        var currentDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
+        var currentDay = NSCalendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
         
         // load overdue items
-        let backDate = calendar.date(byAdding: Calendar.Component.day,
-                                     value: -10000, to: currentDay!)  // a long time ago
+        let backDate = 10000.days.ago(from: currentDay!)
         let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
         if overdueItems.count > 0 {
             sectionNames.append("Overdue")
@@ -51,7 +50,7 @@ class DaysTableViewController: AgendaItemTableViewController {
 
         // load daily items
         for _ in 0..<daysToShow {
-            let nextDay = calendar.date(byAdding: Calendar.Component.day, value: 1, to: currentDay!)
+            let nextDay = 1.days.from(date: currentDay!)
             let oneDaysItems =  ModelController.sharedInstance.loadAgendaItems(from: currentDay!, to: nextDay!)
             agendaItems.append(oneDaysItems)
             let dateString = AppGlobals.dateFormatter.getString(from: currentDay!, with: "M/d/y")
@@ -79,6 +78,5 @@ class DaysTableViewController: AgendaItemTableViewController {
         }
         
     }
-
 
 }

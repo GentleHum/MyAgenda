@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -82,11 +83,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func updateTaskCounts() {
         
         // update the top level numbers
-        let calendar = NSCalendar.current
-        let today = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
-        let tomorrow = calendar.date(byAdding: Calendar.Component.day,
-                                     value: 1, to: today!)
-        let sevenDaysFromToday = calendar.date(byAdding: Calendar.Component.day, value: 7, to: today!)
+        let today = NSCalendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
+        let tomorrow = 1.days.from(date: today!)
+        let sevenDaysFromToday = 7.days.from(date: today!)
         
         homeListItems[HomeListItemRows.today.rawValue].taskCount =
             ModelController.sharedInstance.getAgendaItemCount(from: today!, to: tomorrow!)
