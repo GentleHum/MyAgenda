@@ -1,20 +1,20 @@
 //
-//  AgendaItemTableViewCell.swift
+//  DaysTableViewCell.swift
 //  MyAgenda
 //
-//  Created by Mike Vork on 3/25/17.
+//  Created by Michael Vork on 5/8/17.
 //  Copyright © 2017 Mike Vork. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class AgendaItemTableViewCell: UITableViewCell, AgendaItemSettableCell {
-    
+class DaysTableViewCell: UITableViewCell, AgendaItemSettableCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
     
-    
+
     var agendaItem: AgendaItem? {
         didSet {
             updateUI()

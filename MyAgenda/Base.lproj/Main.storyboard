@@ -36,30 +36,55 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DaysTVC" textLabel="4m7-aw-jov" detailTextLabel="BJc-Jc-mzD" style="IBUITableViewCellStyleSubtitle" id="qao-sQ-6Di">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DaysTVC" id="qao-sQ-6Di" customClass="DaysTableViewCell" customModule="MyAgenda" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qao-sQ-6Di" id="GRW-xf-xNc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4m7-aw-jov">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BJc-Jc-mzD">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzT-jH-T9a">
+                                            <rect key="frame" x="8" y="3.5" width="359" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            </variation>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4I5-Pe-KMK">
+                                            <rect key="frame" x="359" y="26.5" width="8" height="8"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="laE-Di-bvE"/>
+                                                <constraint firstAttribute="width" constant="8" id="pRH-BV-ItM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxl-HX-IM5">
+                                            <rect key="frame" x="326.5" y="22.5" width="28.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4I5-Pe-KMK" firstAttribute="trailing" secondItem="GRW-xf-xNc" secondAttribute="trailingMargin" id="F2u-gM-1Tk"/>
+                                        <constraint firstAttribute="trailing" secondItem="qzT-jH-T9a" secondAttribute="trailing" constant="8" id="Lcg-ZU-QiC"/>
+                                        <constraint firstItem="Mxl-HX-IM5" firstAttribute="top" secondItem="qzT-jH-T9a" secondAttribute="bottom" constant="4" id="Lxp-gu-Ta6"/>
+                                        <constraint firstItem="4I5-Pe-KMK" firstAttribute="top" secondItem="qzT-jH-T9a" secondAttribute="bottom" constant="8" id="SGU-bT-2Fw"/>
+                                        <constraint firstItem="qzT-jH-T9a" firstAttribute="leading" secondItem="GRW-xf-xNc" secondAttribute="leading" constant="8" id="Vil-Yg-EGe"/>
+                                        <constraint firstItem="4I5-Pe-KMK" firstAttribute="centerY" secondItem="Mxl-HX-IM5" secondAttribute="centerY" id="aly-9M-uOZ"/>
+                                        <constraint firstItem="4I5-Pe-KMK" firstAttribute="leading" secondItem="Mxl-HX-IM5" secondAttribute="trailing" constant="4" id="gx4-UB-T0p"/>
+                                        <constraint firstItem="qzT-jH-T9a" firstAttribute="top" secondItem="GRW-xf-xNc" secondAttribute="top" constant="4" id="rq0-JL-zFe"/>
+                                        <constraint firstItem="4I5-Pe-KMK" firstAttribute="centerY" secondItem="Mxl-HX-IM5" secondAttribute="centerY" id="uAB-dA-VfF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="categoryImage" destination="4I5-Pe-KMK" id="4Bq-GW-q6m"/>
+                                    <outlet property="categoryLabel" destination="Mxl-HX-IM5" id="4Lb-jM-Iz9"/>
+                                    <outlet property="itemNameLabel" destination="qzT-jH-T9a" id="tv7-AC-fls"/>
                                     <segue destination="BSs-4P-Snu" kind="show" identifier="AgendaItemDetailSegue" id="w5e-zU-MpS"/>
                                 </connections>
                             </tableViewCell>

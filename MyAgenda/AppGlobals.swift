@@ -13,4 +13,11 @@ import Foundation
 
 struct AppGlobals {
     static let dateFormatter = DateFormatter()
+    
+    static let iconDictionary: Dictionary<String,String> = [
+        "Personal" : "category-blue-icon.png",
+        "Work" : "category-purple-icon.png",
+        "School" : "category-black-icon.png",
+        ]
+
 }
