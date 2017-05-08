@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaItemTableViewController: UITableViewController {
+class AgendaItemTableViewController: UITableViewController, UINavigationControllerDelegate {
     struct AIStoryboard {
         static let detailSegue = "AgendaItemDetailSegue"
         static let detailController = "AgendaItemDetailViewController"
@@ -20,6 +20,8 @@ class AgendaItemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.delegate = self
         
         // allows swipe to delete
         tableView.allowsMultipleSelection = false
@@ -138,6 +140,16 @@ class AgendaItemTableViewController: UITableViewController {
         
     }
     
-    
-    
+//    
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//        let customNavigationAnimator = CustomNavigationAnimator()
+//        
+//        if operation == .push {
+//            customNavigationAnimator.pushing = true
+//        }
+//        
+//        return customNavigationAnimator
+//    }
+//    
 }

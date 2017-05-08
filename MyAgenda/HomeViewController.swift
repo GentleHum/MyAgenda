@@ -9,7 +9,7 @@
 import UIKit
 import SwiftDate
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
     private struct Storyboard {
         static let homeCellIdentifier = "HomeTVC"
@@ -59,7 +59,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
-       
+        
+        navigationController?.delegate = self
+
         // no title on the navigation back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -185,6 +187,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let customNavigationAnimator = CustomNavigationAnimator()
+        
+        if operation == .push {
+            customNavigationAnimator.pushing = true
+        }
+        
+        return customNavigationAnimator
+    }
+
 
 
 
