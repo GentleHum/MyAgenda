@@ -176,7 +176,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if indexPath.row > homeListItems.count {  // skip the category/filter table row
                 let categoryNumber = indexPath.row - homeListItems.count - 1
                 if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.categoryVC) as? UINavigationController {
-                    if let destinationController = navigationController.childViewControllers.first as? CategoryViewController {
+                    if let destinationController = navigationController.childViewControllers.first as? CategoryTableViewController {
                         destinationController.categoryName = categoryListItems[categoryNumber].name
                         self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                     }

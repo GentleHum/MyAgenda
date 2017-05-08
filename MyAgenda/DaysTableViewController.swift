@@ -9,7 +9,7 @@
 import UIKit
 
 class DaysTableViewController: AgendaItemTableViewController {
-    struct AIStoryboard {
+    struct Storyboard {
         static let cellIdentifier = "DaysTVC"
         static let detailSegue = "AgendaItemDetailSegue"
     }
@@ -64,7 +64,7 @@ class DaysTableViewController: AgendaItemTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AIStoryboard.cellIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier,
                                                  for: indexPath)
         let agendaItem = agendaItems[indexPath.section][indexPath.row]
         cell.detailTextLabel?.text = agendaItem.category

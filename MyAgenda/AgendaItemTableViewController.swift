@@ -9,7 +9,7 @@
 import UIKit
 
 class AgendaItemTableViewController: UITableViewController {
-    struct Storyboard {
+    struct AIStoryboard {
         static let detailSegue = "AgendaItemDetailSegue"
         static let detailController = "AgendaItemDetailViewController"
     }
@@ -126,7 +126,7 @@ class AgendaItemTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.detailSegue {
+        if segue.identifier == AIStoryboard.detailSegue {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let agendaItem = agendaItems[indexPath.section][indexPath.row]
                 let controller = segue.destination as! AgendaItemDetailViewController

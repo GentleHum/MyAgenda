@@ -9,7 +9,7 @@
 import UIKit
 
 class AllItemsTableViewController: AgendaItemTableViewController {
-    struct AIStoryboard {
+    struct Storyboard {
         static let cellIdentifier = "AgendaItemTVC"
     }
     
@@ -28,7 +28,7 @@ class AllItemsTableViewController: AgendaItemTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AIStoryboard.cellIdentifier, for: indexPath) as! AgendaItemTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTVC
         
         // Configure the cell...
         cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
@@ -39,7 +39,7 @@ class AllItemsTableViewController: AgendaItemTableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.detailSegue {
+        if segue.identifier == AIStoryboard.detailSegue {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let agendaItem = agendaItems[indexPath.section][indexPath.row]
                 let controller = segue.destination as! AgendaItemDetailViewController
