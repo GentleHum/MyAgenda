@@ -78,15 +78,6 @@ class DaysTableViewController: AgendaItemTableViewController {
     }
     
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let itemToDelete = agendaItems[indexPath.row]
-//            ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
-//            agendaItems.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

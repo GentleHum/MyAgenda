@@ -402,16 +402,17 @@
         <scene sceneID="ynE-Fa-Sni">
             <objects>
                 <tableViewController id="w8i-84-vdy" customClass="CategoryTableViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MVW-2G-LNq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" id="MVW-2G-LNq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTVC" rowHeight="58" id="A0f-0q-sUZ" customClass="CategoryTableViewCell" customModule="MyAgenda" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTVC" rowHeight="59" id="A0f-0q-sUZ" customClass="CategoryTableViewCell" customModule="MyAgenda" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A0f-0q-sUZ" id="Lgu-9m-EDl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-6i-Cjn">
@@ -427,7 +428,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-Qg-39b">
-                                            <rect key="frame" x="8" y="30" width="359" height="19"/>
+                                            <rect key="frame" x="8" y="30" width="359" height="16.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -441,7 +442,7 @@
                                         <constraint firstItem="zRp-Qg-39b" firstAttribute="top" secondItem="VJc-6i-Cjn" secondAttribute="bottom" constant="4" id="O8g-xY-f0R"/>
                                         <constraint firstItem="VJc-6i-Cjn" firstAttribute="leading" secondItem="Lgu-9m-EDl" secondAttribute="leadingMargin" id="i2A-LP-aHZ"/>
                                         <constraint firstItem="zRp-Qg-39b" firstAttribute="leading" secondItem="Lgu-9m-EDl" secondAttribute="leadingMargin" id="jSi-XB-P1B"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zRp-Qg-39b" secondAttribute="bottom" id="rKJ-RS-5P7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zRp-Qg-39b" secondAttribute="bottom" constant="4" id="rKJ-RS-5P7"/>
                                         <constraint firstItem="zRp-Qg-39b" firstAttribute="trailing" secondItem="Lgu-9m-EDl" secondAttribute="trailingMargin" id="tfm-2G-zYm"/>
                                         <constraint firstItem="VJc-6i-Cjn" firstAttribute="top" secondItem="Lgu-9m-EDl" secondAttribute="topMargin" id="zVs-oH-PaZ"/>
                                     </constraints>

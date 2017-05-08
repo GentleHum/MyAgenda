@@ -18,15 +18,6 @@ class CategoryTableViewController: AgendaItemTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // empty rows at bottom of table
-        tableView.tableFooterView = UIView()
-        
-        // allows swipe to delete
-        tableView.allowsMultipleSelection = false
         
     }
 
@@ -51,14 +42,6 @@ class CategoryTableViewController: AgendaItemTableViewController {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let itemToDelete = agendaItems[indexPath.row]
-//            ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
-//            agendaItems.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.detailSegue {
