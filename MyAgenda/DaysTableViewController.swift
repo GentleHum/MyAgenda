@@ -62,16 +62,6 @@ class DaysTableViewController: AgendaItemTableViewController {
     }
     
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier,
-//                                                 for: indexPath)
-//        let agendaItem = agendaItems[indexPath.section][indexPath.row]
-//        cell.detailTextLabel?.text = agendaItem.category
-//        cell.textLabel?.text = agendaItem.descriptionText
-//        
-//        return cell
-//    }
-    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "  " + sectionNames[section]
     }

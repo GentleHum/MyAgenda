@@ -18,6 +18,6 @@ struct AppGlobals {
         "Personal" : "category-blue-icon.png",
         "Work" : "category-purple-icon.png",
         "School" : "category-black-icon.png",
-        ]
+    ]
 
 }

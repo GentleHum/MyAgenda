@@ -27,6 +27,13 @@ class ModelController {
         static let dueDateField = "dueDate"
     }
     
+    private var categoryNames = [
+        "Personal",
+        "Work",
+        "School",
+        "Movies to Watch",
+    ]
+    
     private var agendaItems = [AgendaItem]()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -169,6 +176,10 @@ class ModelController {
         context.delete(itemToDelete)
         self.saveContext()
         NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.dataChanged), object: self)
+    }
+    
+    func getCategoryNames() -> [String] {
+        return categoryNames
     }
     
     // MARK: - Core Data Saving support

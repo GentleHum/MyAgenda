@@ -329,14 +329,14 @@
         <scene sceneID="zyK-4j-mjw">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="dcd-42-9t2" customClass="AllItemsTableViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" id="IVZ-Km-wlg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="58" sectionHeaderHeight="18" sectionFooterHeight="18" id="IVZ-Km-wlg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgendaItemTVC" rowHeight="58" id="jAf-ek-1fg" customClass="AgendaItemTableViewCell" customModule="MyAgenda" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jAf-ek-1fg" id="lBr-8r-Jhz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
@@ -405,7 +405,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73G-IH-YT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067.5" y="527.5"/>
+            <point key="canvasLocation" x="1102" y="-213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BPf-0u-8cr">
@@ -421,7 +421,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLM-vf-hf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="528"/>
+            <point key="canvasLocation" x="164" y="-212"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="ynE-Fa-Sni">
@@ -494,7 +494,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaz-Lc-9NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="-931.48425787106453"/>
+            <point key="canvasLocation" x="1102" y="-902"/>
         </scene>
         <!--AddItem-->
         <scene sceneID="u8J-xU-Zi5">
@@ -537,7 +537,7 @@
                 <viewControllerPlaceholder storyboardName="AddItem" id="LFE-n5-52H" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35e-DE-8w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="527"/>
+            <point key="canvasLocation" x="1766" y="-192"/>
         </scene>
         <!--AgendaItemDetail-->
         <scene sceneID="Fpx-0p-WhM">
@@ -545,7 +545,7 @@
                 <viewControllerPlaceholder storyboardName="AgendaItemDetail" id="F7T-cb-Gi2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7V-cO-lip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="461"/>
+            <point key="canvasLocation" x="1812" y="-235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ak-hI-P5J">
@@ -581,7 +581,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaL-Oa-fjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="-931"/>
+            <point key="canvasLocation" x="164" y="-902"/>
         </scene>
     </scenes>
 </document>

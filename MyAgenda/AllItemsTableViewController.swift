@@ -13,6 +13,8 @@ class AllItemsTableViewController: AgendaItemTableViewController {
         static let cellIdentifier = "AgendaItemTVC"
     }
     
+    private var categoryNames = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,20 +25,19 @@ class AllItemsTableViewController: AgendaItemTableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        categoryNames = ModelController.sharedInstance.getCategoryNames()
         agendaItems.removeAll()
-        agendaItems.append(ModelController.sharedInstance.loadAgendaItems())
+        
+        for categoryName in categoryNames {
+            agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: categoryName))
+        }
         tableView.reloadData()
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTableViewCell
-//    
-//        
-//        // Configure the cell...
-//        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
-//        
-//        return cell
-//    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "  " + categoryNames[section]
+    }
     
     // MARK: - Navigation
 
