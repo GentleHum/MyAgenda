@@ -17,6 +17,7 @@ class AllItemsTableViewController: AgendaItemTableViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "All items"
+        self.cellIdentifier = Storyboard.cellIdentifier
         
     }
     
@@ -27,15 +28,15 @@ class AllItemsTableViewController: AgendaItemTableViewController {
         tableView.reloadData()
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTableViewCell
-    
-        
-        // Configure the cell...
-        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
-        
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath) as! AgendaItemTableViewCell
+//    
+//        
+//        // Configure the cell...
+//        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
+//        
+//        return cell
+//    }
     
     // MARK: - Navigation
 

@@ -14,6 +14,8 @@ class AgendaItemTableViewController: UITableViewController {
         static let detailController = "AgendaItemDetailViewController"
     }
     
+    internal var cellIdentifier = "AgendaItemTVC"
+    
     var agendaItems = [[AgendaItem]]()
     
     override func viewDidLoad() {
@@ -86,8 +88,17 @@ class AgendaItemTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return agendaItems[section].count
     }
-    
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
+                                                 for: indexPath) as! AgendaItemSettableCell
         
+        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
+        
+        return cell as! UITableViewCell
+    }
+
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             delete(from: tableView, at: indexPath)

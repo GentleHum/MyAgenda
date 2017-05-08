@@ -38,6 +38,7 @@
 		E069C7E71EBE9D4F0006FBB9 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */; };
 		E069C7E81EBE9D4F0006FBB9 /* MyAgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E41EBE9D4F0006FBB9 /* MyAgendaTests.swift */; };
 		E069C7EA1EC0BD820006FBB9 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E91EC0BD820006FBB9 /* CategoryTableViewCell.swift */; };
+		E069C7EE1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
 		E069C7E41EBE9D4F0006FBB9 /* MyAgendaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAgendaTests.swift; sourceTree = "<group>"; };
 		E069C7E91EC0BD820006FBB9 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSettableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		7E8EA6D61E86DD57001A8DA3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */,
 				7E8EA6D71E86DD81001A8DA3 /* AgendaItemTableViewCell.swift */,
 				E069C7E91EC0BD820006FBB9 /* CategoryTableViewCell.swift */,
 				7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */,
@@ -412,6 +415,7 @@
 				7E0631A51E81DA0300581274 /* SegmentChoiceTableViewCell.swift in Sources */,
 				7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */,
 				7E0631A71E81DA2600581274 /* HomeCategoryTableViewCell.swift in Sources */,
+				E069C7EE1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift in Sources */,
 				7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */,
 				7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */,
 				7E8EA6D81E86DD81001A8DA3 /* AgendaItemTableViewCell.swift in Sources */,

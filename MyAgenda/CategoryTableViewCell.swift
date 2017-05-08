@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: UITableViewCell, AgendaItemSettableCell {
     
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
@@ -20,7 +20,7 @@ class CategoryTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI() {
+    internal func updateUI() {
         
         guard itemNameLabel != nil,
             dueDateLabel != nil else { return }

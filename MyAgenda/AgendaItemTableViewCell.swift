@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaItemTableViewCell: UITableViewCell {
+class AgendaItemTableViewCell: UITableViewCell, AgendaItemSettableCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
@@ -26,7 +26,7 @@ class AgendaItemTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI() {
+    internal func updateUI() {
         // load new information from our item (if any)
         
         guard itemNameLabel != nil,

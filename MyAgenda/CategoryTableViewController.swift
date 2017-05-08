@@ -19,6 +19,7 @@ class CategoryTableViewController: AgendaItemTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cellIdentifier = Storyboard.itemCellIdentifier
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,18 +32,8 @@ class CategoryTableViewController: AgendaItemTableViewController {
     }
    
     
-    // MARK: Table view data source methods
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.itemCellIdentifier,
-                                                 for: indexPath) as! CategoryTableViewCell
-        
-        cell.agendaItem = agendaItems[indexPath.section][indexPath.row]
-        
-        return cell
-    }
-    
-    
+    // MARK: Navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.detailSegue {
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -54,6 +45,4 @@ class CategoryTableViewController: AgendaItemTableViewController {
         
     }
     
-    
-
 }
