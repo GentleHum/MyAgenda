@@ -7,15 +7,6 @@
 //
 
 import Foundation
-
-//
-//  CustomNavigationAnimator.swift
-//  CustomTransitionDemo
-//
-//  Created by Mike Vork on 4/15/17.
-//  Copyright © 2017 CareerFoundy. All rights reserved.
-//
-
 import UIKit
 
 class CustomNavigationAnimator: NSObject, UIViewControllerAnimatedTransitioning {
