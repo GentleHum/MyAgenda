@@ -201,10 +201,8 @@
 				7EC00C491E8D8D8800BAED00 /* Globals */,
 				7ED746D61E805B6D009BF039 /* Models */,
 				7ED746D71E805B7C009BF039 /* Storyboards */,
+				E08F6D621EC11EB000D47C82 /* Supporting Files */,
 				7ED746DA1E805CBA009BF039 /* Views */,
-				7ED746AF1E805A92009BF039 /* Assets.xcassets */,
-				7ED746B41E805A92009BF039 /* Info.plist */,
-				7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */,
 			);
 			path = MyAgenda;
 			sourceTree = "<group>";
@@ -304,6 +302,16 @@
 				E08F6D5F1EC1134600D47C82 /* CustomNavigationAnimator.swift */,
 			);
 			name = Animations;
+			sourceTree = "<group>";
+		};
+		E08F6D621EC11EB000D47C82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ED746AF1E805A92009BF039 /* Assets.xcassets */,
+				7ED746B41E805A92009BF039 /* Info.plist */,
+				7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
