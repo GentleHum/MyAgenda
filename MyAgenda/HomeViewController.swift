@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let allItemsSegue = "AllItemsSegue"
         
         static let daysVC = "DaysVC"
+        static let daysCVC = "DaysCVC"
         static let todayVC = "TodayVC"
         static let allItemsVC = "AllItemsVC"
         static let categoryVC = "CategoryVC"
@@ -156,11 +157,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-            
+  
         case HomeListItemRows.today.rawValue,
              HomeListItemRows.next7Days.rawValue:
-            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysVC) as? UINavigationController {
-                if let destinationController = navigationController.childViewControllers.first as? DaysTableViewController {
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysCVC) as? UINavigationController {
+                if let destinationController = navigationController.childViewControllers.first as? DaysCollectionViewController {
                     destinationController.daysToShow = daysToShow[indexPath.row]
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }

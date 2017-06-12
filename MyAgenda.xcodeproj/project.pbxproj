@@ -33,6 +33,7 @@
 		7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DD1E806489009BF039 /* HomeListItem.swift */; };
 		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
 		7EFDCCFF1E8EFA0C0002A4A5 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */; };
+		E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */; };
 		E069C7DF1EBE01F40006FBB9 /* AgendaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */; };
 		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
 		E069C7E61EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */; };
@@ -42,6 +43,9 @@
 		E069C7EE1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */; };
 		E069C7F01EC0E26C0006FBB9 /* DaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7EF1EC0E26C0006FBB9 /* DaysTableViewCell.swift */; };
 		E08F6D601EC1134600D47C82 /* CustomNavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F6D5F1EC1134600D47C82 /* CustomNavigationAnimator.swift */; };
+		E0B895B91ED608C200A6CD12 /* DaysCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */; };
+		E0B895BB1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */; };
+		E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,7 @@
 		7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
 		946EB419F3980EC3F741DF23 /* Pods-MyAgenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.release.xcconfig"; sourceTree = "<group>"; };
 		C4D56566D3EBB9B02C7222D4 /* Pods-MyAgenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.debug.xcconfig"; sourceTree = "<group>"; };
+		E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewController.swift; sourceTree = "<group>"; };
 		E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTableViewController.swift; sourceTree = "<group>"; };
 		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTests.swift; sourceTree = "<group>"; };
@@ -107,6 +112,9 @@
 		E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSettableCell.swift; sourceTree = "<group>"; };
 		E069C7EF1EC0E26C0006FBB9 /* DaysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewCell.swift; sourceTree = "<group>"; };
 		E08F6D5F1EC1134600D47C82 /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimator.swift; sourceTree = "<group>"; };
+		E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewController.swift; sourceTree = "<group>"; };
+		E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 		7E8EA6D61E86DD57001A8DA3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */,
 				E069C7ED1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift */,
 				7E8EA6D71E86DD81001A8DA3 /* AgendaItemTableViewCell.swift */,
 				E069C7E91EC0BD820006FBB9 /* CategoryTableViewCell.swift */,
@@ -254,10 +263,12 @@
 			isa = PBXGroup;
 			children = (
 				7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */,
+				E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */,
 				7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */,
 				E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */,
 				7E8EA6D21E86D88A001A8DA3 /* AllItemsTableViewController.swift */,
 				7EB6C8521E8AB41E00F6D064 /* CategoryTableViewController.swift */,
+				E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */,
 				7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */,
 				7ED746A71E805A92009BF039 /* HomeViewController.swift */,
 			);
@@ -267,6 +278,7 @@
 		7ED746DA1E805CBA009BF039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */,
 				7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */,
 			);
 			name = Views;
@@ -511,7 +523,10 @@
 				7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */,
 				7E0631A51E81DA0300581274 /* SegmentChoiceTableViewCell.swift in Sources */,
 				7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */,
+				E0B895BB1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift in Sources */,
+				E0B895B91ED608C200A6CD12 /* DaysCollectionViewController.swift in Sources */,
 				7E0631A71E81DA2600581274 /* HomeCategoryTableViewCell.swift in Sources */,
+				E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */,
 				E069C7EE1EC0D7D80006FBB9 /* AgendaItemSettableCell.swift in Sources */,
 				7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */,
 				7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */,
@@ -523,6 +538,7 @@
 				7E8EA6DC1E870FA3001A8DA3 /* RoundedButton.swift in Sources */,
 				7E0631A91E81DA3800581274 /* HomeFilterTableViewCell.swift in Sources */,
 				7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */,
+				E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */,
 				E069C7EA1EC0BD820006FBB9 /* CategoryTableViewCell.swift in Sources */,
 				7E8EA6D31E86D88A001A8DA3 /* AllItemsTableViewController.swift in Sources */,
 				7EB6C8531E8AB41E00F6D064 /* CategoryTableViewController.swift in Sources */,
