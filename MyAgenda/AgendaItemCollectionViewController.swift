@@ -11,7 +11,7 @@ import UIKit
 
 class AgendaItemCollectionViewController: UICollectionViewController {
 
-    struct Storyboard {
+    internal struct Storyboard {
         static let detailSegue = "AgendaItemDetailSegue"
         static let detailController = "AgendaItemDetailViewController"
         static let cellIdentifier = "AgendaItemCVC"
@@ -26,26 +26,16 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         // set the screen layout
-        let width = collectionView!.frame.width
-        let height = collectionView!.frame.height / 24
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: height)
-        
+//        let width = collectionView!.frame.width
+//        let height = collectionView!.frame.height / 18
+//        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: width, height: height)
+//        
         self.installsStandardGestureForInteractiveMovement = true
         
         // no title on the navigation back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-    }
-    
-    
-    @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
-        //        if let team = getNewTeam() {
-        //            let index = allTeams[0].count
-        //            allTeams[0].append(team)
-        //            let indexPath = IndexPath(item: index, section: 0)
-        //            collectionView?.insertItems(at: [indexPath])
-        //        }
     }
     
     

@@ -16,6 +16,7 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         super.viewWillAppear(animated)
         
         loadSectionData()
+        collectionView?.reloadData()
         self.navigationItem.title = (daysToShow > 1) ? "Next \(daysToShow) Days" : "Today"
     }
     
