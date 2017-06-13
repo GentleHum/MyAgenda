@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let daysCVC = "DaysCVC"
         static let todayVC = "TodayVC"
         static let allItemsVC = "AllItemsVC"
+        static let allItemsCVC = "AllItemsCVC"
         static let categoryVC = "CategoryVC"
         
         static let rowHeight = 44
@@ -167,13 +168,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             
+//        case HomeListItemRows.allItems.rawValue:
+//            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
+//                if navigationController.childViewControllers.first is AllItemsTableViewController {
+//                    self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+//                }
+//            }
+//            
         case HomeListItemRows.allItems.rawValue:
-            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsVC) as? UINavigationController {
-                if navigationController.childViewControllers.first is AllItemsTableViewController {
+            if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsCVC) as? UINavigationController {
+                if navigationController.childViewControllers.first is AllItemsCollectionViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
-            
+        
         default:
             if indexPath.row > homeListItems.count {  // skip the category/filter table row
                 let categoryNumber = indexPath.row - homeListItems.count - 1

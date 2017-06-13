@@ -25,12 +25,6 @@ class AgendaItemCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set the screen layout
-//        let width = collectionView!.frame.width
-//        let height = collectionView!.frame.height / 18
-//        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: width, height: height)
-//        
         self.installsStandardGestureForInteractiveMovement = true
         
         // no title on the navigation back button
@@ -38,15 +32,27 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // set the screen layout
+        let width = collectionView!.frame.width
+        let height: CGFloat = 44.0   // zap don't hard code this
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: height)
+    }
+    
     
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        print("number of sections: \(agendaItems.count)")  // zap
         return agendaItems.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("number of items in section \(section) is \(agendaItems[section].count)")  // zap
         return agendaItems[section].count
     }
     
@@ -66,7 +72,7 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                             withReuseIdentifier: Storyboard.sectionHeader,
                                                                             for: indexPath) as! AgendaItemSectionHeader
-        
+        print("section name is \(sectionNames[indexPath.section])")  // zap
         sectionHeader.title = sectionNames[indexPath.section]
         
         return sectionHeader
