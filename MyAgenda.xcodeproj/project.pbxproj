@@ -257,9 +257,9 @@
 			children = (
 				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
+				E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 				7ED746A91E805A92009BF039 /* Main.storyboard */,
-				E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";

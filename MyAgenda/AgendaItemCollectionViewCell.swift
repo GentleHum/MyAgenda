@@ -12,6 +12,7 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var dueDateLabel: UILabel!
     
     
     var agendaItem: AgendaItem? {
@@ -21,20 +22,28 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
     }
     
     internal func updateUI() {
-        // load new information from our item (if any)
-        
-        guard itemNameLabel != nil,
-            categoryLabel != nil,
-            categoryImage != nil else { return }
-        
-        guard itemNameLabel != nil else { return }
         
         if let item = self.agendaItem {
-            if let iconName = AppGlobals.iconDictionary[item.category ?? ""] {
-                categoryImage.image = UIImage(named: iconName)
+            if itemNameLabel != nil {
+                itemNameLabel.text = item.descriptionText
             }
-            itemNameLabel.text = item.descriptionText
-            categoryLabel.text = item.category
+            
+            if categoryLabel != nil {
+                categoryLabel.text = item.category
+            }
+            
+            if dueDateLabel != nil {
+                if let dueDate = item.dueDate {
+                    dueDateLabel.text = AppGlobals.dateFormatter.getString(from: dueDate as Date,
+                                  with: "M/d/y")
+                }
+            }
+            
+            if categoryImage != nil {
+                if let iconName = AppGlobals.iconDictionary[item.category ?? ""] {
+                    categoryImage.image = UIImage(named: iconName)
+                }
+            }
         }
     }
     

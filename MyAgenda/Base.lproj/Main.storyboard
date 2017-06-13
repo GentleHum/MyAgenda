@@ -315,7 +315,7 @@
         <scene sceneID="1OT-R4-v6G">
             <objects>
                 <collectionViewController id="V4J-zZ-qKj" customClass="DaysCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="i3T-xv-DiK">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="i3T-xv-DiK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -441,7 +441,43 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pve-Vx-4kJ">
+                                            <rect key="frame" x="8" y="8" width="359" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="4md-Im-kx8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYp-iG-jiG">
+                                            <rect key="frame" x="8" y="30" width="359" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="pve-Vx-4kJ" firstAttribute="leading" secondItem="Isy-1e-YGI" secondAttribute="leadingMargin" id="49J-7r-c6m"/>
+                                    <constraint firstItem="uYp-iG-jiG" firstAttribute="bottom" secondItem="Isy-1e-YGI" secondAttribute="bottomMargin" constant="4" id="6pT-kg-Dvo"/>
+                                    <constraint firstItem="pve-Vx-4kJ" firstAttribute="top" secondItem="Isy-1e-YGI" secondAttribute="topMargin" id="CUR-pm-lih"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="pve-Vx-4kJ" secondAttribute="trailing" id="j8W-XJ-Xew"/>
+                                    <constraint firstItem="uYp-iG-jiG" firstAttribute="leading" secondItem="Isy-1e-YGI" secondAttribute="leadingMargin" id="nMt-Pq-R10"/>
+                                    <constraint firstItem="uYp-iG-jiG" firstAttribute="top" secondItem="pve-Vx-4kJ" secondAttribute="bottom" constant="4" id="sUx-a3-wPC"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="uYp-iG-jiG" secondAttribute="trailing" id="vim-D4-nym"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dueDateLabel" destination="uYp-iG-jiG" id="Rhz-Eb-fs1"/>
+                                    <outlet property="itemNameLabel" destination="pve-Vx-4kJ" id="Ozs-B6-mdH"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgendaItemSectionHeader" id="7Ux-mm-2oP" customClass="AgendaItemSectionHeader" customModule="MyAgenda" customModuleProvider="target">
