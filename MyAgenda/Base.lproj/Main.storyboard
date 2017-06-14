@@ -436,6 +436,103 @@
             </objects>
             <point key="canvasLocation" x="1102" y="1219"/>
         </scene>
+        <!--Category Collection View Controller-->
+        <scene sceneID="dH3-3R-YH8">
+            <objects>
+                <collectionViewController id="fge-qo-M8d" customClass="CategoryCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="d3N-bM-x2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ckc-2a-glR">
+                            <size key="itemSize" width="374" height="58"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgendaItemCVC" id="fcv-NN-9DA" customClass="AgendaItemCollectionViewCell" customModule="MyAgenda" customModuleProvider="target">
+                                <rect key="frame" x="0.5" y="0.0" width="374" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5po-N6-kWR">
+                                            <rect key="frame" x="8" y="8" width="358" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="RMx-9T-U4Q"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N5-SB-UUH">
+                                            <rect key="frame" x="8" y="30" width="358" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8N5-SB-UUH" firstAttribute="bottom" secondItem="fcv-NN-9DA" secondAttribute="bottomMargin" constant="4" id="A0U-Eg-QND"/>
+                                    <constraint firstItem="8N5-SB-UUH" firstAttribute="top" secondItem="5po-N6-kWR" secondAttribute="bottom" constant="4" id="Gsy-C2-suI"/>
+                                    <constraint firstItem="8N5-SB-UUH" firstAttribute="trailing" secondItem="fcv-NN-9DA" secondAttribute="trailingMargin" id="Hbc-H6-lkr"/>
+                                    <constraint firstItem="5po-N6-kWR" firstAttribute="leading" secondItem="fcv-NN-9DA" secondAttribute="leadingMargin" id="YsT-Ex-hS1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="5po-N6-kWR" secondAttribute="trailing" id="g3w-Xp-IfD"/>
+                                    <constraint firstItem="8N5-SB-UUH" firstAttribute="leading" secondItem="fcv-NN-9DA" secondAttribute="leadingMargin" id="hux-Gz-nS9"/>
+                                    <constraint firstItem="5po-N6-kWR" firstAttribute="top" secondItem="fcv-NN-9DA" secondAttribute="topMargin" id="wDX-4S-t71"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dueDateLabel" destination="8N5-SB-UUH" id="4Go-KX-Fa7"/>
+                                    <outlet property="itemNameLabel" destination="5po-N6-kWR" id="UBK-h3-M7J"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fge-qo-M8d" id="RBd-gH-2W6"/>
+                            <outlet property="delegate" destination="fge-qo-M8d" id="5Et-aN-NfG"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="7CB-Aa-xyM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="21g-vr-NEC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="AIH-r4-FOS" kind="show" identifier="AddItemSegue" id="7Pn-lo-RLa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Un4-53-UZc" kind="show" identifier="AgendaItemDetailSegue" id="7r7-7O-zs4"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xh-I9-Nl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="491"/>
+        </scene>
+        <!--AddItem-->
+        <scene sceneID="yfK-QA-VxN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddItem" id="AIH-r4-FOS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TmA-4Y-Nd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="400"/>
+        </scene>
+        <!--AgendaItemDetail-->
+        <scene sceneID="T2B-t2-UYS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AgendaItemDetail" id="Un4-53-UZc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJH-Ym-hs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="513"/>
+        </scene>
         <!--AddItem-->
         <scene sceneID="aPY-lf-no3">
             <objects>
@@ -630,6 +727,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sB3-3q-Lxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="156" y="1219"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5hS-Wt-dK6">
+            <objects>
+                <navigationController storyboardIdentifier="CategoryCVC" automaticallyAdjustsScrollViewInsets="NO" id="5Zh-Tv-NPh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lbw-LE-eMK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fge-qo-M8d" kind="relationship" relationship="rootViewController" id="mbk-YB-oeo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9k-Sq-owN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="491"/>
         </scene>
     </scenes>
 </document>

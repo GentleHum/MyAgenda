@@ -46,13 +46,11 @@ class AgendaItemCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("number of sections: \(agendaItems.count)")  // zap
         return agendaItems.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("number of items in section \(section) is \(agendaItems[section].count)")  // zap
         return agendaItems[section].count
     }
     
@@ -72,7 +70,6 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                             withReuseIdentifier: Storyboard.sectionHeader,
                                                                             for: indexPath) as! AgendaItemSectionHeader
-        print("section name is \(sectionNames[indexPath.section])")  // zap
         sectionHeader.title = sectionNames[indexPath.section]
         
         return sectionHeader
@@ -82,7 +79,6 @@ class AgendaItemCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  moveItemAt sourceIndexPath: IndexPath,
                                  to destinationIndexPath: IndexPath) {
-        print("in moveItemAtIndexPath: from: \(sourceIndexPath), to: \(destinationIndexPath)")  // zap
         let itemToMove = agendaItems[sourceIndexPath.section][sourceIndexPath.row]
         agendaItems[sourceIndexPath.section].remove(at: sourceIndexPath.row)
         agendaItems[destinationIndexPath.section].insert(itemToMove, at: destinationIndexPath.row)

@@ -10,13 +10,6 @@ import UIKit
 
 class AllItemsCollectionViewController: AgendaItemCollectionViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        self.cellIdentifier = Storyboard.cellIdentifier
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -31,15 +24,9 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         agendaItems.removeAll()
         sectionNames = ModelController.sharedInstance.getCategoryNames()
         
-        print("sectionNames count: \(sectionNames.count)")  // zap
-        
         for categoryName in sectionNames {
-            print("appending for category: \(categoryName)")  // zap
             agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: categoryName))
         }
-        
-        print("agendaItems count: \(agendaItems.count)")  // zap
-        
     }
     
 
