@@ -276,17 +276,27 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clP-2h-9IH">
+                                            <rect key="frame" x="0.0" y="60" width="368" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="YGR-3w-Mn4"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="clP-2h-9IH" secondAttribute="trailing" id="6VF-Gk-o6b"/>
                                     <constraint firstAttribute="trailing" secondItem="rvl-4P-Sa6" secondAttribute="trailing" constant="4" id="AOs-3K-TXx"/>
                                     <constraint firstItem="DMe-U0-UFk" firstAttribute="top" secondItem="YpW-r8-qjm" secondAttribute="bottom" constant="4" id="CBf-Fe-gz9"/>
+                                    <constraint firstItem="clP-2h-9IH" firstAttribute="leading" secondItem="aRw-0C-nLc" secondAttribute="leading" id="EIV-Xv-Mma"/>
                                     <constraint firstItem="YpW-r8-qjm" firstAttribute="leading" secondItem="aRw-0C-nLc" secondAttribute="leading" constant="8" id="Xeg-hR-Wab"/>
                                     <constraint firstAttribute="trailing" secondItem="YpW-r8-qjm" secondAttribute="trailing" constant="8" id="gKp-qm-IXz"/>
                                     <constraint firstItem="rvl-4P-Sa6" firstAttribute="centerY" secondItem="DMe-U0-UFk" secondAttribute="centerY" id="ioZ-jC-LPr"/>
                                     <constraint firstItem="rvl-4P-Sa6" firstAttribute="top" secondItem="YpW-r8-qjm" secondAttribute="bottom" constant="8" id="j3U-Dd-Y9M"/>
                                     <constraint firstItem="rvl-4P-Sa6" firstAttribute="leading" secondItem="DMe-U0-UFk" secondAttribute="trailing" constant="4" id="kOd-yt-M0H"/>
                                     <constraint firstItem="YpW-r8-qjm" firstAttribute="top" secondItem="aRw-0C-nLc" secondAttribute="top" constant="4" id="kR5-Cq-ZV9"/>
+                                    <constraint firstAttribute="bottom" secondItem="clP-2h-9IH" secondAttribute="bottom" id="z5I-Y7-IJT"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="categoryImage" destination="rvl-4P-Sa6" id="haj-Wa-z3U"/>
