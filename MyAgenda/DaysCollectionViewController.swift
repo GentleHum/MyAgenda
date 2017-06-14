@@ -11,6 +11,7 @@ import UIKit
 class DaysCollectionViewController: AgendaItemCollectionViewController {
     
     var daysToShow = 1      // defaults to Today
+    var datesShowing = [Date]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,6 +25,7 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         // clear the section data
         agendaItems.removeAll()
         sectionNames.removeAll()
+        datesShowing.removeAll()
         
         var currentDay = NSCalendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
         
@@ -33,6 +35,8 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         if overdueItems.count > 0 {
             sectionNames.append("Overdue")
             agendaItems.append(overdueItems)
+            let previousDay = 1.days.ago(from: currentDay!)
+            datesShowing.append(previousDay!)
         }
         
         // load daily items
@@ -42,12 +46,20 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
             agendaItems.append(oneDaysItems)
             let dateString = AppGlobals.dateFormatter.getString(from: currentDay!, with: "M/d/y")
             sectionNames.append(dateString)
+            let middleOfCurrentDay = 12.hours.from(date: currentDay!)
+            datesShowing.append(middleOfCurrentDay!)
             currentDay = nextDay
         }
         
     }
 
-    
+    override func updateRecord(at indexPath: IndexPath) {
+        let itemToUpdate = agendaItems[indexPath.section][indexPath.row]
+        itemToUpdate.dueDate = datesShowing[indexPath.section] as NSDate
+        ModelController.sharedInstance.saveContext()
+        
+        loadSectionData()
+    }
     
 
 }

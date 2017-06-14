@@ -43,7 +43,6 @@ class AgendaItemCollectionViewController: UICollectionViewController {
     }
     
     internal func updateRecord(at indexPath: IndexPath) {
-        print("AgendaItemCollectionViewController: updateRecord")  // zap
     }
     
     // MARK: UICollectionViewDataSource
