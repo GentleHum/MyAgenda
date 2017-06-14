@@ -42,6 +42,9 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: width, height: height)
     }
     
+    internal func updateRecord(at indexPath: IndexPath) {
+        print("AgendaItemCollectionViewController: updateRecord")  // zap
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -82,6 +85,10 @@ class AgendaItemCollectionViewController: UICollectionViewController {
         let itemToMove = agendaItems[sourceIndexPath.section][sourceIndexPath.row]
         agendaItems[sourceIndexPath.section].remove(at: sourceIndexPath.row)
         agendaItems[destinationIndexPath.section].insert(itemToMove, at: destinationIndexPath.row)
+        
+        if sourceIndexPath.section != destinationIndexPath.section {
+            updateRecord(at: destinationIndexPath)
+        }
     }
     
     

@@ -29,5 +29,12 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         }
     }
     
+    override func updateRecord(at indexPath: IndexPath) {
+        print("AllItemsCollectionViewController: updateRecord: indexPath: \(indexPath)")  // zap
+        let itemToUpdate = agendaItems[indexPath.section][indexPath.row]
+        itemToUpdate.category = sectionNames[indexPath.section]
+        ModelController.sharedInstance.saveContext()
+    }
+    
 
 }
