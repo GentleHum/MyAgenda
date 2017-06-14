@@ -489,15 +489,25 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-9e-t2N">
+                                            <rect key="frame" x="0.0" y="57" width="374" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="uXJ-zi-LTY"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="8N5-SB-UUH" firstAttribute="bottom" secondItem="fcv-NN-9DA" secondAttribute="bottomMargin" constant="4" id="A0U-Eg-QND"/>
+                                    <constraint firstAttribute="bottom" secondItem="a5B-9e-t2N" secondAttribute="bottom" id="EHb-HV-HCs"/>
                                     <constraint firstItem="8N5-SB-UUH" firstAttribute="top" secondItem="5po-N6-kWR" secondAttribute="bottom" constant="4" id="Gsy-C2-suI"/>
                                     <constraint firstItem="8N5-SB-UUH" firstAttribute="trailing" secondItem="fcv-NN-9DA" secondAttribute="trailingMargin" id="Hbc-H6-lkr"/>
                                     <constraint firstItem="5po-N6-kWR" firstAttribute="leading" secondItem="fcv-NN-9DA" secondAttribute="leadingMargin" id="YsT-Ex-hS1"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="5po-N6-kWR" secondAttribute="trailing" id="g3w-Xp-IfD"/>
+                                    <constraint firstAttribute="trailing" secondItem="a5B-9e-t2N" secondAttribute="trailing" id="hT3-00-tn7"/>
                                     <constraint firstItem="8N5-SB-UUH" firstAttribute="leading" secondItem="fcv-NN-9DA" secondAttribute="leadingMargin" id="hux-Gz-nS9"/>
+                                    <constraint firstItem="a5B-9e-t2N" firstAttribute="leading" secondItem="fcv-NN-9DA" secondAttribute="leading" id="jVs-Lw-5uV"/>
                                     <constraint firstItem="5po-N6-kWR" firstAttribute="top" secondItem="fcv-NN-9DA" secondAttribute="topMargin" id="wDX-4S-t71"/>
                                 </constraints>
                                 <connections>
