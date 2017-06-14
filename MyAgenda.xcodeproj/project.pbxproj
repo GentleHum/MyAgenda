@@ -48,6 +48,7 @@
 		E0B895B91ED608C200A6CD12 /* DaysCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */; };
 		E0B895BB1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */; };
 		E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */; };
+		E0CF01C21EF0BEB20036A94C /* AllItemsTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewController.swift; sourceTree = "<group>"; };
 		E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSectionHeader.swift; sourceTree = "<group>"; };
+		E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllItemsTable.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			children = (
 				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
+				E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */,
 				E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 				7ED746A91E805A92009BF039 /* Main.storyboard */,
@@ -448,6 +451,7 @@
 			files = (
 				7ED746B31E805A92009BF039 /* LaunchScreen.storyboard in Resources */,
 				7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */,
+				E0CF01C21EF0BEB20036A94C /* AllItemsTable.storyboard in Resources */,
 				E0262C5E1EEF74E800F97DFB /* DaysTable.storyboard in Resources */,
 				7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */,
 				7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */,
