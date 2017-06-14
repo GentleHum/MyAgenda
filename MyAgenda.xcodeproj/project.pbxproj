@@ -34,7 +34,6 @@
 		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
 		7EFDCCFF1E8EFA0C0002A4A5 /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFE1E8EFA0C0002A4A5 /* DaysTableViewController.swift */; };
 		E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */; };
-		E0262C5E1EEF74E800F97DFB /* DaysTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */; };
 		E0262C601EEF7E3700F97DFB /* AllItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */; };
 		E069C7DF1EBE01F40006FBB9 /* AgendaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */; };
 		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
@@ -48,7 +47,6 @@
 		E0B895B91ED608C200A6CD12 /* DaysCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */; };
 		E0B895BB1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */; };
 		E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */; };
-		E0CF01C21EF0BEB20036A94C /* AllItemsTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */; };
 		E0CF01C41EF0BF890036A94C /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF01C31EF0BF890036A94C /* CategoryCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +104,6 @@
 		946EB419F3980EC3F741DF23 /* Pods-MyAgenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.release.xcconfig"; sourceTree = "<group>"; };
 		C4D56566D3EBB9B02C7222D4 /* Pods-MyAgenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.debug.xcconfig"; sourceTree = "<group>"; };
 		E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewController.swift; sourceTree = "<group>"; };
-		E0262C5D1EEF74E800F97DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DaysTable.storyboard; sourceTree = "<group>"; };
 		E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		E069C7DE1EBE01F40006FBB9 /* AgendaItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTableViewController.swift; sourceTree = "<group>"; };
 		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 		E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewController.swift; sourceTree = "<group>"; };
 		E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSectionHeader.swift; sourceTree = "<group>"; };
-		E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllItemsTable.storyboard; sourceTree = "<group>"; };
 		E0CF01C31EF0BF890036A94C /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,8 +257,6 @@
 			children = (
 				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
-				E0CF01C11EF0BEB20036A94C /* AllItemsTable.storyboard */,
-				E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 				7ED746A91E805A92009BF039 /* Main.storyboard */,
 			);
@@ -454,8 +448,6 @@
 			files = (
 				7ED746B31E805A92009BF039 /* LaunchScreen.storyboard in Resources */,
 				7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */,
-				E0CF01C21EF0BEB20036A94C /* AllItemsTable.storyboard in Resources */,
-				E0262C5E1EEF74E800F97DFB /* DaysTable.storyboard in Resources */,
 				7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */,
 				7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */,
 				7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */,
@@ -629,14 +621,6 @@
 				7ED746B21E805A92009BF039 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E0262C5C1EEF74E800F97DFB /* DaysTable.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0262C5D1EEF74E800F97DFB /* Base */,
-			);
-			name = DaysTable.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
