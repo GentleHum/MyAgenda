@@ -391,13 +391,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-IX-dBW">
+                                            <rect key="frame" x="0.0" y="58" width="375" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="bb4-zj-mQI"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="pve-Vx-4kJ" firstAttribute="leading" secondItem="Isy-1e-YGI" secondAttribute="leadingMargin" id="49J-7r-c6m"/>
                                     <constraint firstItem="uYp-iG-jiG" firstAttribute="bottom" secondItem="Isy-1e-YGI" secondAttribute="bottomMargin" constant="4" id="6pT-kg-Dvo"/>
                                     <constraint firstItem="pve-Vx-4kJ" firstAttribute="top" secondItem="Isy-1e-YGI" secondAttribute="topMargin" id="CUR-pm-lih"/>
+                                    <constraint firstAttribute="bottom" secondItem="VfJ-IX-dBW" secondAttribute="bottom" id="Jqm-Pw-VVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="VfJ-IX-dBW" secondAttribute="trailing" id="dnh-Vh-FSy"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="pve-Vx-4kJ" secondAttribute="trailing" id="j8W-XJ-Xew"/>
+                                    <constraint firstItem="VfJ-IX-dBW" firstAttribute="leading" secondItem="Isy-1e-YGI" secondAttribute="leading" id="jj2-VD-caw"/>
                                     <constraint firstItem="uYp-iG-jiG" firstAttribute="leading" secondItem="Isy-1e-YGI" secondAttribute="leadingMargin" id="nMt-Pq-R10"/>
                                     <constraint firstItem="uYp-iG-jiG" firstAttribute="top" secondItem="pve-Vx-4kJ" secondAttribute="bottom" constant="4" id="sUx-a3-wPC"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="uYp-iG-jiG" secondAttribute="trailing" id="vim-D4-nym"/>
