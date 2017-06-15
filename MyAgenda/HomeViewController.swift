@@ -21,12 +21,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         static let next7DaysSegue = "Next7DaysSegue"
         static let allItemsSegue = "AllItemsSegue"
         
-        static let daysVC = "DaysVC"
         static let daysCVC = "DaysCVC"
-        static let todayVC = "TodayVC"
-        static let allItemsVC = "AllItemsVC"
         static let allItemsCVC = "AllItemsCVC"
-        static let categoryVC = "CategoryVC"
         static let categoryCVC = "CategoryCVC"
         
         static let rowHeight = 44
