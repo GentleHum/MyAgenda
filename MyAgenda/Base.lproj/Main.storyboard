@@ -233,7 +233,7 @@
         <scene sceneID="1OT-R4-v6G">
             <objects>
                 <collectionViewController id="V4J-zZ-qKj" customClass="DaysCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="i3T-xv-DiK">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="i3T-xv-DiK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -304,6 +304,30 @@
                                     <outlet property="itemNameLabel" destination="YpW-r8-qjm" id="mqh-qF-Nfi"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BlankAgendaItemCVC" id="WhL-Q3-nZl" customClass="BlankCollectionViewCell" customModule="MyAgenda" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-uJ-sgz">
+                                            <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="9cw-xd-tVT"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xLQ-uJ-sgz" firstAttribute="leading" secondItem="WhL-Q3-nZl" secondAttribute="leading" id="5tT-We-LqW"/>
+                                    <constraint firstAttribute="bottom" secondItem="xLQ-uJ-sgz" secondAttribute="bottom" id="EjG-iw-wcf"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLQ-uJ-sgz" secondAttribute="trailing" id="cTy-GD-SVA"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="60"/>
+                            </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgendaItemSectionHeader" id="TbN-iQ-kZI" customClass="AgendaItemSectionHeader" customModule="MyAgenda" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
@@ -346,13 +370,13 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4A-Gi-BRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-1314"/>
+            <point key="canvasLocation" x="1101.449275362319" y="-1314.1304347826087"/>
         </scene>
         <!--All Items Collection View Controller-->
         <scene sceneID="Gcu-uz-CXO">
             <objects>
                 <collectionViewController id="kfK-rF-ihL" customClass="AllItemsCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iu8-Am-bUG">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="iu8-Am-bUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -415,6 +439,29 @@
                                     <outlet property="dueDateLabel" destination="uYp-iG-jiG" id="Rhz-Eb-fs1"/>
                                     <outlet property="itemNameLabel" destination="pve-Vx-4kJ" id="Ozs-B6-mdH"/>
                                 </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BlankAgendaItemCVC" id="5GL-BA-6zy" customClass="BlankCollectionViewCell" customModule="MyAgenda" customModuleProvider="target">
+                                <rect key="frame" x="19.666666666666668" y="98" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvp-ie-Eym">
+                                            <rect key="frame" x="0.0" y="63" width="375" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="cfa-rf-BYW"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nvp-ie-Eym" secondAttribute="bottom" id="AuS-4m-kS7"/>
+                                    <constraint firstAttribute="trailing" secondItem="nvp-ie-Eym" secondAttribute="trailing" id="KoO-5r-YOJ"/>
+                                    <constraint firstItem="nvp-ie-Eym" firstAttribute="leading" secondItem="5GL-BA-6zy" secondAttribute="leading" id="bU6-zT-Vwn"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgendaItemSectionHeader" id="7Ux-mm-2oP" customClass="AgendaItemSectionHeader" customModule="MyAgenda" customModuleProvider="target">

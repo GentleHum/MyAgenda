@@ -15,6 +15,7 @@ class CategoryCollectionViewController: AgendaItemCollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        blankCellsPerSection = 0
         loadSectionData()
         collectionView?.reloadData()
         self.navigationItem.title = categoryName

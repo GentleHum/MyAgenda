@@ -54,7 +54,7 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
     }
 
     override func updateRecord(at indexPath: IndexPath) {
-        let itemToUpdate = agendaItems[indexPath.section][indexPath.row]
+        let itemToUpdate = agendaItems[indexPath.section][agendaItemNumber(from: indexPath)]
         itemToUpdate.dueDate = datesShowing[indexPath.section] as NSDate
         ModelController.sharedInstance.saveContext()
         
