@@ -72,11 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        if let topAsDetailController = secondaryAsNavController.topViewController as? AgendaItemDetailViewController {
-            if topAsDetailController.agendaItem == nil {
+        if let topAsDetailController = secondaryAsNavController.topViewController as? AgendaItemCollectionViewController {
+           if topAsDetailController.agendaItems.count == 0 {
                 // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
                 return true
-            }
+           }
         } else if (secondaryAsNavController.topViewController as? DaysCollectionViewController) != nil {
             return true
         }

@@ -12,11 +12,9 @@
 		7E0631A71E81DA2600581274 /* HomeCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A61E81DA2600581274 /* HomeCategoryTableViewCell.swift */; };
 		7E0631A91E81DA3800581274 /* HomeFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0631A81E81DA3800581274 /* HomeFilterTableViewCell.swift */; };
 		7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */; };
-		7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */; };
 		7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */; };
 		7E8EA6DA1E870478001A8DA3 /* AddAgendaItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */; };
 		7E8EA6DC1E870FA3001A8DA3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */; };
-		7E8EA6DE1E882800001A8DA3 /* AgendaItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */; };
 		7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */; };
 		7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */; };
 		7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A51E805A92009BF039 /* AppDelegate.swift */; };
@@ -67,11 +65,9 @@
 		7E0631A61E81DA2600581274 /* HomeCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		7E0631A81E81DA3800581274 /* HomeFilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFilterTableViewCell.swift; sourceTree = "<group>"; };
 		7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter-Extensions.swift"; sourceTree = "<group>"; };
-		7E89E1191E90451400BA6072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AgendaItemDetail.storyboard; sourceTree = "<group>"; };
 		7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgendaItemViewController.swift; sourceTree = "<group>"; };
 		7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemDetailViewController.swift; sourceTree = "<group>"; };
 		7E9B14CA1E8FF7410045E25E /* MainPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MainPlayground.playground; sourceTree = "<group>"; };
 		7EBDB27C1E8B03D200CAD1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddItem.storyboard; sourceTree = "<group>"; };
 		7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
@@ -150,9 +146,9 @@
 				E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */,
 				E075C69C1EF6EFAC002C820D /* BlankCollectionViewCell.swift */,
 				7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */,
-				7E0631A41E81DA0300581274 /* SegmentChoiceTableViewCell.swift */,
 				7E0631A61E81DA2600581274 /* HomeCategoryTableViewCell.swift */,
 				7E0631A81E81DA3800581274 /* HomeFilterTableViewCell.swift */,
+				7E0631A41E81DA0300581274 /* SegmentChoiceTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -241,7 +237,6 @@
 		7ED746D71E805B7C009BF039 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */,
 				7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */,
 				7ED746B11E805A92009BF039 /* LaunchScreen.storyboard */,
 				7ED746A91E805A92009BF039 /* Main.storyboard */,
@@ -254,7 +249,6 @@
 			children = (
 				7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */,
 				E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */,
-				7E8EA6DD1E882800001A8DA3 /* AgendaItemDetailViewController.swift */,
 				E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */,
 				E0CF01C31EF0BF890036A94C /* CategoryCollectionViewController.swift */,
 				E0B895B81ED608C200A6CD12 /* DaysCollectionViewController.swift */,
@@ -432,7 +426,6 @@
 				7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */,
 				7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */,
 				7ED746B01E805A92009BF039 /* Assets.xcassets in Resources */,
-				7E89E11A1E90451400BA6072 /* AgendaItemDetail.storyboard in Resources */,
 				7ED746AB1E805A92009BF039 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,7 +500,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED746A81E805A92009BF039 /* HomeViewController.swift in Sources */,
-				7E8EA6DE1E882800001A8DA3 /* AgendaItemDetailViewController.swift in Sources */,
 				7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */,
 				7E0631A51E81DA0300581274 /* SegmentChoiceTableViewCell.swift in Sources */,
 				7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */,
@@ -567,14 +559,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7E89E1181E90451400BA6072 /* AgendaItemDetail.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E89E1191E90451400BA6072 /* Base */,
-			);
-			name = AgendaItemDetail.storyboard;
-			sourceTree = "<group>";
-		};
 		7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
