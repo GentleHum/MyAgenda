@@ -84,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-It-fMV">
-                                <rect key="frame" x="27" y="186" width="320" height="216"/>
+                                <rect key="frame" x="27" y="182" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="512834359.19873899">
                                     <!--2017-04-02 13:59:19 +0000-->
                                 </date>
@@ -100,7 +100,7 @@
                             <constraint firstItem="0BL-It-fMV" firstAttribute="centerX" secondItem="0Nq-oN-byc" secondAttribute="centerX" id="fZQ-D3-tN4"/>
                             <constraint firstItem="Zwt-a7-qYM" firstAttribute="top" secondItem="U5Y-5Y-4Oe" secondAttribute="bottom" constant="12" id="rzp-1q-5mB"/>
                             <constraint firstItem="S9r-J6-34K" firstAttribute="leading" secondItem="0Nq-oN-byc" secondAttribute="leadingMargin" id="sGR-8E-eF7"/>
-                            <constraint firstItem="0BL-It-fMV" firstAttribute="top" secondItem="S9r-J6-34K" secondAttribute="bottom" constant="12" id="uNK-O6-Wqp"/>
+                            <constraint firstItem="0BL-It-fMV" firstAttribute="top" secondItem="S9r-J6-34K" secondAttribute="bottom" constant="8" id="uNK-O6-Wqp"/>
                             <constraint firstItem="U5Y-5Y-4Oe" firstAttribute="leading" secondItem="0Nq-oN-byc" secondAttribute="leadingMargin" id="vFa-ho-hKU"/>
                             <constraint firstItem="S9r-J6-34K" firstAttribute="top" secondItem="Zwt-a7-qYM" secondAttribute="bottom" constant="12" id="xBB-dx-2Bl"/>
                         </constraints>
