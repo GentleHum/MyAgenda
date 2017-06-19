@@ -31,7 +31,6 @@ class ModelController {
         "Personal",
         "Work",
         "School",
-        "Movies to Watch",
     ]
     
     private var agendaItems = [AgendaItem]()
