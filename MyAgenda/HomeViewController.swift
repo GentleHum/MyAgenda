@@ -46,7 +46,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         CategoryListItem(name: "Personal", iconName: "category-blue-icon.png", taskCount: 0),
         CategoryListItem(name: "Work", iconName: "category-purple-icon.png", taskCount: 0),
         CategoryListItem(name: "School", iconName: "category-black-icon.png", taskCount: 0),
-        CategoryListItem(name: "Movies to watch", iconName: "", taskCount: 0),
     ]
     
     @IBOutlet weak var mainTableView: UITableView!

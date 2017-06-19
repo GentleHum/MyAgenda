@@ -12,7 +12,7 @@ class AddAgendaItemViewController: UIViewController {
 
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var priorityChoice: UISegmentedControl!
-    @IBOutlet weak var categoryField: UITextField!
+    @IBOutlet weak var categoryChoice: UISegmentedControl!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
@@ -23,14 +23,15 @@ class AddAgendaItemViewController: UIViewController {
         
         dueDatePicker.tintColor = .darkGray
         dueDatePicker.sizeThatFits(CGSize(width: 200, height: 100))
+        dueDatePicker.minimumDate = Date()  // no due dates before today
 
     }
 
     @IBAction func saveWasPressed(_ sender: Any) {
         let priority = priorityChoice.selectedSegmentIndex + 1 // adjust from zero-based
+        let category = categoryChoice.titleForSegment(at: categoryChoice.selectedSegmentIndex) ?? ""
         let dueDate = dueDatePicker.date
         let descriptionText = descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let category = categoryField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         if descriptionText != "" && category != "" {
             // we have an actual name so add the category
             let model = ModelController.sharedInstance
