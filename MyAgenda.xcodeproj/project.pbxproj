@@ -29,6 +29,7 @@
 		7ED746DC1E805FF2009BF039 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DB1E805FF2009BF039 /* HomeTableViewCell.swift */; };
 		7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746DD1E806489009BF039 /* HomeListItem.swift */; };
 		7EFDCCFD1E8EF7640002A4A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */; };
+		E00D69CC1EF8565600C644E7 /* UISegmentedControl-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D69CB1EF8565600C644E7 /* UISegmentedControl-Extensions.swift */; };
 		E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */; };
 		E0262C601EEF7E3700F97DFB /* AllItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */; };
 		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
@@ -93,6 +94,7 @@
 		7EFDCCFC1E8EF7640002A4A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		946EB419F3980EC3F741DF23 /* Pods-MyAgenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.release.xcconfig"; sourceTree = "<group>"; };
 		C4D56566D3EBB9B02C7222D4 /* Pods-MyAgenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAgenda.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyAgenda/Pods-MyAgenda.debug.xcconfig"; sourceTree = "<group>"; };
+		E00D69CB1EF8565600C644E7 /* UISegmentedControl-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl-Extensions.swift"; sourceTree = "<group>"; };
 		E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewController.swift; sourceTree = "<group>"; };
 		E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */,
+				E00D69CB1EF8565600C644E7 /* UISegmentedControl-Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */,
 				E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */,
 				E0262C601EEF7E3700F97DFB /* AllItemsCollectionViewController.swift in Sources */,
+				E00D69CC1EF8565600C644E7 /* UISegmentedControl-Extensions.swift in Sources */,
 				7ED746AE1E805A92009BF039 /* MyAgenda.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,8 @@ import UIKit
 class AgendaItemCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     internal struct Storyboard {
-        static let detailSegue = "AgendaItemDetailSegue"
-        static let detailController = "AgendaItemDetailViewController"
+        static let editItemSegue = "EditItemSegue"
+        static let addItemSegue = "AddItemSegue"
         static let cellIdentifier = "AgendaItemCVC"
         static let blankCellIdentifier = "BlankAgendaItemCVC"
         static let sectionHeader = "AgendaItemSectionHeader"
@@ -149,7 +149,7 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
             alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { action in
                 
                 // perform segue to agenda item detail
-                self.performSegue(withIdentifier: Storyboard.detailSegue,
+                self.performSegue(withIdentifier: Storyboard.editItemSegue,
                                   sender: self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)])
                 
             }))
@@ -184,12 +184,19 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     
     // MARK: - Navigation
     
+    internal func setAddItemDefaults(forController controller: AddAgendaItemViewController) {
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.detailSegue {
+        if segue.identifier == Storyboard.editItemSegue {
             if let agendaItem = sender as? AgendaItem {
-                let controller = segue.destination as! AgendaItemDetailViewController
+                let controller = segue.destination as! AddAgendaItemViewController
                 controller.agendaItem = agendaItem
             }
+        } else if segue.identifier == Storyboard.addItemSegue {
+            print("got the add item segue")  // zap
+            let controller = segue.destination as! AddAgendaItemViewController
+            setAddItemDefaults(forController: controller)
         }
         
     }

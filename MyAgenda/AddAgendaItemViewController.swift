@@ -8,6 +8,8 @@
 
 import UIKit
 
+// add or edit an agenda item
+
 class AddAgendaItemViewController: UIViewController {
 
     @IBOutlet weak var descriptionField: UITextField!
@@ -15,11 +17,14 @@ class AddAgendaItemViewController: UIViewController {
     @IBOutlet weak var categoryChoice: UISegmentedControl!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
+    var agendaItem: AgendaItem?
+    var defaultCategoryName: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "Add to Agenda"
         
         dueDatePicker.tintColor = .darkGray
         dueDatePicker.sizeThatFits(CGSize(width: 200, height: 100))
@@ -27,6 +32,20 @@ class AddAgendaItemViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = (agendaItem == nil) ? "Add to Agenda" : "Edit Agenda"
+
+        if let existingAgendaItem = agendaItem {
+            descriptionField.text = existingAgendaItem.descriptionText
+            dueDatePicker.date = (existingAgendaItem.dueDate)! as Date
+            categoryChoice.setSelectedIndex(toItemWithTitle: existingAgendaItem.category)
+            priorityChoice.selectedSegmentIndex = Int(existingAgendaItem.priority) - 1  // zero-based
+        } else {
+            categoryChoice.setSelectedIndex(toItemWithTitle: defaultCategoryName)
+        }
+    }
     
 
     @IBAction func saveWasPressed(_ sender: Any) {
@@ -34,13 +53,21 @@ class AddAgendaItemViewController: UIViewController {
         let category = categoryChoice.titleForSegment(at: categoryChoice.selectedSegmentIndex) ?? ""
         let dueDate = dueDatePicker.date
         let descriptionText = descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        if descriptionText != "" && category != "" {
-            // we have an actual name so add the category
+        
+        if descriptionText != "" {
             let model = ModelController.sharedInstance
-            _ = model.addAgendaItem(descriptionText: descriptionText,
-                                    category: category,
-                                    priority: priority,
-                                    dueDate: dueDate)
+            if let existingAgendaItem = agendaItem {
+                existingAgendaItem.priority = Int16(priority)
+                existingAgendaItem.category = category
+                existingAgendaItem.dueDate = dueDate as NSDate
+                existingAgendaItem.descriptionText = descriptionText
+                model.saveContext()
+            } else  {
+                _ = model.addAgendaItem(descriptionText: descriptionText,
+                                        category: category,
+                                        priority: priority,
+                                        dueDate: dueDate)
+            }
             
             // and return to the previous controller
             _ = navigationController?.popViewController(animated: true)

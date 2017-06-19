@@ -30,5 +30,10 @@ class CategoryCollectionViewController: AgendaItemCollectionViewController {
         sectionNames.append(categoryName ?? "")
         agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: categoryName))        
     }
+    
+    override func setAddItemDefaults(forController controller: AddAgendaItemViewController) {
+        controller.defaultCategoryName = categoryName
+    }
+
 
 }
