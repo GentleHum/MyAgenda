@@ -14,7 +14,6 @@
 		7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */; };
 		7E8EA6D51E86D8C6001A8DA3 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */; };
 		7E8EA6DA1E870478001A8DA3 /* AddAgendaItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */; };
-		7E8EA6DC1E870FA3001A8DA3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */; };
 		7EBDB27D1E8B03D200CAD1FC /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EBDB27B1E8B03D200CAD1FC /* AddItem.storyboard */; };
 		7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */; };
 		7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED746A51E805A92009BF039 /* AppDelegate.swift */; };
@@ -67,7 +66,6 @@
 		7E89E1161E90365E00BA6072 /* DateFormatter-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter-Extensions.swift"; sourceTree = "<group>"; };
 		7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		7E8EA6D91E870478001A8DA3 /* AddAgendaItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgendaItemViewController.swift; sourceTree = "<group>"; };
-		7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7E9B14CA1E8FF7410045E25E /* MainPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MainPlayground.playground; sourceTree = "<group>"; };
 		7EBDB27C1E8B03D200CAD1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddItem.storyboard; sourceTree = "<group>"; };
 		7EC00C4A1E8D8DAF00BAED00 /* AppGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */,
-				7E8EA6DB1E870FA3001A8DA3 /* RoundedButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -513,7 +510,6 @@
 				E08F6D601EC1134600D47C82 /* CustomNavigationAnimator.swift in Sources */,
 				7E8EA6DA1E870478001A8DA3 /* AddAgendaItemViewController.swift in Sources */,
 				7ED746DC1E805FF2009BF039 /* HomeTableViewCell.swift in Sources */,
-				7E8EA6DC1E870FA3001A8DA3 /* RoundedButton.swift in Sources */,
 				7E0631A91E81DA3800581274 /* HomeFilterTableViewCell.swift in Sources */,
 				E0CF01C41EF0BF890036A94C /* CategoryCollectionViewController.swift in Sources */,
 				7EC00C4B1E8D8DAF00BAED00 /* AppGlobals.swift in Sources */,
