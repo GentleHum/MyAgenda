@@ -10,7 +10,7 @@ import UIKit
 
 // add or edit an agenda item
 
-class AddAgendaItemViewController: UIViewController {
+class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var priorityChoice: UISegmentedControl!
@@ -25,6 +25,8 @@ class AddAgendaItemViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        descriptionField.delegate = self
         
         dueDatePicker.tintColor = .darkGray
         dueDatePicker.sizeThatFits(CGSize(width: 200, height: 100))
@@ -45,6 +47,8 @@ class AddAgendaItemViewController: UIViewController {
         } else {
             categoryChoice.setSelectedIndex(toItemWithTitle: defaultCategoryName)
         }
+        
+        descriptionField.becomeFirstResponder()
     }
     
 
@@ -75,4 +79,12 @@ class AddAgendaItemViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        saveWasPressed(descriptionField)
+        return true
+    }
+    
 }
+
+

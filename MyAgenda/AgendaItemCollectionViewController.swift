@@ -20,9 +20,12 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     }
     
     internal var blankCellsPerSection = 1
-    internal var cellHeight:CGFloat = 44.0
-    internal var blankCellHeight: CGFloat = 1.0
+    internal let cellHeight:CGFloat = 44.0
+    internal let cellMenuHeight: CGFloat = 24.0
+    internal let cellHeightWithMenu: CGFloat = 68.0
+    internal let blankCellHeight: CGFloat = 1.0
     
+    internal var selectedIndexPath:IndexPath?
     
     internal var agendaItems = [[AgendaItem]]()
     internal var sectionNames = [String]()
@@ -45,6 +48,20 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         let height: CGFloat = cellHeight
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
+        
+        selectedIndexPath = nil
+    }
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        // set the screen layout
+        let width = collectionView?.frame.width
+        let height: CGFloat = cellHeight
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width!, height: height)
+        
     }
     
     internal func agendaItemNumber(from indexPath: IndexPath) -> Int {
@@ -73,6 +90,9 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier,
                                                           for: indexPath) as! AgendaItemCollectionViewCell
             cell.agendaItem = agendaItems[indexPath.section][agendaItemNumber(from: indexPath)]
+            
+            cell.menuIsHidden = (indexPath != selectedIndexPath)
+            cell.menuDelegate = self
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.blankCellIdentifier,
@@ -95,7 +115,6 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView,
                                  moveItemAt sourceIndexPath: IndexPath,
                                  to destinationIndexPath: IndexPath) {
-        print("in moveItemAtIndexPath: from \(sourceIndexPath) to \(destinationIndexPath)")  // zap
         let itemToMove = agendaItems[sourceIndexPath.section][agendaItemNumber(from: sourceIndexPath)]
         agendaItems[sourceIndexPath.section].remove(at: agendaItemNumber(from: sourceIndexPath))
         agendaItems[destinationIndexPath.section].insert(itemToMove,
@@ -111,7 +130,7 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     }
     
     override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return indexPath.row > (blankCellsPerSection - 1)
+        return indexPath.row > (blankCellsPerSection - 1) && selectedIndexPath == nil
     }
     
     override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
@@ -126,59 +145,29 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         }
     }
     
+    internal func getItemHeight(from indexPath: IndexPath) -> CGFloat {
+        if indexPath == selectedIndexPath {
+            return cellHeightWithMenu
+        } else {
+            return (indexPath.row > (blankCellsPerSection - 1)) ? cellHeight : blankCellHeight
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = view.frame.width
-        let itemHeight: CGFloat = (indexPath.row > (blankCellsPerSection - 1)) ? cellHeight : blankCellHeight
+        let itemHeight = getItemHeight(from: indexPath)
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        func showAlert(title: String, sender: UIView) {
-            let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Mark as Complete", style: .default, handler: { action in
-                
-                collectionView.performBatchUpdates({Void in
-                    let itemToDelete = self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)]
-                    ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
-                    self.agendaItems[indexPath.section].remove(at: self.agendaItemNumber(from: indexPath))
-                    self.collectionView?.deleteItems(at: [indexPath])
-                }, completion: nil)
-                
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { action in
-                
-                // perform segue to agenda item detail
-                self.performSegue(withIdentifier: Storyboard.editItemSegue,
-                                  sender: self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)])
-                
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-                
-                collectionView.performBatchUpdates({Void in
-                    let itemToDelete = self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)]
-                    ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
-                    self.agendaItems[indexPath.section].remove(at: self.agendaItemNumber(from: indexPath))
-                    self.collectionView?.deleteItems(at: [indexPath])
-                }, completion: nil)
-                
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            alert.popoverPresentationController?.sourceRect = sender.frame
-            alert.popoverPresentationController?.sourceView = collectionView
-            
-            self.present(alert, animated: true, completion: nil)
+
+        if indexPath == selectedIndexPath {
+            selectedIndexPath = nil
+        } else {
+            selectedIndexPath = indexPath
         }
+        collectionView.reloadData()
         
-        let item = agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)]
-        let itemDescription = item.descriptionText ?? ""
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.cellIdentifier,
-                                                      for: indexPath) as! AgendaItemCollectionViewCell
-        
-        showAlert(title: "Perform which action on\n'\(itemDescription)'?", sender: cell)
     }
     
     
@@ -194,11 +183,42 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
                 controller.agendaItem = agendaItem
             }
         } else if segue.identifier == Storyboard.addItemSegue {
-            print("got the add item segue")  // zap
             let controller = segue.destination as! AddAgendaItemViewController
             setAddItemDefaults(forController: controller)
         }
         
     }
     
+}
+
+extension AgendaItemCollectionViewController: AgendaItemMenuDelegate {
+    func didPressComplete() {
+        
+        // for now, complete and delete are the same. 
+        // In the future, may add feature to keep completed tasks in a backlog.
+        self.didPressDelete()
+    }
+    
+    func didPressDelete() {
+        if let indexPath = selectedIndexPath {
+            selectedIndexPath = nil
+            collectionView?.performBatchUpdates({Void in
+                let itemToDelete = self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)]
+                ModelController.sharedInstance.deleteAgendaItem(itemToDelete)
+                self.agendaItems[indexPath.section].remove(at: self.agendaItemNumber(from: indexPath))
+                self.collectionView?.deleteItems(at: [indexPath])
+            }, completion: nil)
+            
+        }
+
+    }
+    func didPressEdit() {
+        
+        // perform segue to edit agenda item detail
+        if let indexPath = selectedIndexPath {
+            self.performSegue(withIdentifier: Storyboard.editItemSegue,
+                              sender: self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)])
+        }
+    }
+   
 }

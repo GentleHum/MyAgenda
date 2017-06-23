@@ -8,16 +8,31 @@
 
 import UIKit
 
+
+protocol AgendaItemMenuDelegate {
+    func didPressComplete()
+    func didPressDelete()
+    func didPressEdit()
+}
+
 class AgendaItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var menuView: UIView!
     
+    var menuDelegate: AgendaItemMenuDelegate?
     
     var agendaItem: AgendaItem? {
         didSet {
             updateUI()
+        }
+    }
+    
+    var menuIsHidden: Bool = true {
+        didSet {
+            menuView?.isHidden = menuIsHidden
         }
     }
     
@@ -45,6 +60,22 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
+        
     }
+    
+    // MARK: input actions
+    
+    @IBAction func didPressComplete(_ sender: UIButton) {
+        menuDelegate?.didPressComplete()
+    }
+    
+    @IBAction func didPressDelete(_ sender: UIButton) {
+        menuDelegate?.didPressDelete()
+    }
+    
+    @IBAction func didPressEdit(_ sender: UIButton) {
+        menuDelegate?.didPressEdit()
+    }
+    
     
 }
