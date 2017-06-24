@@ -7,5 +7,6 @@ target 'MyAgenda' do
   use_frameworks!
 
   # Pods for NetworkingTask
+  pod 'Flurry-iOS-SDK'
   pod 'SwiftDate', '~>4.0.8'
 end

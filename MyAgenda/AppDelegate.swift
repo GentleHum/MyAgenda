@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
-let facebookBlue = UIColor(colorLiteralRed: 59/255.0, green: 89/255.0, blue: 152/255.0, alpha: 1.0) // Facebook blue
-let twitterBlue = UIColor(colorLiteralRed: 64/255.0, green: 153/255.0, blue: 255/255.0, alpha: 1.0)  // Twitter blue
+let flurryApplicationKey = "WYFF5KR6TH6BZ64TRSKK"
 
 
 @UIApplicationMain
@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool  {
+        Flurry.startSession(flurryApplicationKey, with: FlurrySessionBuilder
+            .init()
+            .withCrashReporting(true)
+            .withLogLevel(FlurryLogLevelAll))
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         UINavigationBar.appearance().shadowImage = UIImage()

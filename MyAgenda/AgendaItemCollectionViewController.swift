@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
 
 class AgendaItemCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -196,11 +197,30 @@ extension AgendaItemCollectionViewController: AgendaItemMenuDelegate {
         
         // for now, complete and delete are the same. 
         // In the future, may add feature to keep completed tasks in a backlog.
-        self.didPressDelete()
+        
+        Flurry.logEvent("CompletedAgendaItem")
+        deleteAgendaItem()
     }
     
     func didPressDelete() {
+        Flurry.logEvent("DeletedAgendaItem")
+        deleteAgendaItem()
+    }
+    
+    func didPressEdit() {
+        
+        Flurry.logEvent("EditedAgendaItem")
+
+        // perform segue to edit agenda item detail
         if let indexPath = selectedIndexPath {
+            self.performSegue(withIdentifier: Storyboard.editItemSegue,
+                              sender: self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)])
+        }
+    }
+    
+    internal func deleteAgendaItem() {
+        if let indexPath = selectedIndexPath {
+            
             selectedIndexPath = nil
             collectionView?.performBatchUpdates({Void in
                 let itemToDelete = self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)]
@@ -209,15 +229,6 @@ extension AgendaItemCollectionViewController: AgendaItemMenuDelegate {
                 self.collectionView?.deleteItems(at: [indexPath])
             }, completion: nil)
             
-        }
-
-    }
-    func didPressEdit() {
-        
-        // perform segue to edit agenda item detail
-        if let indexPath = selectedIndexPath {
-            self.performSegue(withIdentifier: Storyboard.editItemSegue,
-                              sender: self.agendaItems[indexPath.section][self.agendaItemNumber(from: indexPath)])
         }
     }
    
