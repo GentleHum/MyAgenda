@@ -55,7 +55,7 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
             }
             
             if categoryImage != nil {
-                if let iconName = AppGlobals.iconDictionary[item.category ?? ""] {
+                if let iconName = AppGlobals.iconDictionary[NSLocalizedString(item.category ?? "", comment: "Category")] {
                     categoryImage.image = UIImage(named: iconName)
                 }
             }

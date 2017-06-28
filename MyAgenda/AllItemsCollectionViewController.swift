@@ -25,7 +25,8 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         sectionNames = ModelController.sharedInstance.getCategoryNames()
         
         for categoryName in sectionNames {
-            agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: categoryName))
+            let localizedCategoryName = NSLocalizedString(categoryName, comment: "category")
+            agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: localizedCategoryName))
         }
     }
     

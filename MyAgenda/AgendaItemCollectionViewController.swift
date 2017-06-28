@@ -105,7 +105,7 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                             withReuseIdentifier: Storyboard.sectionHeader,
                                                                             for: indexPath) as! AgendaItemSectionHeader
-        sectionHeader.title = sectionNames[indexPath.section]
+        sectionHeader.title = NSLocalizedString(sectionNames[indexPath.section], comment: "category")
         
         return sectionHeader
     }
