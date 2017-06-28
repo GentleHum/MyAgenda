@@ -106,7 +106,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // update the category numbers
         for itemNumber in 0..<categoryListItems.count {
             categoryListItems[itemNumber].taskCount =
-                ModelController.sharedInstance.getAgendaItemCount(matching: categoryListItems[itemNumber].name)
+                ModelController.sharedInstance.getAgendaItemCount(matching: Int16(itemNumber))
         }
     }
     
@@ -182,7 +182,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let categoryNumber = indexPath.row - homeListItems.count - 1
                 if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.categoryCVC) as? UINavigationController {
                     if let destinationController = navigationController.childViewControllers.first as? CategoryCollectionViewController {
-                        destinationController.categoryName = categoryListItems[categoryNumber].name
+                        destinationController.categoryNumber = categoryNumber
                         self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                     }
                 }

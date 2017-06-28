@@ -24,15 +24,15 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         agendaItems.removeAll()
         sectionNames = ModelController.sharedInstance.getCategoryNames()
         
-        for categoryName in sectionNames {
-            let localizedCategoryName = NSLocalizedString(categoryName, comment: "category")
-            agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: localizedCategoryName))
+        for categoryNumber in 0..<sectionNames.count {
+//            let localizedCategoryName = NSLocalizedString(categoryName, comment: "category")
+            agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: Int16(categoryNumber)))
         }
     }
     
     override func updateRecord(at indexPath: IndexPath) {
         let itemToUpdate = agendaItems[indexPath.section][agendaItemNumber(from: indexPath)]
-        itemToUpdate.category = sectionNames[indexPath.section]
+        itemToUpdate.category = Int16(indexPath.section)
         ModelController.sharedInstance.saveContext()
     }
     

@@ -44,7 +44,7 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
             }
             
             if categoryLabel != nil {
-                categoryLabel.text = NSLocalizedString(item.category ?? "", comment: "Category")
+                categoryLabel.text = ModelController.sharedInstance.localizedCategoryName(Int(item.category))
             }
             
             if dueDateLabel != nil {
@@ -55,9 +55,8 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
             }
             
             if categoryImage != nil {
-                if let iconName = AppGlobals.iconDictionary[NSLocalizedString(item.category ?? "", comment: "Category")] {
-                    categoryImage.image = UIImage(named: iconName)
-                }
+                let iconName = AppGlobals.iconArray[Int(item.category)]
+                categoryImage.image = UIImage(named: iconName)
             }
         }
         

@@ -14,10 +14,10 @@ import Foundation
 struct AppGlobals {
     static let dateFormatter = DateFormatter()
     
-    static let iconDictionary: Dictionary<String,String> = [
-        "Personal" : "category-blue-icon.png",
-        "Work" : "category-purple-icon.png",
-        "School" : "category-black-icon.png",
+    static let iconArray = [
+        "category-blue-icon.png",
+        "category-purple-icon.png",
+        "category-black-icon.png",
     ]
 
 }

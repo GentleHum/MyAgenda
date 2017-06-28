@@ -18,7 +18,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     var agendaItem: AgendaItem?
-    var defaultCategoryName: String?
+    var defaultCategoryNumber: Int?
     
     
     override func viewDidLoad() {
@@ -44,10 +44,10 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
         if let existingAgendaItem = agendaItem {
             descriptionField.text = existingAgendaItem.descriptionText
             dueDatePicker.date = (existingAgendaItem.dueDate)! as Date
-            categoryChoice.setSelectedIndex(toItemWithTitle: existingAgendaItem.category)
+            categoryChoice.selectedSegmentIndex = Int(existingAgendaItem.category)
             priorityChoice.selectedSegmentIndex = Int(existingAgendaItem.priority) - 1  // zero-based
         } else {
-            categoryChoice.setSelectedIndex(toItemWithTitle: defaultCategoryName)
+            categoryChoice.selectedSegmentIndex = defaultCategoryNumber ?? 0
         }
         
         descriptionField.becomeFirstResponder()
@@ -56,7 +56,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func saveWasPressed(_ sender: Any) {
         let priority = priorityChoice.selectedSegmentIndex + 1 // adjust from zero-based
-        let category = categoryChoice.titleForSegment(at: categoryChoice.selectedSegmentIndex) ?? ""
+        let category = categoryChoice.selectedSegmentIndex
         let dueDate = dueDatePicker.date
         let descriptionText = descriptionField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
@@ -64,7 +64,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
             let model = ModelController.sharedInstance
             if let existingAgendaItem = agendaItem {
                 existingAgendaItem.priority = Int16(priority)
-                existingAgendaItem.category = category
+                existingAgendaItem.category = Int16(category)
                 existingAgendaItem.dueDate = dueDate as NSDate
                 existingAgendaItem.descriptionText = descriptionText
                 model.saveContext()

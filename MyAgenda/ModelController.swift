@@ -76,12 +76,12 @@ class ModelController {
     }
     
     
-    private func buildAgendaItemQuery(categoryName: String? = nil) -> NSFetchRequest<NSFetchRequestResult> {
+    private func buildAgendaItemQuery(categoryNumber: Int16? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: AgendaItemProperties.entityName)
-        if let name = categoryName {
-            request.predicate = NSPredicate(format: "category == %@", name)
+        if let categoryNum = categoryNumber {
+            request.predicate = NSPredicate(format: "category = %@",
+                                            argumentArray: [categoryNum])
         }
-        
         return request
     }
     
@@ -99,10 +99,10 @@ class ModelController {
         return count
     }
     
-    func getAgendaItemCount(matching categoryName: String? = nil) -> Int {
+    func getAgendaItemCount(matching categoryNumber: Int16? = nil) -> Int {
         var count = 0
         let context = self.persistentContainer.viewContext
-        let request = buildAgendaItemQuery(categoryName: categoryName)
+        let request = buildAgendaItemQuery(categoryNumber: categoryNumber)
         request.includesPropertyValues = false
         
         do {
@@ -115,9 +115,9 @@ class ModelController {
     }
     
     
-    func loadAgendaItems(matching categoryName: String? = nil) -> [AgendaItem] {
+    func loadAgendaItems(matching categoryNumber: Int16) -> [AgendaItem] {
         let context = self.persistentContainer.viewContext
-        let request = buildAgendaItemQuery(categoryName: categoryName)
+        let request = buildAgendaItemQuery(categoryNumber: categoryNumber)
         
         do {
             let results = try context.fetch(request)
@@ -145,7 +145,7 @@ class ModelController {
         return [AgendaItem]()
     }
     
-    func addAgendaItem(descriptionText: String, category: String,
+    func addAgendaItem(descriptionText: String, category: Int,
                        priority: Int, dueDate: Date) -> AgendaItem? {
         let context = self.persistentContainer.viewContext
         
@@ -179,6 +179,14 @@ class ModelController {
     
     func getCategoryNames() -> [String] {
         return categoryNames
+    }
+    
+    func categoryName(_ categoryNumber: Int) -> String {
+        return categoryNames[categoryNumber]
+    }
+    
+    func localizedCategoryName(_ categoryNumber: Int) -> String {
+        return NSLocalizedString(categoryNames[categoryNumber], comment: "category")
     }
     
     // MARK: - Core Data Saving support
