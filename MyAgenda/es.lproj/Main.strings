@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Agenda Item"; ObjectID = "5po-N6-kWR"; */
+"5po-N6-kWR.text" = "Orden del día";
+
+/* Class = "UILabel"; text = "Due Date"; ObjectID = "8N5-SB-UUH"; */
+"8N5-SB-UUH.text" = "Fecha Debida";
+
+/* Class = "UILabel"; text = "Section Name"; ObjectID = "BCk-at-ofe"; */
+"BCk-at-ofe.text" = "Nombre de Sección";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DMe-U0-UFk"; */
+"DMe-U0-UFk.text" = "Etiqueta";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "NY7-V4-ao7"; */
+"NY7-V4-ao7.text" = "10";
+
+/* Class = "UILabel"; text = "Agenda Item"; ObjectID = "YpW-r8-qjm"; */
+"YpW-r8-qjm.text" = "Orden del día";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "a73-cn-9ij"; */
+"a73-cn-9ij.text" = "10";
+
+/* Class = "UILabel"; text = "Section Name"; ObjectID = "equ-ua-nqP"; */
+"equ-ua-nqP.text" = "Nombre de Sección";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fsQ-Zd-ZI6"; */
+"fsQ-Zd-ZI6.text" = "Etiqueta";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jxO-jr-sZX"; */
+"jxO-jr-sZX.text" = "Etiqueta";
+
+/* Class = "UINavigationItem"; title = "MyAgenda"; ObjectID = "ncv-W8-hYY"; */
+"ncv-W8-hYY.title" = "MiOrden";
+
+/* Class = "UILabel"; text = "Agenda Item"; ObjectID = "pve-Vx-4kJ"; */
+"pve-Vx-4kJ.text" = "Orden del día";
+
+/* Class = "UILabel"; text = "Categories"; ObjectID = "qx0-s3-Iai"; */
+"qx0-s3-Iai.text" = "Categorías";
+
+/* Class = "UILabel"; text = "Due Date"; ObjectID = "uYp-iG-jiG"; */
+"uYp-iG-jiG.text" = "Fecha Debida";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "w3F-A0-TUm"; */
+"w3F-A0-TUm.text" = "Etiqueta";

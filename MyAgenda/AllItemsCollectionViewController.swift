@@ -15,7 +15,7 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         
         loadSectionData()
         collectionView?.reloadData()
-        self.navigationItem.title = "All Items"
+        self.navigationItem.title = NSLocalizedString("All Items", comment: "All Items")
     }
     
     
@@ -30,7 +30,6 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
     }
     
     override func updateRecord(at indexPath: IndexPath) {
-        print("AllItemsCollectionViewController: updateRecord: indexPath: \(indexPath)")  // zap
         let itemToUpdate = agendaItems[indexPath.section][agendaItemNumber(from: indexPath)]
         itemToUpdate.category = sectionNames[indexPath.section]
         ModelController.sharedInstance.saveContext()

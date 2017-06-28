@@ -37,7 +37,9 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.title = (agendaItem == nil) ? "Add to Agenda" : "Edit Agenda"
+        self.navigationItem.title = (agendaItem == nil) ?
+            NSLocalizedString("Add To Agenda", comment: "Add To Agenda") :
+            NSLocalizedString("Edit Agenda", comment: "Edit Agenda")
 
         if let existingAgendaItem = agendaItem {
             descriptionField.text = existingAgendaItem.descriptionText

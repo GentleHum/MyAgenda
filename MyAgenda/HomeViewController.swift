@@ -37,15 +37,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let daysToShow = [1, 7]  // today, next 7 days
     
     private var homeListItems = [
-        HomeListItem(name: "Today", iconName: "Today-icon.png", taskCount: 0),
-        HomeListItem(name: "Next 7 Days", iconName: "Next7Days-icon.png", taskCount: 0),
-        HomeListItem(name: "All", iconName: "AllItems-icon", taskCount: 0),
+        HomeListItem(name: NSLocalizedString("Today", comment: "Today"),
+                     iconName: "Today-icon.png", taskCount: 0),
+        HomeListItem(name: NSLocalizedString("Next 7 Days", comment: "Next 7 Days"),
+                     iconName: "Next7Days-icon.png", taskCount: 0),
+        HomeListItem(name: NSLocalizedString("All", comment: "All"),
+                     iconName: "AllItems-icon", taskCount: 0),
     ]
     
     private var categoryListItems = [
-        CategoryListItem(name: "Personal", iconName: "category-blue-icon.png", taskCount: 0),
-        CategoryListItem(name: "Work", iconName: "category-purple-icon.png", taskCount: 0),
-        CategoryListItem(name: "School", iconName: "category-black-icon.png", taskCount: 0),
+        CategoryListItem(name: NSLocalizedString("Personal", comment: "Personal"),
+                         iconName: "category-blue-icon.png", taskCount: 0),
+        CategoryListItem(name: NSLocalizedString("Work", comment: "Work"),
+                         iconName: "category-purple-icon.png", taskCount: 0),
+        CategoryListItem(name: NSLocalizedString("School", comment: "School"),
+                         iconName: "category-black-icon.png", taskCount: 0),
     ]
     
     @IBOutlet weak var mainTableView: UITableView!

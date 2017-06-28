@@ -18,7 +18,9 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         
         loadSectionData()
         collectionView?.reloadData()
-        self.navigationItem.title = (daysToShow > 1) ? "Next \(daysToShow) Days" : "Today"
+        self.navigationItem.title = (daysToShow > 1) ?
+            "\(NSLocalizedString("Next", comment: "Next")) \(daysToShow) \(NSLocalizedString("Days", comment: "Days"))" :
+            NSLocalizedString("Today", comment: "Today")
     }
     
     private func loadSectionData() {
@@ -33,7 +35,7 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         let backDate = 10000.days.ago(from: currentDay!)
         let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
         if overdueItems.count > 0 {
-            sectionNames.append("Overdue")
+            sectionNames.append(NSLocalizedString("Overdue", comment: "Overdue"))
             agendaItems.append(overdueItems)
             let previousDay = 1.days.ago(from: currentDay!)
             datesShowing.append(previousDay!)

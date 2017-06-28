@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  MyAgenda
+
+  Created by Michael Vork on 6/28/17.
+  Copyright © 2017 Mike Vork. All rights reserved.
+*/
+
+"Add To Agenda" = "Añadir a Agenda";
+"All" = "Todo";
+"All Items" = "Todos Los Temas ";
+"Days" = "Días";
+"Edit Agenda" = "Corregir a Agenda";
+"Next" = "Próximo";
+"Next 7 Days" = "Próximo 7 Días";
+"Overdue" = "Vencido";
+"Personal" = "Personal";
+"School" = "Escuela";
+"Today" = "Hoy";
+"Work" = "Trabajo";
