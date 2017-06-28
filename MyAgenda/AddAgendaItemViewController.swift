@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Flurry_iOS_SDK
 
 // add or edit an agenda item
 
@@ -68,7 +67,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
                 existingAgendaItem.descriptionText = descriptionText
                 model.saveContext()
             } else  {
-                Flurry.logEvent("AddedAgendaItem")
+                AnalyticsController.sharedInstance.addedAgendaItem()
 
                 _ = model.addAgendaItem(descriptionText: descriptionText,
                                         category: category,

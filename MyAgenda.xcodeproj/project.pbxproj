@@ -40,6 +40,7 @@
 		E0B895BB1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */; };
 		E0B895BD1ED621D100A6CD12 /* AgendaItemSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */; };
 		E0CF01C41EF0BF890036A94C /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF01C31EF0BF890036A94C /* CategoryCollectionViewController.swift */; };
+		E0E759D71F040CB300DF4316 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E759D61F040CB300DF4316 /* AnalyticsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		E0B895BA1ED60B7100A6CD12 /* AgendaItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E0B895BC1ED621D100A6CD12 /* AgendaItemSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemSectionHeader.swift; sourceTree = "<group>"; };
 		E0CF01C31EF0BF890036A94C /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		E0E759D61F040CB300DF4316 /* AnalyticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */,
+				E0E759D61F040CB300DF4316 /* AnalyticsController.swift */,
 				7ED746DD1E806489009BF039 /* HomeListItem.swift */,
 				7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */,
 			);
@@ -510,6 +513,7 @@
 				7E0631A71E81DA2600581274 /* HomeCategoryTableViewCell.swift in Sources */,
 				E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */,
 				7ED746A61E805A92009BF039 /* AppDelegate.swift in Sources */,
+				E0E759D71F040CB300DF4316 /* AnalyticsController.swift in Sources */,
 				7E89E1171E90365E00BA6072 /* DateFormatter-Extensions.swift in Sources */,
 				E08F6D601EC1134600D47C82 /* CustomNavigationAnimator.swift in Sources */,
 				7E8EA6DA1E870478001A8DA3 /* AddAgendaItemViewController.swift in Sources */,

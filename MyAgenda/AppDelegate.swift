@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Flurry_iOS_SDK
-
-let flurryApplicationKey = "WYFF5KR6TH6BZ64TRSKK"
 
 
 @UIApplicationMain
@@ -20,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool  {
-        Flurry.startSession(flurryApplicationKey, with: FlurrySessionBuilder
-            .init()
-            .withCrashReporting(true)
-            .withLogLevel(FlurryLogLevelAll))
+        
+        AnalyticsController.sharedInstance.startSession()
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         UINavigationBar.appearance().shadowImage = UIImage()

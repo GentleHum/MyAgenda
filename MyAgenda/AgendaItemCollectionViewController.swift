@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Flurry_iOS_SDK
-
 
 class AgendaItemCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -195,21 +193,21 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
 extension AgendaItemCollectionViewController: AgendaItemMenuDelegate {
     func didPressComplete() {
         
-        // for now, complete and delete are the same. 
-        // In the future, may add feature to keep completed tasks in a backlog.
+        AnalyticsController.sharedInstance.completedAgendaItem()
         
-        Flurry.logEvent("CompletedAgendaItem")
+        // for now, complete and delete are the same.
+        // In the future, may add feature to keep completed tasks in a backlog.
+
         deleteAgendaItem()
     }
     
     func didPressDelete() {
-        Flurry.logEvent("DeletedAgendaItem")
+        AnalyticsController.sharedInstance.deletedAgendaItem()
         deleteAgendaItem()
     }
     
     func didPressEdit() {
-        
-        Flurry.logEvent("EditedAgendaItem")
+        AnalyticsController.sharedInstance.editedAgendaItem()
 
         // perform segue to edit agenda item detail
         if let indexPath = selectedIndexPath {
