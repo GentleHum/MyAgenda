@@ -44,7 +44,7 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
             }
             
             if categoryLabel != nil {
-                categoryLabel.text = item.category
+                categoryLabel.text = NSLocalizedString(item.category ?? "", comment: "Category")
             }
             
             if dueDateLabel != nil {
