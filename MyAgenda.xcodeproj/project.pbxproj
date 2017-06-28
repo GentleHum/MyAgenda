@@ -203,6 +203,7 @@
 				7E89E1151E90361B00BA6072 /* Extensions */,
 				7EC00C491E8D8D8800BAED00 /* Globals */,
 				7ED746D61E805B6D009BF039 /* Models */,
+				E0500A631F04435300901F99 /* Services */,
 				7ED746D71E805B7C009BF039 /* Storyboards */,
 				E08F6D621EC11EB000D47C82 /* Supporting Files */,
 				7ED746DA1E805CBA009BF039 /* Views */,
@@ -236,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */,
-				E0E759D61F040CB300DF4316 /* AnalyticsController.swift */,
 				7ED746DD1E806489009BF039 /* HomeListItem.swift */,
 				7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */,
 			);
@@ -297,6 +297,14 @@
 				946EB419F3980EC3F741DF23 /* Pods-MyAgenda.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0500A631F04435300901F99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E0E759D61F040CB300DF4316 /* AnalyticsController.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		E08F6D611EC113CA00D47C82 /* Animations */ = {
