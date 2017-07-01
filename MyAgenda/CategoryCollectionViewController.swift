@@ -40,6 +40,7 @@ class CategoryCollectionViewController: AgendaItemCollectionViewController {
     }
     
     override func setAddItemDefaults(forController controller: AddAgendaItemViewController) {
+        super.setAddItemDefaults(forController: controller)
         controller.defaultCategoryNumber = categoryNumber
     }
 

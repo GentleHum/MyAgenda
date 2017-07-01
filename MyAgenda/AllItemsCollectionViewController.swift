@@ -25,7 +25,6 @@ class AllItemsCollectionViewController: AgendaItemCollectionViewController {
         sectionNames = ModelController.sharedInstance.getCategoryNames()
         
         for categoryNumber in 0..<sectionNames.count {
-//            let localizedCategoryName = NSLocalizedString(categoryName, comment: "category")
             agendaItems.append(ModelController.sharedInstance.loadAgendaItems(matching: Int16(categoryNumber)))
         }
     }

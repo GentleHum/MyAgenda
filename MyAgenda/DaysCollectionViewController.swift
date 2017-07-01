@@ -10,7 +10,8 @@ import UIKit
 
 class DaysCollectionViewController: AgendaItemCollectionViewController {
     
-    var daysToShow = 1      // defaults to Today
+    var daysToShow = 1    // defaults to Today
+    
     var datesShowing = [Date]()
     
     override func viewWillAppear(_ animated: Bool) {

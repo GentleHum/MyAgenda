@@ -214,7 +214,11 @@
                             <constraint firstAttribute="trailing" secondItem="wfL-Yr-sjt" secondAttribute="trailing" id="jim-3g-miR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MyAgenda" id="ncv-W8-hYY"/>
+                    <navigationItem key="navigationItem" title="MyAgenda" id="ncv-W8-hYY">
+                        <barButtonItem key="rightBarButtonItem" image="Settings-icon" id="k2o-dZ-sRi">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="wfL-Yr-sjt" id="PRT-kK-4jU"/>
                     </connections>
@@ -227,7 +231,7 @@
         <scene sceneID="1OT-R4-v6G">
             <objects>
                 <collectionViewController id="V4J-zZ-qKj" customClass="DaysCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="i3T-xv-DiK">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="i3T-xv-DiK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +424,7 @@
         <scene sceneID="Gcu-uz-CXO">
             <objects>
                 <collectionViewController id="kfK-rF-ihL" customClass="AllItemsCollectionViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="iu8-Am-bUG">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iu8-Am-bUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -432,7 +436,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgendaItemCVC" id="Isy-1e-YGI" customClass="AgendaItemCollectionViewCell" customModule="MyAgenda" customModuleProvider="target">
-                                <rect key="frame" x="20" y="34" width="375" height="104"/>
+                                <rect key="frame" x="19.666666666666668" y="34" width="375" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
@@ -836,6 +840,7 @@
     <resources>
         <image name="Checkmark" width="16" height="16"/>
         <image name="Edit-pencil" width="16" height="16"/>
+        <image name="Settings-icon" width="16" height="16"/>
         <image name="Trash-basket" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>

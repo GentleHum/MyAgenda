@@ -56,7 +56,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var mainTableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,7 +64,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         mainTableView.dataSource = self
         
         navigationController?.delegate = self
-
+        
+        
         // no title on the navigation back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -76,6 +76,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.dataChangeObserver),
                                                name: NSNotification.Name(rawValue: ModelController.Notifications.dataChanged),
                                                object: nil)
+        
+        SettingsController.sharedInstance.load()
 
     }
     
@@ -174,6 +176,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.allItemsCVC) as? UINavigationController {
                 if navigationController.childViewControllers.first is AllItemsCollectionViewController {
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
+
                 }
             }
         

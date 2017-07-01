@@ -30,6 +30,7 @@
 		E00D69CE1EFDCA4100C644E7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D69CD1EFDCA4100C644E7 /* MenuView.swift */; };
 		E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */; };
 		E0262C601EEF7E3700F97DFB /* AllItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */; };
+		E0500A651F07320C00901F99 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0500A641F07320C00901F99 /* SettingsController.swift */; };
 		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
 		E069C7E61EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */; };
 		E069C7E71EBE9D4F0006FBB9 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */; };
@@ -94,6 +95,7 @@
 		E00D69CD1EFDCA4100C644E7 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewController.swift; sourceTree = "<group>"; };
 		E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsCollectionViewController.swift; sourceTree = "<group>"; };
+		E0500A641F07320C00901F99 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTests.swift; sourceTree = "<group>"; };
 		E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				7ED746AC1E805A92009BF039 /* MyAgenda.xcdatamodeld */,
 				7ED746DD1E806489009BF039 /* HomeListItem.swift */,
 				7E8EA6D41E86D8C6001A8DA3 /* ModelController.swift */,
+				E0500A641F07320C00901F99 /* SettingsController.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0500A651F07320C00901F99 /* SettingsController.swift in Sources */,
 				7ED746A81E805A92009BF039 /* HomeViewController.swift in Sources */,
 				7ED746DE1E806489009BF039 /* HomeListItem.swift in Sources */,
 				7E0631A51E81DA0300581274 /* SegmentChoiceTableViewCell.swift in Sources */,

@@ -173,6 +173,10 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     // MARK: - Navigation
     
     internal func setAddItemDefaults(forController controller: AddAgendaItemViewController) {
+        let settings = SettingsController.sharedInstance
+        controller.defaultCategoryNumber = settings.defaultCategory
+        controller.defaultPriority = settings.defaultPriority
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -19,6 +19,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
     
     var agendaItem: AgendaItem?
     var defaultCategoryNumber: Int?
+    var defaultPriority: Int?
     
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class AddAgendaItemViewController: UIViewController, UITextFieldDelegate {
             priorityChoice.selectedSegmentIndex = Int(existingAgendaItem.priority) - 1  // zero-based
         } else {
             categoryChoice.selectedSegmentIndex = defaultCategoryNumber ?? 0
+            priorityChoice.selectedSegmentIndex = (defaultPriority ?? 1) - 1  // zero-based
         }
         
         descriptionField.becomeFirstResponder()
