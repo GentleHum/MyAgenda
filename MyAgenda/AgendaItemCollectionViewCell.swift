@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol AgendaItemMenuDelegate {
+protocol AgendaItemMenuDelegate: NSObjectProtocol {
     func didPressComplete()
     func didPressDelete()
     func didPressEdit()
@@ -22,7 +22,7 @@ class AgendaItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var menuView: UIView!
     
-    var menuDelegate: AgendaItemMenuDelegate?
+    weak var menuDelegate: AgendaItemMenuDelegate?
     
     var agendaItem: AgendaItem? {
         didSet {
