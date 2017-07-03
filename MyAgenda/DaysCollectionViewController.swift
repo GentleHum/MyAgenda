@@ -11,6 +11,7 @@ import UIKit
 class DaysCollectionViewController: AgendaItemCollectionViewController {
     
     var daysToShow = 1    // defaults to Today
+    var showOverdueItems = true
     
     var datesShowing = [Date]()
     
@@ -33,13 +34,15 @@ class DaysCollectionViewController: AgendaItemCollectionViewController {
         var currentDay = NSCalendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())  // today
         
         // load overdue items
-        let backDate = 10000.days.ago(from: currentDay!)
-        let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
-        if overdueItems.count > 0 {
-            sectionNames.append(NSLocalizedString("Overdue", comment: "Overdue"))
-            agendaItems.append(overdueItems)
-            let previousDay = 1.days.ago(from: currentDay!)
-            datesShowing.append(previousDay!)
+        if showOverdueItems {
+            let backDate = 10000.days.ago(from: currentDay!)
+            let overdueItems = ModelController.sharedInstance.loadAgendaItems(from: backDate!, to: currentDay!)
+            if overdueItems.count > 0 {
+                sectionNames.append(NSLocalizedString("Overdue", comment: "Overdue"))
+                agendaItems.append(overdueItems)
+                let previousDay = 1.days.ago(from: currentDay!)
+                datesShowing.append(previousDay!)
+            }
         }
         
         // load daily items

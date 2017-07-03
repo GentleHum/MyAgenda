@@ -168,6 +168,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.daysCVC) as? UINavigationController {
                 if let destinationController = navigationController.childViewControllers.first as? DaysCollectionViewController {
                     destinationController.daysToShow = daysToShow[indexPath.row]
+                    destinationController.showOverdueItems = true
                     self.splitViewController?.showDetailViewController(navigationController, sender: nil)
                 }
             }
