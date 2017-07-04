@@ -72,6 +72,9 @@ class ModelController {
         request.predicate = NSPredicate(format: "(dueDate >= %@) AND (dueDate <= %@)",
                                         argumentArray: [startDate!, endDate!] )
         
+        request.sortDescriptors = [ NSSortDescriptor(key: AgendaItemProperties.dueDateField, ascending: true),
+                                    NSSortDescriptor(key: AgendaItemProperties.priorityField, ascending: true) ]
+        
         return request
     }
     
@@ -82,6 +85,10 @@ class ModelController {
             request.predicate = NSPredicate(format: "category = %@",
                                             argumentArray: [categoryNum])
         }
+        
+        request.sortDescriptors = [ NSSortDescriptor(key: AgendaItemProperties.dueDateField, ascending: true),
+                                    NSSortDescriptor(key: AgendaItemProperties.priorityField, ascending: true) ]
+
         return request
     }
     
