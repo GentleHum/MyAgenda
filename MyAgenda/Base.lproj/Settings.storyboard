@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYC-oR-WdM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Wvf-in-XWj">
+            <objects>
+                <viewController id="AYC-oR-WdM" customClass="SettingsViewController" customModule="MyAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ioI-T8-wra"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDX-kl-nRd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eVM-f7-SMK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="DP3-qB-MHg">
+                                <rect key="frame" x="20" y="112" width="374" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRQ-zf-UAn">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="GVV-Q1-7H0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WNz-Ey-VWW">
+                                        <rect key="frame" x="80" y="0.0" width="294" height="25"/>
+                                        <segments>
+                                            <segment title="Personal"/>
+                                            <segment title="Work"/>
+                                            <segment title="School"/>
+                                        </segments>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WNz-Ey-VWW" firstAttribute="height" secondItem="mRQ-zf-UAn" secondAttribute="height" id="aMK-Qw-ZHA"/>
+                                    <constraint firstAttribute="height" constant="24" id="hFk-Bq-etN"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cie-VV-Oaq">
+                                <rect key="frame" x="20" y="152" width="374" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njg-Gz-mRv">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="OgW-WS-Y4x"/>
+                                            <constraint firstAttribute="width" constant="80" id="SdO-wD-kiK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zf3-Il-a2L">
+                                        <rect key="frame" x="80" y="0.0" width="294" height="25"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                            <segment title="4"/>
+                                        </segments>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="jvT-Lr-K0f"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agenda Item Defaults" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI4-zg-uhx">
+                                <rect key="frame" x="20" y="72" width="374" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="89o-Sa-MKo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QI4-zg-uhx" firstAttribute="leading" secondItem="eVM-f7-SMK" secondAttribute="leadingMargin" id="Ji6-G3-FUk"/>
+                            <constraint firstItem="QI4-zg-uhx" firstAttribute="trailing" secondItem="eVM-f7-SMK" secondAttribute="trailingMargin" id="OZs-Uv-D1g"/>
+                            <constraint firstItem="DP3-qB-MHg" firstAttribute="leading" secondItem="eVM-f7-SMK" secondAttribute="leadingMargin" id="QHD-ww-q2i"/>
+                            <constraint firstItem="cie-VV-Oaq" firstAttribute="top" secondItem="DP3-qB-MHg" secondAttribute="bottom" constant="16" id="eHv-Yw-9vf"/>
+                            <constraint firstItem="cie-VV-Oaq" firstAttribute="leading" secondItem="eVM-f7-SMK" secondAttribute="leadingMargin" id="fRD-og-o4y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DP3-qB-MHg" secondAttribute="trailing" id="lxn-RG-mQk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cie-VV-Oaq" secondAttribute="trailing" id="txE-Gz-yJv"/>
+                            <constraint firstItem="DP3-qB-MHg" firstAttribute="top" secondItem="QI4-zg-uhx" secondAttribute="bottom" constant="12" id="w1K-e6-zwR"/>
+                            <constraint firstItem="QI4-zg-uhx" firstAttribute="top" secondItem="ioI-T8-wra" secondAttribute="bottom" constant="8" id="xvP-wI-iH1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="14a-FS-IVs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wmy-h1-AIr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveWasPressed:" destination="AYC-oR-WdM" id="ZcC-Rc-4oG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina5_5.fullscreen"/>
+                    <connections>
+                        <outlet property="categoryChoice" destination="WNz-Ey-VWW" id="elq-UG-GEc"/>
+                        <outlet property="priorityChoice" destination="Zf3-Il-a2L" id="f1i-7Y-oX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWd-du-oKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="-2302.1739130434785"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Agenda Item Defaults"; ObjectID = "QI4-zg-uhx"; */
+"QI4-zg-uhx.text" = "El Tema Predeterminado";
+
+/* Class = "UISegmentedControl"; WNz-Ey-VWW.segmentTitles[0] = "Personal"; ObjectID = "WNz-Ey-VWW"; */
+"WNz-Ey-VWW.segmentTitles[0]" = "Personal";
+
+/* Class = "UISegmentedControl"; WNz-Ey-VWW.segmentTitles[1] = "Work"; ObjectID = "WNz-Ey-VWW"; */
+"WNz-Ey-VWW.segmentTitles[1]" = "Trabajo";
+
+/* Class = "UISegmentedControl"; WNz-Ey-VWW.segmentTitles[2] = "School"; ObjectID = "WNz-Ey-VWW"; */
+"WNz-Ey-VWW.segmentTitles[2]" = "Escuela";
+
+/* Class = "UISegmentedControl"; Zf3-Il-a2L.segmentTitles[0] = "1"; ObjectID = "Zf3-Il-a2L"; */
+"Zf3-Il-a2L.segmentTitles[0]" = "1";
+
+/* Class = "UISegmentedControl"; Zf3-Il-a2L.segmentTitles[1] = "2"; ObjectID = "Zf3-Il-a2L"; */
+"Zf3-Il-a2L.segmentTitles[1]" = "2";
+
+/* Class = "UISegmentedControl"; Zf3-Il-a2L.segmentTitles[2] = "3"; ObjectID = "Zf3-Il-a2L"; */
+"Zf3-Il-a2L.segmentTitles[2]" = "3";
+
+/* Class = "UISegmentedControl"; Zf3-Il-a2L.segmentTitles[3] = "4"; ObjectID = "Zf3-Il-a2L"; */
+"Zf3-Il-a2L.segmentTitles[3]" = "4";
+
+/* Class = "UILabel"; text = "Category:"; ObjectID = "mRQ-zf-UAn"; */
+"mRQ-zf-UAn.text" = "Categoría:";
+
+/* Class = "UILabel"; text = "Priority: "; ObjectID = "njg-Gz-mRv"; */
+"njg-Gz-mRv.text" = "Prioridad: ";
