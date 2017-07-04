@@ -31,6 +31,10 @@
 		E0262C5B1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */; };
 		E0262C601EEF7E3700F97DFB /* AllItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */; };
 		E0500A651F07320C00901F99 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0500A641F07320C00901F99 /* SettingsController.swift */; };
+		E0500A6C1F0AAE0700901F99 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0500A6B1F0AAE0700901F99 /* NotificationCenter.framework */; };
+		E0500A6F1F0AAE0700901F99 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0500A6E1F0AAE0700901F99 /* TodayViewController.swift */; };
+		E0500A721F0AAE0700901F99 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0500A701F0AAE0700901F99 /* MainInterface.storyboard */; };
+		E0500A761F0AAE0700901F99 /* TodaysTasksWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0500A6A1F0AAE0700901F99 /* TodaysTasksWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E069C7E51EBE9D4F0006FBB9 /* AgendaItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */; };
 		E069C7E61EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */; };
 		E069C7E71EBE9D4F0006FBB9 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069C7E31EBE9D4F0006FBB9 /* ModelControllerTests.swift */; };
@@ -60,7 +64,28 @@
 			remoteGlobalIDString = 7ED746A11E805A92009BF039;
 			remoteInfo = MyAgenda;
 		};
+		E0500A741F0AAE0700901F99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED7469A1E805A92009BF039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0500A691F0AAE0700901F99;
+			remoteInfo = TodaysTasksWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E0500A7A1F0AAE0700901F99 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E0500A761F0AAE0700901F99 /* TodaysTasksWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		619302BA07CDFED70B312042 /* Pods_MyAgenda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyAgenda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +121,11 @@
 		E0262C5A1EEF577A00F97DFB /* AgendaItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemCollectionViewController.swift; sourceTree = "<group>"; };
 		E0262C5F1EEF7E3700F97DFB /* AllItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		E0500A641F07320C00901F99 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E0500A6A1F0AAE0700901F99 /* TodaysTasksWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodaysTasksWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0500A6B1F0AAE0700901F99 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E0500A6E1F0AAE0700901F99 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E0500A711F0AAE0700901F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E0500A731F0AAE0700901F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E069C7E01EBE9D4F0006FBB9 /* MyAgendaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAgendaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E069C7E11EBE9D4F0006FBB9 /* AgendaItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItemTests.swift; sourceTree = "<group>"; };
 		E069C7E21EBE9D4F0006FBB9 /* DateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
@@ -135,6 +165,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0500A671F0AAE0700901F99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0500A6C1F0AAE0700901F99 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +216,7 @@
 				7ED746A41E805A92009BF039 /* MyAgenda */,
 				7ED746BC1E805A92009BF039 /* MyAgendaTests */,
 				7ED746C71E805A92009BF039 /* MyAgendaUITests */,
+				E0500A6D1F0AAE0700901F99 /* TodaysTasksWidget */,
 				7ED746A31E805A92009BF039 /* Products */,
 				CA15F2D419F95B3F016FA91F /* Pods */,
 				99AA420E68DC59E13D2E8C8D /* Frameworks */,
@@ -190,6 +229,7 @@
 				7ED746A21E805A92009BF039 /* MyAgenda.app */,
 				7ED746B91E805A92009BF039 /* MyAgendaTests.xctest */,
 				7ED746C41E805A92009BF039 /* MyAgendaUITests.xctest */,
+				E0500A6A1F0AAE0700901F99 /* TodaysTasksWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				619302BA07CDFED70B312042 /* Pods_MyAgenda.framework */,
+				E0500A6B1F0AAE0700901F99 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -308,6 +349,16 @@
 				E0E759D61F040CB300DF4316 /* AnalyticsController.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		E0500A6D1F0AAE0700901F99 /* TodaysTasksWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E0500A6E1F0AAE0700901F99 /* TodayViewController.swift */,
+				E0500A701F0AAE0700901F99 /* MainInterface.storyboard */,
+				E0500A731F0AAE0700901F99 /* Info.plist */,
+			);
+			path = TodaysTasksWidget;
 			sourceTree = "<group>";
 		};
 		E08F6D611EC113CA00D47C82 /* Animations */ = {
@@ -342,10 +393,12 @@
 				7ED746A01E805A92009BF039 /* Resources */,
 				ED101761CF09CB55CAACC0CD /* [CP] Embed Pods Frameworks */,
 				FB27CB08A49AEE68B2AEF843 /* [CP] Copy Pods Resources */,
+				E0500A7A1F0AAE0700901F99 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E0500A751F0AAE0700901F99 /* PBXTargetDependency */,
 			);
 			name = MyAgenda;
 			productName = MyAgenda;
@@ -388,13 +441,30 @@
 			productReference = 7ED746C41E805A92009BF039 /* MyAgendaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E0500A691F0AAE0700901F99 /* TodaysTasksWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0500A771F0AAE0700901F99 /* Build configuration list for PBXNativeTarget "TodaysTasksWidget" */;
+			buildPhases = (
+				E0500A661F0AAE0700901F99 /* Sources */,
+				E0500A671F0AAE0700901F99 /* Frameworks */,
+				E0500A681F0AAE0700901F99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodaysTasksWidget;
+			productName = TodaysTasksWidget;
+			productReference = E0500A6A1F0AAE0700901F99 /* TodaysTasksWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7ED7469A1E805A92009BF039 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mike Vork";
 				TargetAttributes = {
@@ -416,6 +486,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7ED746A11E805A92009BF039;
 					};
+					E0500A691F0AAE0700901F99 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = JNR8436L9N;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7ED7469D1E805A92009BF039 /* Build configuration list for PBXProject "MyAgenda" */;
@@ -434,6 +509,7 @@
 				7ED746A11E805A92009BF039 /* MyAgenda */,
 				7ED746B81E805A92009BF039 /* MyAgendaTests */,
 				7ED746C31E805A92009BF039 /* MyAgendaUITests */,
+				E0500A691F0AAE0700901F99 /* TodaysTasksWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -463,6 +539,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0500A681F0AAE0700901F99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0500A721F0AAE0700901F99 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +651,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0500A661F0AAE0700901F99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0500A6F1F0AAE0700901F99 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -579,6 +671,11 @@
 			isa = PBXTargetDependency;
 			target = 7ED746A11E805A92009BF039 /* MyAgenda */;
 			targetProxy = 7ED746C51E805A92009BF039 /* PBXContainerItemProxy */;
+		};
+		E0500A751F0AAE0700901F99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0500A691F0AAE0700901F99 /* TodaysTasksWidget */;
+			targetProxy = E0500A741F0AAE0700901F99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -608,6 +705,14 @@
 				E0E759D91F0420BA00DF4316 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E0500A701F0AAE0700901F99 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0500A711F0AAE0700901F99 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		E0E759DF1F04327300DF4316 /* Localizable.strings */ = {
@@ -721,6 +826,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4D56566D3EBB9B02C7222D4 /* Pods-MyAgenda.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JNR8436L9N;
 				INFOPLIST_FILE = MyAgenda/Info.plist;
@@ -735,6 +841,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 946EB419F3980EC3F741DF23 /* Pods-MyAgenda.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JNR8436L9N;
 				INFOPLIST_FILE = MyAgenda/Info.plist;
@@ -808,6 +915,36 @@
 			};
 			name = Release;
 		};
+		E0500A781F0AAE0700901F99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = JNR8436L9N;
+				INFOPLIST_FILE = TodaysTasksWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentumsoft.MyAgenda.TodaysTasksWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E0500A791F0AAE0700901F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = JNR8436L9N;
+				INFOPLIST_FILE = TodaysTasksWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentumsoft.MyAgenda.TodaysTasksWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -846,6 +983,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E0500A771F0AAE0700901F99 /* Build configuration list for PBXNativeTarget "TodaysTasksWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0500A781F0AAE0700901F99 /* Debug */,
+				E0500A791F0AAE0700901F99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
