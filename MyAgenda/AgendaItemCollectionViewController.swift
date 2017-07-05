@@ -19,6 +19,7 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
     }
     
     internal var blankCellsPerSection = 1
+    internal var cellWidth:CGFloat = 320.0
     internal let cellHeight:CGFloat = 44.0
     internal let cellMenuHeight: CGFloat = 24.0
     internal let cellHeightWithMenu: CGFloat = 68.0
@@ -37,31 +38,19 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         // no title on the navigation back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+        // set the screen layout
+        cellWidth = collectionView!.frame.width
+        let height: CGFloat = cellHeight
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: cellWidth, height: height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // set the screen layout
-        let width = collectionView!.frame.width
-        let height: CGFloat = cellHeight
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: height)
-        
         selectedIndexPath = nil
     }
     
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        // set the screen layout
-        let width = collectionView?.frame.width
-        let height: CGFloat = cellHeight
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width!, height: height)
-        
-    }
     
     internal func agendaItemNumber(from indexPath: IndexPath) -> Int {
         return indexPath.row - blankCellsPerSection
@@ -82,6 +71,7 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         return agendaItems[section].count + blankCellsPerSection
     }
     
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row > (blankCellsPerSection - 1) {
@@ -152,10 +142,24 @@ class AgendaItemCollectionViewController: UICollectionViewController, UICollecti
         }
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = view.frame.width
+        let itemWidth = self.cellWidth
         let itemHeight = getItemHeight(from: indexPath)
+        
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        guard let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        // set the screen layout
+        self.cellWidth = size.width
+        flowLayout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        
+        flowLayout.invalidateLayout()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
